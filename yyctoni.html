@@ -1,0 +1,1460 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <title>YYCToni | Curated Calgary Real Estate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Toni Tsim — Calgary investor-focused realtor specializing in Airbnb & short-term rental properties." />
+  <meta name="author" content="Toni Tsim" />
+  <meta name="theme-color" content="#0b0d14" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f4efe7" media="(prefers-color-scheme: light)" />
+  <link rel="canonical" href="https://yyctoni.com/" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="images/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png" />
+
+  <!-- Open Graph (Facebook, Instagram, LinkedIn, iMessage) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="YYCToni" />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:url" content="https://yyctoni.com/" />
+  <meta property="og:title" content="Toni Tsim | Calgary Realtor &amp; Airbnb Investment Specialist" />
+  <meta property="og:description" content="Investor-focused Calgary real estate with a short-term rental edge. Buy, sell, and build a portfolio with an Airbnb Superhost who knows the market." />
+  <meta property="og:image" content="https://yyctoni.com/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Toni Tsim, Calgary realtor and Airbnb short-term rental specialist" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Toni Tsim | Calgary Realtor &amp; Airbnb Investment Specialist" />
+  <meta name="twitter:description" content="Investor-focused Calgary real estate with a short-term rental edge." />
+  <meta name="twitter:image" content="https://yyctoni.com/images/og-cover.jpg" />
+
+  <!-- Preload the hero image so it paints fast -->
+  <link rel="preload" as="image" href="images/toni-tsim.webp" type="image/webp" />
+
+  <!-- Local business structured data (Google local results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Toni Tsim / YYC TONI Inc.",
+    "alternateName": "YYCToni",
+    "description": "Calgary realtor specializing in residential real estate, investment properties, and Airbnb short-term rental consulting.",
+    "url": "https://yyctoni.com/",
+    "image": "https://yyctoni.com/images/og-cover.jpg",
+    "telephone": "+1-587-839-8118",
+    "email": "yyctoni@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Calgary",
+      "addressRegion": "AB",
+      "addressCountry": "CA"
+    },
+    "areaServed": { "@type": "City", "name": "Calgary" },
+    "sameAs": [
+      "https://www.instagram.com/yyc.toni",
+      "https://maps.google.com/?cid=16270645983452046333"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "reviewCount": "5"
+    },
+    "knowsAbout": ["Airbnb short-term rentals","Real estate investment","Calgary housing market"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Buying representation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Listing and selling" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Airbnb and short-term rental consulting" } }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --toni-photo: image-set(url('images/toni-tsim.webp') type('image/webp'), url('images/toni-tsim.jpg') type('image/jpeg'));
+      --superhost-img: image-set(url('images/superhost.webp') type('image/webp'), url('images/superhost.jpg') type('image/jpeg'));
+      --bg: #0b0d14;
+      --bg-soft: rgba(255,255,255,0.06);
+      --panel: rgba(17,21,33,0.72);
+      --text: #f5f2eb;
+      --muted: #b5b8c5;
+      --border: rgba(255,255,255,0.10);
+      --accent: #f2d675;
+      /* CTA tokens: identical in both themes so buttons never shift identity */
+      --cta-bg: #f2d675;
+      --cta-bg-hover: #e8c85c;
+      --cta-text: #14161c;
+      --star: #f2d675;
+      --cta-ring: rgba(242,214,117,0.32);
+      /* ghost/secondary buttons (theme-aware surface, same shape language) */
+      --btn-ghost-bg: rgba(255,255,255,0.06);
+      --btn-ghost-bg-hover: rgba(255,255,255,0.13);
+      --btn-ghost-border: rgba(255,255,255,0.16);
+      --accent-strong: #dcbc5a;
+      --shadow: 0 24px 80px rgba(0,0,0,0.30);
+      --grad-bg: radial-gradient(circle at top left, rgba(217,183,124,0.16), transparent 32%), radial-gradient(circle at top right, rgba(166,124,82,0.14), transparent 26%), #0b0d14;
+    }
+    :root[data-theme="light"] {
+      --bg: #f4efe7;
+      --bg-soft: rgba(255,255,255,0.82);
+      --panel: rgba(255,255,255,0.82);
+      --text: #1d2230;
+      --muted: #5d6473;
+      --border: rgba(29,34,48,0.10);
+      --accent: #856416;
+      --star: #a87b16;
+      --btn-ghost-bg: rgba(29,34,48,0.05);
+      --btn-ghost-bg-hover: rgba(29,34,48,0.11);
+      --btn-ghost-border: rgba(29,34,48,0.16);
+      --accent-strong: #6f5211;
+      --shadow: 0 20px 50px rgba(45,37,24,0.12);
+      --grad-bg: radial-gradient(circle at top left, rgba(217,183,124,0.22), transparent 32%), radial-gradient(circle at top right, rgba(166,124,82,0.18), transparent 26%), #f4efe7;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--grad-bg); min-height: 100vh; transition: background 0.3s ease, color 0.3s ease; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    html, body { overflow-x: hidden; max-width: 100%; }
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; padding: 12px 18px;
+      background: var(--cta-bg); color: var(--cta-text); font-weight: 700; border-radius: 0 0 12px 0; }
+    .skip-link:focus { left: 0; }
+    .site-shell { width: min(1280px, calc(100% - 32px)); margin: 0 auto; padding: 20px 0 48px; }
+    .glass-panel { background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .site-header { position: sticky; top: 16px; z-index: 100; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; padding: 14px 22px; border-radius: 28px; margin-bottom: 24px; transition: background 0.3s, border-color 0.3s; }
+    .brand { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .brand-mark { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--cta-bg); color: var(--cta-text); font-weight: 800; font-size: 1rem; flex-shrink: 0; }
+    .brand-copy { display: grid; line-height: 1.3; }
+    .brand-copy strong { font-size: 1rem; }
+    .brand-copy small { color: var(--muted); font-size: 0.75rem; }
+    .site-nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; align-items: center; }
+    .site-nav a { padding: 9px 14px; border-radius: 999px; color: var(--muted); transition: color 0.18s, background 0.18s; font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+    .site-nav a:hover, .site-nav a.active { color: var(--text); background: var(--bg-soft); }
+    .header-actions { display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
+    .theme-toggle { background: var(--btn-ghost-bg); border: 1px solid var(--btn-ghost-border); border-radius: 999px;
+      padding: 8px 14px; display: inline-flex; align-items: center; gap: 8px; color: var(--text);
+      transition: border-color .2s, background .2s; }
+    .theme-toggle:hover { background: var(--btn-ghost-bg-hover); border-color: var(--cta-bg); }
+    .theme-icon { font-size: 1rem; line-height: 1; }
+    .theme-label { font-size: 0.8rem; font-weight: 500; }
+    .toggle-track { width: 40px; height: 22px; border-radius: 999px; background: rgba(255,255,255,0.15); position: relative; display: inline-block; transition: background 0.3s; flex-shrink: 0; }
+    :root[data-theme="dark"] .toggle-track { background: rgba(217,183,124,0.35); }
+    .toggle-thumb { position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform 0.22s ease; }
+    :root[data-theme="dark"] .toggle-thumb { transform: translateX(18px); }
+    .primary-button:focus-visible, .secondary-button:focus-visible, .header-cta:focus-visible,
+    .theme-toggle:focus-visible, .hamburger:focus-visible, .carousel-nav:focus-visible {
+      outline: 2px solid var(--cta-bg); outline-offset: 3px; }
+    .header-cta { background: var(--cta-bg); color: var(--cta-text); font-weight: 700; border-radius: 999px;
+      border: 1px solid transparent; padding: 10px 16px; display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.8rem; line-height: 1.1; white-space: nowrap; transition: background .18s, transform .18s, box-shadow .18s; }
+    .header-cta:hover { background: var(--cta-bg-hover); transform: translateY(-1px); box-shadow: 0 6px 18px var(--cta-ring); }
+    .hamburger { display: none; background: var(--btn-ghost-bg); border: 1px solid var(--btn-ghost-border);
+      border-radius: 12px; padding: 8px 10px; color: var(--text); font-size: 1.2rem; align-items: center;
+      justify-content: center; transition: background .18s, border-color .18s; }
+    .hamburger:hover { background: var(--btn-ghost-bg-hover); border-color: var(--cta-bg); }
+    .mobile-nav-drawer { display: none; flex-direction: column; gap: 4px; padding: 12px 0 4px; }
+    .mobile-nav-drawer a { padding: 12px 16px; border-radius: 14px; color: var(--muted); transition: color 0.18s, background 0.18s; font-weight: 500; }
+    .mobile-nav-drawer a:hover, .mobile-nav-drawer a.active { color: var(--text); background: var(--bg-soft); }
+    /* CTA pinned to the bottom of the drawer */
+    .mobile-nav-drawer .drawer-cta,
+    .mobile-nav-drawer .drawer-cta:hover,
+    .mobile-nav-drawer .drawer-cta.active {
+      margin-top: 8px; padding: 14px 18px; border-radius: 14px; min-height: 48px;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: var(--cta-bg); color: var(--cta-text); font-weight: 700; line-height: 1.25; }
+    .mobile-nav-drawer .drawer-cta:hover { background: var(--cta-bg-hover); }
+    /* the drawer's CTA is a button, not a nav link — keep the dark-on-gold treatment */
+    .mobile-nav-drawer a.primary-button,
+    .mobile-nav-drawer a.primary-button:hover,
+    .mobile-nav-drawer a.primary-button.active {
+      color: var(--cta-text); background: var(--cta-bg); font-weight: 700; }
+    .mobile-nav-drawer a.primary-button:hover { background: var(--cta-bg-hover); }
+    .mobile-nav-drawer.open {
+      display: flex;
+      position: fixed;            /* follow the sticky header instead of the document */
+      z-index: 120;               /* above the header (100) and the backdrop (110) */
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      animation: drawerIn .18s ease both;
+    }
+    @keyframes drawerIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+    .nav-backdrop { position: fixed; inset: 0; z-index: 110; background: rgba(8,10,16,.55);
+      backdrop-filter: blur(2px); opacity: 0; transition: opacity .18s ease; }
+    .nav-backdrop.show { opacity: 1; }
+    body.nav-open { overflow: hidden; }
+    .site-footer { margin-top: 32px; border-radius: 28px; padding: 28px 32px; display: flex; justify-content: space-between; gap: 24px; align-items: center; flex-wrap: wrap; }
+    .site-footer p { margin: 8px 0 0; color: var(--muted); max-width: 500px; font-size: 0.9rem; line-height: 1.7; }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); font-size: 0.9rem; transition: color 0.18s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-link { color: var(--muted); }
+    .footer-brand { font-size: 1.1rem; }
+    .footer-copy { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+    .page { display: none; }
+    .page.active { display: block; animation: fadeUp 0.45s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .page-grid { display: grid; gap: 28px; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 0.24em; font-size: 0.74rem; font-weight: 700; margin-bottom: 12px; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1;
+      overflow-wrap: break-word; word-wrap: break-word; }
+    h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); line-height: 1.15; }
+    /* headings promoted to h2 for a valid outline keep their card-level size */
+    .info-card h2, .process-step h2, .listing-copy h2, .contact-facts h2, .contact-card h2, .why-title {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem); line-height: 1.15; }
+    .lead { color: var(--muted); font-size: 1.02rem; line-height: 1.82; max-width: 64ch; }
+    .muted { color: var(--muted); }
+    .button-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+    .primary-button { background: var(--cta-bg); color: var(--cta-text); font-weight: 700; padding: 13px 22px;
+      border-radius: 999px; border: 1px solid transparent; display: inline-flex; align-items: center; gap: 8px;
+      transition: background .18s, transform .18s, box-shadow .18s; }
+    .primary-button:hover { background: var(--cta-bg-hover); transform: translateY(-1px); box-shadow: 0 6px 18px var(--cta-ring); }
+    .secondary-button { background: var(--cta-bg); border: 1px solid transparent; color: var(--cta-text);
+      font-weight: 700; padding: 13px 22px; border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;
+      transition: background .18s, transform .18s, box-shadow .18s; }
+    .secondary-button:hover { background: var(--cta-bg-hover); transform: translateY(-1px); box-shadow: 0 6px 18px var(--cta-ring); }
+    .primary-button, .secondary-button, .header-cta, .theme-toggle, .hamburger, .mobile-nav-drawer a {
+      min-height: 44px;
+      touch-action: manipulation;
+    }
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: stretch; padding: 36px 32px; border-radius: 36px; }
+    .hero-content { display: grid; gap: 0; }
+    .hero-content .eyebrow { margin-bottom: 16px; }
+    .hero-content h1 { margin-bottom: 18px; }
+    /* "Why work with Toni" checklist — informational, so no card chrome */
+    .why-toni { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--border); position: relative; }
+    .why-toni::before { content: ''; position: absolute; top: -1px; left: 0; width: 42px; height: 1px;
+      background: var(--accent); opacity: .9; }
+    .why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 600;
+      color: var(--text); margin-bottom: 14px; }
+    .why-list { list-style: none; padding: 0; margin: 0; display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 24px; }
+    .why-list li { position: relative; padding-left: 24px; font-size: .87rem; line-height: 1.5;
+      color: var(--muted); }
+    .why-list li::before { content: '\2713'; position: absolute; left: 0; top: 0;
+      color: var(--accent); font-weight: 700; font-size: .82rem; }
+    
+    .hero-visual { min-height: 560px; height: 100%; background-color: var(--panel); border-radius: 32px; overflow: hidden; position: relative;
+      display: flex; align-items: flex-end;
+      background-image: var(--toni-photo);
+      background-size: cover; background-position: center 12%; background-repeat: no-repeat; }
+    /* transparent scrim so the copy reads without hiding the photo */
+    .hero-caption { width: 100%; padding: 46px 22px 20px; border: none; box-shadow: none; border-radius: 0;
+      background: linear-gradient(180deg, rgba(10,12,18,0) 0%, rgba(10,12,18,.62) 45%, rgba(10,12,18,.88) 100%); }
+    
+    .hero-caption p { color: rgba(255,255,255,.86); font-size: 0.88rem; line-height: 1.65; margin-bottom: 6px;
+      text-shadow: 0 1px 12px rgba(0,0,0,.45); }
+    .hero-caption strong { font-size: 0.95rem; color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+    .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+    /* grid/flex items default to min-width:auto, which lets long headings blow out the column */
+    .split-layout > *, .page-grid > *, .card-grid > *, .listing-grid > *, .process-grid > *, .hero > * { min-width: 0; }
+    .split-panel { min-width: 0; overflow: hidden; border-radius: 28px; padding: 32px; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(18px); display: flex; flex-direction: column; gap: 14px; }
+    /* headings inside a half-width panel need their own scale */
+    .split-panel h1 { font-size: clamp(1.9rem, 3.4vw, 3.1rem); line-height: 1.06; }
+    /* full-bleed intro panel: heading returns to display scale, copy stays readable */
+    .split-panel--wide { width: 100%; max-width: none; }
+    .split-panel--wide h1 { font-size: clamp(2.4rem, 5.2vw, 4.2rem); }
+    .split-panel--wide .lead { max-width: 68ch; }
+    /* Superhost proof-point beside the STR copy */
+    .str-panel { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 32px; align-items: center; }
+    .str-panel-copy { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+    .superhost-badge { margin: 0; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+    .superhost-img { width: 100%; content-visibility: auto; aspect-ratio: 720 / 996; border-radius: 20px;
+      background-image: var(--superhost-img); background-size: cover; background-position: center;
+      border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .superhost-badge figcaption { font-size: .8rem; line-height: 1.65; color: var(--muted); text-align: center; }
+    .superhost-badge figcaption strong { color: var(--text); }
+    /* Featured communities */
+    .community-grid { list-style: none; padding: 0; margin: 0; display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .community-grid li { display: flex; }
+    .community-grid a { position: relative; flex: 1; display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; padding: 18px 16px 18px 20px; border-radius: 18px; min-height: 48px;
+      background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow);
+      backdrop-filter: blur(18px); font-family: 'Cormorant Garamond', serif; font-size: 1.22rem;
+      font-weight: 600; color: var(--text); overflow: hidden; text-decoration: none;
+      transition: border-color .18s, transform .18s, background .18s; }
+    .community-grid a::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px;
+      width: 3px; border-radius: 0 3px 3px 0; background: var(--accent); opacity: 1; }
+    .community-grid a:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .community-grid a:focus-visible { outline: 2px solid var(--cta-bg); outline-offset: 3px; }
+    .community-pin { font-family: 'Inter', sans-serif; font-size: .82rem; color: var(--muted);
+      opacity: 0; transform: translate(-3px, 3px); transition: opacity .18s, transform .18s, color .18s; }
+    .community-grid a:hover .community-pin { opacity: 1; transform: none; color: var(--accent); }
+
+    .str-services { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+    .str-services li { font-size: .82rem; color: var(--text); padding: 7px 14px; border-radius: 999px;
+      background: var(--btn-ghost-bg); border: 1px solid var(--btn-ghost-border); }
+    .str-services li::before { content: '\2713'; color: var(--accent); font-weight: 700; margin-right: 7px; font-size: .78rem; }
+    .split-panel h2 { font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.08; }
+    .split-panel h1, .split-panel h2 { margin: 0; }
+    .split-panel .lead { margin: 0; }
+    .large-photo { min-height: 460px; border-radius: 32px; background-size: cover; background-position: center; background-image: linear-gradient(180deg, rgba(14,18,28,0.08), rgba(14,18,28,0.35)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80'); }
+    .portrait-photo { min-height: 480px; border-radius: 32px; background-size: cover; background-position: center 18%; background-repeat: no-repeat; aspect-ratio: 4 / 5; }
+    .section-head { display: grid; gap: 10px; }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .info-card { border-radius: 24px; padding: 26px; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(18px); display: flex; flex-direction: column; gap: 10px; }
+    .info-card h2, .info-card h3 { font-size: 1.4rem; }
+    .info-card p { font-size: 0.9rem; line-height: 1.75; }
+    .listing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .listing-card { display: grid; gap: 0; border-radius: 28px; overflow: hidden; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); transition: transform 0.22s; }
+    .listing-card:hover { transform: translateY(-4px); }
+    .listing-image { height: 260px; background-size: cover; background-position: center; display: flex; align-items: flex-start; padding: 16px; }
+    .listing-image span { background: rgba(10,10,14,0.70); color: #fff; padding: 8px 14px; border-radius: 999px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; backdrop-filter: blur(6px); }
+    .listing-copy { padding: 20px 22px 24px; display: grid; gap: 6px; }
+    .listing-copy h2, .listing-copy h3 { font-size: 1.25rem; margin-bottom: 2px; }
+    .listing-copy strong { color: var(--accent); font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+    .listing-copy p { font-size: 0.86rem; }
+    .quote-card { border-radius: 24px; padding: 26px; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(18px); display: flex; flex-direction: column; gap: 12px; }
+    .quote-card p { color: var(--muted); line-height: 1.8; font-size: 0.92rem; font-style: italic; }
+    .quote-card strong { font-size: 0.95rem; }
+    .quote-card small { color: var(--muted); font-size: 0.82rem; }
+    /* ===== Google reviews carousel ===== */
+    .reviews-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+    .google-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px;
+      background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); white-space: nowrap;
+      transition: border-color .18s, transform .18s; }
+    .google-badge:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .google-badge .g-score { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 700; line-height: 1; letter-spacing: .01em; }
+    .google-badge .g-meta { display: grid; gap: 1px; line-height: 1.2; }
+    .google-badge .g-meta small { color: var(--muted); font-size: .78rem; font-weight: 500; }
+    .google-badge .stars { color: var(--star); font-size: .9rem; letter-spacing: 1.5px; }
+
+    .reviews-carousel { position: relative; }
+    .reviews-viewport { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; padding: 4px 0; }
+    .reviews-viewport::-webkit-scrollbar { display: none; }
+
+    .review-card { flex: 0 0 calc((100% - 40px) / 3); scroll-snap-align: start; min-width: 0;
+      border-radius: 24px; padding: 26px; background: var(--panel); border: 1px solid var(--border);
+      box-shadow: var(--shadow); backdrop-filter: blur(18px); display: flex; flex-direction: column; gap: 12px; }
+    .review-card .stars { color: var(--star); font-size: 1rem; letter-spacing: 2px; }
+    .review-body { position: relative; color: var(--muted); line-height: 1.8; font-size: .92rem; font-style: italic;
+      display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; overflow: hidden; }
+    .review-card.is-open .review-body { -webkit-line-clamp: unset; }
+    .review-more { align-self: flex-start; background: none; border: none; padding: 0; color: var(--accent);
+      font-size: .82rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .review-foot { margin-top: auto; display: flex; align-items: center; gap: 12px; padding-top: 6px; }
+    .review-avatar { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
+      background: var(--cta-bg); color: var(--cta-text); font-weight: 800; font-size: .9rem; }
+    .review-who { display: grid; line-height: 1.35; min-width: 0; }
+    .review-who strong { font-size: .95rem; }
+    .review-who small { color: var(--muted); font-size: .78rem; }
+
+    .carousel-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow);
+      backdrop-filter: blur(18px); color: var(--text); font-size: 1.1rem; line-height: 1;
+      transition: border-color .18s, opacity .18s, transform .18s; }
+    .carousel-nav:hover { border-color: var(--cta-bg); background: var(--btn-ghost-bg-hover); transform: translateY(-50%) scale(1.06); }
+    .carousel-nav[disabled] { opacity: .28; pointer-events: none; }
+    .carousel-nav.prev { left: -20px; }
+    .carousel-nav.next { right: -20px; }
+    /* below ~1340px the shell hugs the viewport, so pull the arrows inside it */
+    @media (max-width: 1340px) {
+      .carousel-nav.prev { left: -6px; }
+      .carousel-nav.next { right: -6px; }
+    }
+
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+    .carousel-dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: none;
+      background: var(--border); transition: background .2s, width .2s; }
+    .carousel-dots button.active { background: var(--cta-bg); width: 22px; border-radius: 999px; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .process-step { border-radius: 24px; padding: 26px; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(18px); display: flex; flex-direction: column; gap: 10px; }
+    .process-step .step-num { color: var(--accent); font-weight: 800; font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; }
+    .process-step p { font-size: 0.88rem; line-height: 1.75; }
+    .contact-card { border-radius: 28px; padding: 32px; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: blur(18px); }
+    .center-row { text-align: center; padding: 4px 0; }
+    .center-row .primary-button, .center-row .secondary-button { display: inline-flex; }
+    .disclaimer { text-align: center; margin: 0 auto; font-size: .82rem; }
+    .mobile-nav-drawer { border-radius: 22px; padding: 14px 18px; margin-bottom: 14px; }
+
+    /* ---- Contact form ---- */
+    .contact-form { display: flex; flex-direction: column; gap: 12px; margin: 16px 0 4px; }
+    .field { display: grid; gap: 6px; }
+    .field > span { font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .field > span em { text-transform: none; letter-spacing: 0; font-style: normal; opacity: .75; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%; font: inherit; font-size: .92rem; color: var(--text);
+      background: var(--btn-ghost-bg); border: 1px solid var(--btn-ghost-border);
+      border-radius: 12px; padding: 12px 14px; min-height: 46px;
+      transition: border-color .18s, background .18s; }
+    .contact-form textarea { resize: vertical; min-height: 96px; line-height: 1.6; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--muted); opacity: .75; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--cta-bg); background: var(--btn-ghost-bg-hover); }
+    .contact-form input:focus-visible, .contact-form select:focus-visible, .contact-form textarea:focus-visible {
+      outline: 2px solid var(--cta-bg); outline-offset: 2px; }
+    .contact-form select { appearance: none; -webkit-appearance: none; cursor: pointer;
+      background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+      background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+      background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 40px; }
+    .contact-form select option { background: var(--bg); color: var(--text); }
+    .form-submit { width: 100%; justify-content: center; margin-top: 4px; cursor: pointer; }
+    .form-note { font-size: .8rem; text-align: center; margin-top: 2px; }
+    .req { color: var(--accent); font-weight: 700; }
+    .contact-form :required:invalid:not(:placeholder-shown) { border-color: #e06a5f; }
+    /* iOS zooms the viewport when a focused input is under 16px */
+    @media (max-width: 820px) {
+      .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px; }
+      .contact-facts { gap: 14px; }
+    }
+    .form-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+    .form-status { padding: 12px 14px; border-radius: 12px; font-size: .9rem; margin-bottom: 4px;
+      border: 1px solid var(--btn-ghost-border); background: var(--btn-ghost-bg); }
+    .form-status.ok { border-color: var(--cta-bg); }
+
+    /* ---- Contact page supporting detail ---- */
+    .contact-facts { display: grid; gap: 18px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .contact-facts h2, .contact-facts h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .contact-facts p { font-size: .88rem; line-height: 1.7; }
+
+    .contact-links { display: grid; gap: 12px; margin-top: 16px; }
+    .contact-links a { color: var(--text); padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; font-size: 0.95rem; transition: color 0.18s; }
+    .contact-links a:hover { color: var(--accent); }
+    .contact-icon { font-size: 1.1rem; width: 24px; text-align: center; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important; scroll-behavior: auto !important; }
+    }
+    @media (max-width: 1180px) and (min-width: 981px) {
+      .header-cta { white-space: normal; text-align: center; max-width: 130px; font-size: .74rem; padding: 8px 14px; }
+      .site-nav a { padding: 9px 11px; font-size: .82rem; }
+    }
+    @media (max-width: 980px) {
+      .site-header { grid-template-columns: minmax(0,1fr) auto; grid-template-areas: "brand actions"; gap: 12px; }
+      .brand { grid-area: brand; min-width: 0; overflow: hidden; }
+      .brand-copy { min-width: 0; }
+      .brand-copy strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .header-actions { grid-area: actions; gap: 8px; flex-shrink: 0; }
+      .site-nav { display: none; }
+      .hamburger { display: flex; }
+      /* header CTA is replaced by the full-width bar below the header */
+      .header-cta { display: none; }
+      .theme-label { display: none; }
+      .theme-toggle { padding: 8px 12px; gap: 7px; }
+      .hero, .split-layout { grid-template-columns: 1fr; }
+      .hero { padding: 24px 22px; }
+      .hero-visual { min-height: 420px; }
+      .card-grid, .listing-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+      .str-panel { grid-template-columns: 1fr; gap: 24px; }
+      .superhost-badge { max-width: 320px; margin: 0 auto; }
+      .review-card { flex-basis: calc((100% - 20px) / 2); }
+      .carousel-nav.prev { left: -8px; }
+      .carousel-nav.next { right: -8px; }
+      .why-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .community-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .button-row { gap: 12px; }
+      .button-row a { flex: 1 1 calc(50% - 6px); justify-content: center; }
+      .mobile-nav-drawer { margin-bottom: 16px; }
+    }
+    @media (max-width: 640px) {
+      .site-shell { width: calc(100% - 18px); padding-top: 12px; }
+      .site-header { padding: 10px 12px; border-radius: 18px; top: 8px; gap: 8px; }
+      .brand { gap: 9px; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 11px; font-size: .9rem; }
+      .brand-copy strong { font-size: 0.95rem; }
+      .header-actions { gap: 7px; }
+      .theme-toggle { padding: 7px 10px; gap: 6px; }
+      .toggle-track { width: 34px; height: 19px; }
+      .toggle-thumb { width: 13px; height: 13px; }
+      :root[data-theme="dark"] .toggle-thumb { transform: translateX(15px); }
+      .hamburger { padding: 7px 9px; font-size: 1.1rem; }
+      .card-grid, .listing-grid, .process-grid { grid-template-columns: 1fr; }
+      .superhost-badge { max-width: 260px; }
+      .superhost-badge figcaption { font-size: .74rem; }
+      .review-card { flex-basis: 100%; padding: 20px 18px; border-radius: 18px; }
+      .reviews-viewport { gap: 12px; }
+      .carousel-nav { width: 38px; height: 38px; font-size: 1rem; }
+      .carousel-nav.prev { left: 2px; }
+      .carousel-nav.next { right: 2px; }
+      .reviews-head { align-items: flex-start; }
+      .why-toni { margin-top: 24px; padding-top: 18px; }
+      .why-title { font-size: 1.28rem; margin-bottom: 11px; }
+      .why-list { grid-template-columns: 1fr; gap: 8px; }
+      .community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .community-grid a { padding: 14px 12px 14px 16px; font-size: 1.06rem; border-radius: 14px; }
+      .community-pin { opacity: 1; transform: none; }
+      .why-list li { font-size: .84rem; }
+      .hero { padding: 20px 18px; gap: 20px; border-radius: 26px; }
+      .hero-visual { min-height: 340px; border-radius: 24px; }
+      .hero-caption { padding: 40px 16px 16px; }
+
+      .split-layout, .page-grid { gap: 18px; }
+      .portrait-photo, .large-photo { min-height: 360px; border-radius: 24px; }
+      .portrait-photo { background-size: contain !important; background-position: center top !important; background-color: rgba(255,255,255,0.04); aspect-ratio: 4 / 5; }
+      .split-panel, .contact-card, .info-card, .process-step, .quote-card, .listing-copy { padding: 22px; }
+      .theme-label { display: none; }
+      .theme-toggle { padding: 8px 10px; }
+      .hamburger { padding: 8px; min-width: 44px; }
+      .header-cta { padding: 11px 16px; }
+      .primary-button, .secondary-button { width: 100%; justify-content: center; padding: 14px 18px; font-size: 0.95rem; }
+      .button-row { width: 100%; gap: 10px; }
+      .button-row a { flex: 1 1 100%; }
+      .mobile-nav-drawer { padding: 12px; }
+      .mobile-nav-drawer a { padding: 14px 16px; }
+      .site-footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; border-radius: 22px; }
+      .footer-links { width: 100%; gap: 12px; }
+      .footer-links a { padding: 6px 0; }
+      .brand-copy small { display: none; }
+      h1 { font-size: clamp(2rem, 8vw, 3rem); line-height: 1.05; }
+      h2 { font-size: clamp(1.7rem, 6vw, 2.4rem); line-height: 1.08; }
+      .lead { font-size: 0.98rem; line-height: 1.75; }
+    }
+    @media (max-width: 420px) {
+      .why-list { grid-template-columns: 1fr; }
+      .site-header { padding: 9px 11px; gap: 6px; }
+      .header-actions { gap: 6px; }
+      .brand-copy strong { font-size: 0.88rem; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 10px; font-size: .82rem; }
+      .theme-toggle { padding: 7px 9px; }
+      .toggle-track { display: none; }
+      .hero { padding: 18px 16px; }
+      .split-panel, .contact-card, .info-card, .process-step, .quote-card, .listing-copy { padding: 18px; }
+      .portrait-photo, .large-photo, .hero-visual { min-height: 300px; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="site-shell">
+
+  <header class="site-header glass-panel">
+    <a class="brand" href="/" data-page="home" aria-label="YYCToni Home">
+      <div class="brand-mark">TT</div>
+      <div class="brand-copy">
+        <strong>YYCToni</strong>
+        <small>Calgary Real Estate</small>
+      </div>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="/" data-page="home" class="active">Home</a>
+      <a href="/about" data-page="about">About</a>
+      <a href="/services" data-page="services">Services</a>
+      <a href="/listings" data-page="listings">Listings</a>
+      <a href="/contact" data-page="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon" id="themeIcon">&#9790;</span>
+        <span class="theme-label" id="themeLabel">Dark</span>
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <a class="header-cta" href="/contact" data-page="contact">Book Your Free Consultation</a>
+    </div>
+  </header>
+
+  <nav class="mobile-nav-drawer glass-panel" id="mobileNav" aria-label="Mobile navigation">
+    <a href="/" data-page="home" class="active">Home</a>
+    <a href="/about" data-page="about">About</a>
+    <a href="/services" data-page="services">Services</a>
+    <a href="/listings" data-page="listings">Listings</a>
+    <a href="/contact" data-page="contact">Contact</a>
+    <a class="drawer-cta" href="/contact" data-page="contact">Book Your Free Consultation</a>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- HOME -->
+    <section class="page active" id="page-home">
+      <div class="page-grid">
+        <div class="hero glass-panel">
+          <div class="hero-content">
+            <p class="eyebrow">Calgary Realtor &middot; Investor Specialist</p>
+            <h1>Curated Calgary real estate with a polished, modern feel.</h1>
+            <p class="lead">A luxury-inspired experience for buyers, sellers, and investors who want thoughtful strategy, sharp presentation, and responsive communication.</p>
+            <div class="button-row">
+              <a class="secondary-button" href="/about" data-page="about">Meet Toni</a>
+            </div>
+            <div class="why-toni">
+              <h2 class="why-title">Why Work With Toni?</h2>
+              <ul class="why-list">
+                <li>Investor mindset&mdash;not just sales</li>
+                <li>Airbnb and cash-flow expertise</li>
+                <li>Professional marketing that makes listings stand out</li>
+                <li>Strong negotiation skills</li>
+                <li>Local Calgary market expertise</li>
+                <li>Concierge-level service from start to finish</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-caption">
+              <p>Helping Calgary clients buy, sell, and invest with confidence.</p>
+              <strong>Luxury presentation. Local insight. Real strategy.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="split-layout">
+          <div class="split-panel">
+            <p class="eyebrow">Brand Promise</p>
+            <h2>Modern, boutique, and easy to navigate.</h2>
+            <p class="lead">A high-touch experience tailored for Calgary buyers, sellers, and investors. Premium presentation meets practical, grounded market advice.</p>
+            <div class="button-row"><a class="secondary-button" href="/services" data-page="services">My Services &rarr;</a></div>
+          </div>
+          <div class="large-photo"></div>
+        </div>
+
+        <div class="split-panel split-panel--wide str-panel">
+          <div class="str-panel-copy">
+          <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
+          <h2>Built for investors, end to end.</h2>
+          <p class="lead">Toni specializes in Airbnb and short-term rental consulting &mdash; identifying high-performing investment opportunities and preparing properties for launch, with a strategic, hands-on approach to maximizing returns.</p>
+          <ul class="str-services">
+            <li>Investment analysis</li>
+            <li>Furnishing &amp; setup guidance</li>
+            <li>Listing optimization</li>
+            <li>Pricing strategy</li>
+            <li>Guest experience design</li>
+            <li>Operational consulting</li>
+          </ul>
+          <div class="button-row">
+            <a class="primary-button" href="/services" data-page="services">See how it works</a>
+          </div>
+          </div>
+          <figure class="superhost-badge">
+            <div class="superhost-img" role="img" aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+            <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently outstanding ratings, reliability, and guest experience.</figcaption>
+          </figure>
+        </div>
+
+        <div class="page-grid">
+          <div class="section-head">
+            <p class="eyebrow">Featured Communities</p>
+            <h2>Neighbourhoods Toni knows inside out.</h2>
+            <p class="lead">From inner-city character to newer master-planned communities &mdash; local knowledge that shapes smarter buying, selling, and investing decisions.</p>
+          </div>
+          <ul class="community-grid">
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Altadore%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Altadore, Calgary on Google Maps">Altadore<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Marda%20Loop%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Marda Loop, Calgary on Google Maps">Marda Loop<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Beltline%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Beltline, Calgary on Google Maps">Beltline<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Mahogany%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Mahogany, Calgary on Google Maps">Mahogany<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Seton%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Seton, Calgary on Google Maps">Seton<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Currie%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Currie, Calgary on Google Maps">Currie<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Aspen%20Woods%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Aspen Woods, Calgary on Google Maps">Aspen Woods<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Signal%20Hill%2C%20Calgary%2C%20AB" target="_blank" rel="noopener noreferrer" aria-label="View Signal Hill, Calgary on Google Maps">Signal Hill<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+          </ul>
+        </div>
+
+        <div class="page-grid">
+          <div class="section-head reviews-head">
+            <div>
+              <p class="eyebrow">Google Reviews</p>
+              <h2>What clients say about working together.</h2>
+            </div>
+            <a class="google-badge" id="googleBadge" href="#" target="_blank" rel="noopener">
+              <span class="g-score" id="gScore">4.9</span>
+              <span class="g-meta">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <small id="gCount">On Google</small>
+              </span>
+            </a>
+          </div>
+
+          <div class="reviews-carousel">
+            <button class="carousel-nav prev" id="revPrev" aria-label="Previous reviews">&#10094;</button>
+            <div class="reviews-viewport" id="reviewsTrack" tabindex="0" aria-label="Client reviews"></div>
+            <button class="carousel-nav next" id="revNext" aria-label="Next reviews">&#10095;</button>
+          </div>
+          <div class="carousel-dots" id="revDots"></div>
+
+          <div class="center-row">
+            <a class="secondary-button" id="allReviewsLink" href="#" target="_blank" rel="noopener">Read all reviews on Google &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="page" id="page-about">
+      <div class="page-grid">
+        <div class="split-layout">
+          <div class="portrait-photo" style="background-image: var(--toni-photo); background-size: cover; background-position: center top;"></div>
+          <div class="split-panel">
+            <p class="eyebrow">About Toni</p>
+            <h1>Calgary&rsquo;s investor-focused realtor with a short-term rental edge.</h1>
+            <p class="lead">Toni Tsim is a Calgary-based realtor with Imperial Real Estate Group - Century 21 Bravo Realty: specializing in residential real estate, investment properties, and short-term rentals.</p>
+            <p class="lead">Whether you’re buying, selling, or building an investment portfolio, Toni combines market expertise, strategic marketing, and skilled negotiation to help clients achieve exceptional results. With a strong understanding of Calgary’s real estate market and short-term rental landscape, she provides practical, data-driven guidance tailored to each client’s goals.</p>
+            <p class="lead">Known for her professionalism, clear communication, and results-focused approach, Toni is committed to making every real estate experience seamless, strategic, and successful.</p>
+            <div class="button-row">
+              <a class="primary-button" href="/contact" data-page="contact">Start the conversation</a>
+              <a class="secondary-button" href="/services" data-page="services">Explore services</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <p class="eyebrow">Approach</p>
+            <h2>Tailored over templated</h2>
+            <p class="muted">Every client has different goals, timelines, and financial priorities &mdash; so the process adapts instead of feeling generic.</p>
+          </article>
+          <article class="info-card">
+            <p class="eyebrow">STR Expertise</p>
+            <h2>Airbnb-savvy from day one</h2>
+            <p class="muted">Toni knows which Calgary buildings permit short-term rentals, how to underwrite STR cash flow, and how to position a listing for maximum bookings.</p>
+          </article>
+          <article class="info-card">
+            <p class="eyebrow">Presentation</p>
+            <h2>Luxury-inspired details</h2>
+            <p class="muted">Design, photography, story, and online positioning all matter when you want a listing or a brand to stand out in the Calgary market.</p>
+          </article>
+        </div>
+
+        <div class="split-panel split-panel--wide str-panel">
+          <div class="str-panel-copy">
+          <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
+          <h2>Built for investors, end to end.</h2>
+          <p class="lead">Alongside residential real estate, Toni consults on Airbnb and short-term rentals &mdash; helping investors find properties that actually perform, then getting them launch-ready and running well.</p>
+          <ul class="str-services">
+            <li>Investment analysis</li>
+            <li>Furnishing &amp; setup guidance</li>
+            <li>Listing optimization</li>
+            <li>Pricing strategy</li>
+            <li>Guest experience design</li>
+            <li>Operational consulting</li>
+          </ul>
+          <div class="button-row">
+            <a class="primary-button" href="/contact" data-page="contact">Talk STR strategy</a>
+          </div>
+          </div>
+          <figure class="superhost-badge">
+            <div class="superhost-img" role="img" aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+            <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently outstanding ratings, reliability, and guest experience.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="page" id="page-services">
+      <div class="page-grid">
+        <div class="split-panel split-panel--wide">
+          <p class="eyebrow">Services</p>
+          <h1>Support for buying, selling, and investing.</h1>
+          <p class="lead">Dedicated support for each path &mdash; including a specialized focus on Airbnb and short-term rental investment properties across Calgary.</p>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <p class="eyebrow">Buying</p>
+            <h2>Buy with a plan</h2>
+            <p class="muted">From neighbourhood fit to offer strategy, the buying process is designed to stay focused, informed, and efficient &mdash; whether it&rsquo;s a primary home or an investment property.</p>
+          </article>
+          <article class="info-card">
+            <p class="eyebrow">Airbnb &amp; STR</p>
+            <h2>Short-term rental strategy</h2>
+            <p class="muted">Identify STR-friendly buildings, model cash flow, and find properties positioned to perform on Airbnb. Toni specializes in Calgary&rsquo;s growing short-term rental market.</p>
+          </article>
+          <article class="info-card">
+            <p class="eyebrow">Selling</p>
+            <h2>Sell with standout marketing</h2>
+            <p class="muted">Pricing, presentation, photography, positioning, and launch strategy are all handled with a polished, cohesive feel.</p>
+          </article>
+        </div>
+
+        <div class="split-panel split-panel--wide str-panel">
+          <div class="str-panel-copy">
+          <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
+          <h2>Built for investors, end to end.</h2>
+          <p class="lead">In addition to residential real estate, Toni specializes in Airbnb and short-term rental consulting. From identifying high-performing investment opportunities to preparing properties for launch, she helps investors maximize their returns with a strategic, hands-on approach. Services include investment analysis, furnishing and setup guidance, listing optimization, pricing strategy, guest experience design, and ongoing operational consulting&mdash;whether you&rsquo;re launching your first short-term rental or expanding an existing portfolio.</p>
+          <ul class="str-services">
+            <li>Investment analysis</li>
+            <li>Furnishing &amp; setup guidance</li>
+            <li>Listing optimization</li>
+            <li>Pricing strategy</li>
+            <li>Guest experience design</li>
+            <li>Operational consulting</li>
+          </ul>
+          <div class="button-row">
+            <a class="primary-button" href="/contact" data-page="contact">Talk STR strategy</a>
+          </div>
+          </div>
+          <figure class="superhost-badge">
+            <div class="superhost-img" role="img" aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+            <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently outstanding ratings, reliability, and guest experience.</figcaption>
+          </figure>
+        </div>
+
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>A clear, three-step process.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-step">
+            <span class="step-num">01</span>
+            <h2>Discover your goals</h2>
+            <p class="muted">Start with timing, budget, lifestyle, and the outcome that matters most &mdash; whether that&rsquo;s a family home or a cash-flowing rental.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-num">02</span>
+            <h2>Build the strategy</h2>
+            <p class="muted">Create a roadmap tailored to the current Calgary market and your priorities, including STR income projections where relevant.</p>
+          </article>
+          <article class="process-step">
+            <span class="step-num">03</span>
+            <h2>Move with confidence</h2>
+            <p class="muted">Get organized guidance, tight communication, and a smooth path to closing.</p>
+          </article>
+        </div>
+        <div class="button-row">
+          <a class="primary-button" href="/contact" data-page="contact">Book a Free Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTINGS -->
+    <section class="page" id="page-listings">
+      <div class="page-grid">
+        <div class="split-panel split-panel--wide">
+          <p class="eyebrow">Listings</p>
+          <h1>Calgary homes and investment properties.</h1>
+          <p class="lead">Active listings, recent sales, and short-term rental opportunities across the city. For the full, always-current MLS&reg; feed &mdash; including listings not shown here &mdash; reach out and Toni will set up a personalized search.</p>
+          <div class="button-row">
+            <a class="primary-button" href="/contact" data-page="contact">Get new listings first</a>
+          </div>
+        </div>
+
+        <div class="listing-grid">
+          <article class="listing-card">
+            <div class="listing-image" style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')"><span>Featured</span></div>
+            <div class="listing-copy"><h2>Modern inner-city home</h2><strong>$849,900</strong><p class="muted">4 bed &middot; 3.5 bath &middot; Altadore</p></div>
+          </article>
+          <article class="listing-card">
+            <div class="listing-image" style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')"><span>Just listed</span></div>
+            <div class="listing-copy"><h2>Bright family retreat</h2><strong>$679,900</strong><p class="muted">3 bed &middot; 2.5 bath &middot; Mahogany</p></div>
+          </article>
+          <article class="listing-card">
+            <div class="listing-image" style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')"><span>Airbnb ready</span></div>
+            <div class="listing-copy"><h2>Stylish condo investment</h2><strong>$329,900</strong><p class="muted">2 bed &middot; 2 bath &middot; Beltline &middot; STR-friendly</p></div>
+          </article>
+          <article class="listing-card">
+            <div class="listing-image" style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')"><span>Coming soon</span></div>
+            <div class="listing-copy"><h2>Charming bungalow</h2><strong>$524,000</strong><p class="muted">3 bed &middot; 2 bath &middot; Signal Hill</p></div>
+          </article>
+          <article class="listing-card">
+            <div class="listing-image" style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')"><span>Sold</span></div>
+            <div class="listing-copy"><h2>Executive estate</h2><strong>$1,249,000</strong><p class="muted">5 bed &middot; 4 bath &middot; Aspen Woods</p></div>
+          </article>
+          <article class="listing-card">
+            <div class="listing-image" style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')"><span>Investor pick</span></div>
+            <div class="listing-copy"><h2>Downtown loft</h2><strong>$289,900</strong><p class="muted">1 bed &middot; 1 bath &middot; Currie</p></div>
+          </article>
+        </div>
+
+        <p class="lead disclaimer">Listing details are illustrative. Contact Toni for current availability, pricing, and MLS&reg; listings.</p>
+
+        <div class="center-row">
+          <a class="primary-button" href="/contact" data-page="contact">Inquire about a listing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="page" id="page-contact">
+      <div class="page-grid">
+        <div class="split-layout">
+          <div class="split-panel">
+            <p class="eyebrow">Contact</p>
+            <h1>Ready to make your next move in Calgary?</h1>
+            <p class="lead">Reach out to talk about buying, selling, or investing &mdash; including Airbnb and short-term rental properties. The first conversation can stay simple, whether you&rsquo;re ready now or just exploring options.</p>
+            <p class="lead">Toni Tsim works with buyers, sellers, and investors across Calgary, AB with a focus on clear communication and premium presentation.</p>
+
+            <div class="contact-facts">
+              <div>
+                <h2>Areas served</h2>
+                <p class="muted">Calgary and surrounding communities &mdash; inner-city, southeast, and west-side neighbourhoods, plus acreages within commuting distance.</p>
+              </div>
+              <div>
+                <h2>Who Toni works with</h2>
+                <p class="muted">First-time buyers, move-up families, sellers preparing to list, and investors building or scaling a short-term rental portfolio.</p>
+              </div>
+              <div>
+                <h2>What happens next</h2>
+                <p class="muted">You&rsquo;ll hear back within one business day. The first call is a no-pressure conversation about your timeline, budget, and goals &mdash; free, with no obligation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <p class="eyebrow">Send a message</p>
+            <h2>Tell Toni about your move</h2>
+
+            <form class="contact-form" name="contact" method="POST" action="https://formsubmit.co/yyctoni@gmail.com">
+              <!-- FormSubmit config: emails the submission to yyctoni@gmail.com -->
+              <input type="hidden" name="_subject" value="New enquiry from yyctoni.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://yyctoni.com/contact?sent=1" />
+              <p class="hp-field"><label>Leave this blank <input type="text" name="_honey" tabindex="-1" autocomplete="off" /></label></p>
+
+              <label class="field">
+                <span>Name <b class="req" aria-hidden="true">*</b></span>
+                <input type="text" name="name" required autocomplete="name" placeholder="Your name" />
+              </label>
+              <label class="field">
+                <span>Email <b class="req" aria-hidden="true">*</b></span>
+                <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+              </label>
+              <label class="field">
+                <span>Phone <em>(optional)</em></span>
+                <input type="tel" name="phone" autocomplete="tel" placeholder="(587) 000-0000" />
+              </label>
+              <label class="field">
+                <span>I&rsquo;m interested in</span>
+                <select name="interest">
+                  <option>Buying a home</option>
+                  <option>Selling a home</option>
+                  <option>Airbnb / short-term rental investing</option>
+                  <option>Investment property</option>
+                  <option>Just exploring / not sure yet</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Message <b class="req" aria-hidden="true">*</b></span>
+                <textarea name="message" rows="4" required placeholder="Timeline, budget, neighbourhoods you like &mdash; whatever&rsquo;s useful."></textarea>
+              </label>
+
+              <button type="submit" class="primary-button form-submit">Send message</button>
+              <p class="form-note muted">Prefer email? <a href="mailto:yyctoni@gmail.com?subject=Real%20Estate%20Inquiry">yyctoni@gmail.com</a></p>
+            </form>
+
+            <div class="contact-links">
+              <a href="tel:+15878398118"><span class="contact-icon">&#128222;</span>(587) 839-8118</a>
+              <a href="mailto:yyctoni@gmail.com"><span class="contact-icon">&#9993;</span>yyctoni@gmail.com</a>
+              <a href="https://instagram.com/yyc.toni" target="_blank" rel="noopener noreferrer"><span class="contact-icon">&#64;</span>yyc.toni</a>
+              <a href="https://maps.google.com/?q=Calgary,+Alberta" target="_blank" rel="noopener noreferrer"><span class="contact-icon">&#128205;</span>Calgary, Alberta</a>
+            </div>
+          </div>
+        </div>
+        <div class="large-photo"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer glass-panel">
+    <div>
+      <strong class="footer-brand">YYCToni</strong>
+      <p>&middot; Century 21 &middot; Imperial Real Estate Group</p>
+      <p class="footer-copy">&copy; 2026 YYCToni &middot; <a href="tel:+15878398118" class="footer-link">(587) 839-8118</a> &middot; <a href="https://instagram.com/yyc.toni" class="footer-link" target="_blank" rel="noopener noreferrer">@yyc.toni</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="/about" data-page="about">About</a>
+      <a href="/services" data-page="services">Services</a>
+      <a href="/listings" data-page="listings">Listings</a>
+      <a href="/contact" data-page="contact">Contact</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  /* ============================================================
+     GOOGLE REVIEWS
+     ------------------------------------------------------------
+     url     – where the "Read all reviews" links point.
+               Replace with Toni's exact Google listing URL when
+               you have it (Maps -> her profile -> Share -> copy link).
+     placeId – optional. Her Google Place ID. Get it from
+               https://developers.google.com/maps/documentation/places/web-service/place-id
+     apiKey  – optional. A Maps JavaScript API key restricted to
+               this site's domain (Places API must be enabled).
+
+     If placeId AND apiKey are both filled in, the carousel pulls
+     her live reviews from Google on page load (Google returns a
+     maximum of 5). Otherwise it renders the REVIEWS list below.
+     ============================================================ */
+  const GOOGLE_REVIEWS = {
+    url:     'https://maps.google.com/?cid=16270645983452046333',
+    placeId: '',
+    apiKey:  ''
+  };
+
+  /* Manually-entered reviews (used until the API config above is filled in). */
+  const REVIEWS = [
+    {
+      author: 'Tarik',
+      rating: 5,
+      when:   '',
+      text:   "Working with Toni has been an outstanding experience. She\u2019s incredibly hard-working, persistent, and truly gets things done no matter what. Her exceptional work ethic and positive attitude made the entire process smooth and stress-free. She took the time to explain and answer all my questions in detail. She's responsive, and easy to work with. Toni is a dedicated realtor who genuinely goes above and beyond for her clients."
+    },
+    {
+      author: 'Curtis Shipalesky',
+      rating: 5,
+      when:   '',
+      text:   "Toni is absolutely fantastic. She helped us find the perfect property and went above and beyond to make the entire buying process smooth, clear, and easy. She is a true professional, and I would recommend her to anyone in a heartbeat!"
+    },
+    {
+      author: 'John Garcia',
+      rating: 5,
+      when:   '',
+      text:   "We had an exceptional experience from Toni!! Can't thank her enough for all the guidance and help. Toni provided us with a highly focused service and attention to detail. She was there every step of the way. She answered all of our questions about the market and made sure that we were getting the best deal for our first investment property. Her knowledge and expertise is invaluable! Toni is flexible and a great communicator! (We're an out of town buyer living in Manitoba and she worked tirelessly with us...went above and beyond....and still do even after the sale!!!) Highly recommended if you require services of a top notch realtor!!! 11/10 experience"
+    },
+    {
+      author: 'Kiara Amaya',
+      rating: 5,
+      when:   '',
+      text:   "Great experience overall! The team was friendly, helpful, and easy to work with. They communicated clearly, knew the market well, and made the whole process simple and stress-free. Toni is very knowledgable, she was always looking out for my best Interest, it made me really feel confident and trust in her work. I’d definitely recommend them to anyone looking for a reliable real estate company!"
+    },
+    {
+      author: 'Erin Kowalchuk',
+      rating: 5,
+      when:   '',
+      text:   "As first-time home buyers, we couldn’t have asked for a better realtor. From the very beginning, Toni was patient, caring, and always took the time to explain every step of the process in a way that made us feel comfortable and confident. She truly went above and beyond to help us find the perfect home.\n\nWhat stood out most was how much thought, effort, and genuine care Toni put into helping us make the right decision. She listened to what we wanted, supported us through every question and concern, and made what could have been a stressful experience feel exciting and manageable.\n\nWe are so grateful for all of her hard work and would highly recommend her to anyone, especially first-time buyers looking for someone they can truly trust!"
+    }
+  ];
+
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+
+  function applyTheme(mode) {
+    html.setAttribute('data-theme', mode);
+    themeIcon.textContent = mode === 'dark' ? '☾' : '☀';
+    themeLabel.textContent = mode === 'dark' ? 'Dark' : 'Light';
+    themeToggle.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    try { localStorage.setItem('yyctoni-theme', mode); } catch(e) {}
+  }
+
+  const saved = (() => { try { return localStorage.getItem('yyctoni-theme'); } catch(e) { return null; } })();
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme((saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light'));
+
+  themeToggle.addEventListener('click', () => {
+    applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  const pages = document.querySelectorAll('.page');
+  const allNavLinks = document.querySelectorAll('[data-page]');
+
+  /* ---- Routing: each virtual page gets a real URL, title and back-button behaviour ---- */
+  const ROUTES = {
+    home:     { path: '/',          title: 'Toni Tsim | Calgary Realtor & Airbnb Investment Specialist',
+                desc: 'Investor-focused Calgary real estate with a short-term rental edge.' },
+    about:    { path: '/about',     title: 'About Toni Tsim | Calgary Investor-Focused Realtor',
+                desc: "Meet Toni Tsim - Calgary realtor, Airbnb Superhost and short-term rental specialist." },
+    services: { path: '/services',  title: 'Services | Buying, Selling & Airbnb Consulting in Calgary',
+                desc: 'Buying, selling, and Airbnb short-term rental consulting across Calgary.' },
+    listings: { path: '/listings',  title: 'Listings | Calgary Homes & Investment Properties',
+                desc: 'Calgary homes, condos and short-term rental investment opportunities.' },
+    contact:  { path: '/contact',   title: 'Contact Toni Tsim | Calgary Realtor',
+                desc: 'Book a free consultation with Calgary realtor Toni Tsim.' }
+  };
+  const PATH_TO_PAGE = Object.fromEntries(Object.entries(ROUTES).map(([k, v]) => [v.path, k]));
+
+  /* Pretty paths only work when served over http(s) with a rewrite rule.
+     Opened straight from disk (file://) the History API throws, so fall back to #hash. */
+  const CAN_USE_PATHS = (location.protocol === 'http:' || location.protocol === 'https:');
+
+  function urlFor(pageId) {
+    return CAN_USE_PATHS ? ROUTES[pageId].path : (pageId === 'home' ? '#' : '#' + pageId);
+  }
+
+  function setHistory(method, pageId) {
+    try {
+      history[method]({ page: pageId }, '', urlFor(pageId));
+      return true;
+    } catch (err) {
+      // file:// or a sandboxed frame — routing still works, the URL just won't update
+      if (!CAN_USE_PATHS) { try { location.hash = pageId === 'home' ? '' : pageId; } catch (e) {} }
+      return false;
+    }
+  }
+
+  function render(pageId, scroll) {
+    if (!ROUTES[pageId]) pageId = 'home';
+    pages.forEach(p => p.classList.remove('active'));
+    allNavLinks.forEach(a => a.classList.remove('active'));
+    const target = document.getElementById('page-' + pageId);
+    if (target) target.classList.add('active');
+    allNavLinks.forEach(a => { if (a.dataset.page === pageId) a.classList.add('active'); });
+
+    // keep title / description / canonical in step for analytics and sharing
+    const r = ROUTES[pageId];
+    document.title = r.title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', r.desc);
+    const canon = document.querySelector('link[rel="canonical"]');
+    if (canon && CAN_USE_PATHS) canon.setAttribute('href', location.origin + r.path);
+
+    if (scroll !== false) window.scrollTo({ top: 0, behavior: 'smooth' });
+    closeMobileNav();
+  }
+
+  function navigate(pageId) {
+    if (!ROUTES[pageId]) pageId = 'home';
+    setHistory('pushState', pageId);   // best-effort; render happens regardless
+    render(pageId);
+  }
+
+  function pageFromLocation() {
+    const h = location.hash.replace('#', '');
+    if (ROUTES[h]) return h;                                   // #about
+    if (PATH_TO_PAGE[location.pathname]) return PATH_TO_PAGE[location.pathname];  // /about
+    const seg = location.pathname.split('/').filter(Boolean).pop();
+    if (ROUTES[seg]) return seg;
+    return 'home';
+  }
+
+  allNavLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // let new-tab work
+      e.preventDefault();
+      const page = link.dataset.page;
+      try { navigate(page); }
+      catch (err) { render(page); }   // routing must never break navigation
+    });
+    // keep hrefs meaningful in whichever mode we're in
+    if (!CAN_USE_PATHS && link.dataset.page) link.setAttribute('href', urlFor(link.dataset.page));
+  });
+
+  window.addEventListener('popstate', e => {
+    render((e.state && e.state.page) || pageFromLocation(), false);
+  });
+
+  window.addEventListener('hashchange', () => {
+    if (!CAN_USE_PATHS) render(pageFromLocation(), false);
+  });
+
+  // deep-link on first load
+  (function initRoute() {
+    try {
+      const p = pageFromLocation();
+      setHistory('replaceState', p);
+      render(p, false);
+    } catch (err) {
+      render('home', false);   // never leave the page in a broken state
+    }
+  })();
+
+
+  function closeMobileNav() {
+    if (!mobileNav.classList.contains('open')) return;
+    mobileNav.classList.remove('open');
+    ['top','left','width','maxHeight'].forEach(k => mobileNav.style[k] = '');
+    hamburger.textContent = '\u2630';
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+    if (backdrop) {
+      backdrop.classList.remove('show');
+      const el = backdrop; backdrop = null;
+      setTimeout(() => el.remove(), 200);
+    }
+    window.removeEventListener('resize', positionDrawer);
+    window.removeEventListener('scroll', positionDrawer);
+  }
+
+  const siteHeader = document.querySelector('.site-header');
+  let backdrop = null;
+
+  /* Anchor the open drawer to the sticky header's on-screen position,
+     so it appears correctly no matter how far the page is scrolled. */
+  function positionDrawer() {
+    if (!mobileNav.classList.contains('open')) return;
+    const r = siteHeader.getBoundingClientRect();
+    mobileNav.style.top   = (r.bottom + 10) + 'px';
+    mobileNav.style.left  = r.left + 'px';
+    mobileNav.style.width = r.width + 'px';
+    mobileNav.style.maxHeight = Math.max(160, window.innerHeight - r.bottom - 26) + 'px';
+  }
+
+  function openMobileNav() {
+    mobileNav.classList.add('open');
+    hamburger.textContent = '\u2715';
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'nav-backdrop';
+      backdrop.addEventListener('click', closeMobileNav);
+      document.body.appendChild(backdrop);
+    }
+    requestAnimationFrame(() => backdrop && backdrop.classList.add('show'));
+
+    positionDrawer();
+    window.addEventListener('resize', positionDrawer);
+    window.addEventListener('scroll', positionDrawer, { passive: true });
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (mobileNav.classList.contains('open')) closeMobileNav();
+    else openMobileNav();
+  });
+
+  // Esc closes it
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMobileNav();
+  });
+
+  // Back on desktop, make sure nothing is left stuck open
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980 && mobileNav.classList.contains('open')) closeMobileNav();
+  });
+
+  /* ---- Contact form: submit without leaving the page ---- */
+  const CONTACT_EMAIL = 'yyctoni@gmail.com';
+
+  (function initContactForm() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+    const submit = form.querySelector('.form-submit');
+
+    function status(msg, ok) {
+      let el = form.querySelector('.form-status');
+      if (!el) {
+        el = document.createElement('div');
+        el.className = 'form-status';
+        el.setAttribute('role', 'status');
+        form.prepend(el);
+      }
+      el.textContent = msg;
+      el.classList.toggle('ok', !!ok);
+    }
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      if (data.get('_honey')) return;              // bot filled the hidden field
+
+      submit.disabled = true;
+      const label = submit.textContent;
+      submit.textContent = 'Sending...';
+
+      // AJAX endpoint delivers the submission by email without leaving the page
+      const endpoint = 'https://formsubmit.co/ajax/' + CONTACT_EMAIL;
+      const payload = {
+        _subject: 'New enquiry from yyctoni.com',
+        _template: 'table',
+        _captcha: 'false',
+        Name: data.get('name'),
+        Email: data.get('email'),
+        Phone: data.get('phone') || 'Not provided',
+        'Interested in': data.get('interest'),
+        Message: data.get('message')
+      };
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || out.success === 'false') throw new Error(out.message || res.status);
+        form.reset();
+        status('Thanks! Your message has been sent to Toni \u2014 she\u2019ll reply within one business day.', true);
+      } catch (err) {
+        // fall back to the visitor's mail client so the enquiry is never lost
+        const body = encodeURIComponent(
+          'Name: ' + (data.get('name') || '') +
+          '\nEmail: ' + (data.get('email') || '') +
+          '\nPhone: ' + (data.get('phone') || '') +
+          '\nInterested in: ' + (data.get('interest') || '') +
+          '\n\n' + (data.get('message') || '')
+        );
+        status('Couldn\u2019t send automatically. Opening your email app instead \u2014 or call (587) 839-8118.');
+        window.location.href = 'mailto:' + CONTACT_EMAIL +
+          '?subject=' + encodeURIComponent('Real estate enquiry') + '&body=' + body;
+      } finally {
+        submit.disabled = false;
+        submit.textContent = label;
+      }
+    });
+
+    // success state when the no-JS fallback redirects back
+    if (new URLSearchParams(location.search).get('sent') === '1') {
+      status('Thanks! Your message was sent \u2014 Toni will reply within one business day.', true);
+      history.replaceState({ page: 'contact' }, '', '/contact');
+    }
+  })();
+
+  /* ===================== Google reviews carousel ===================== */
+  (function initReviews() {
+    const track = document.getElementById('reviewsTrack');
+    if (!track) return;
+
+    const prevBtn = document.getElementById('revPrev');
+    const nextBtn = document.getElementById('revNext');
+    const dotsBox = document.getElementById('revDots');
+    const badge   = document.getElementById('googleBadge');
+    const allLink = document.getElementById('allReviewsLink');
+    const gScore  = document.getElementById('gScore');
+    const gCount  = document.getElementById('gCount');
+
+    badge.href   = GOOGLE_REVIEWS.url;
+    allLink.href = GOOGLE_REVIEWS.url;
+
+    const esc = s => String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+    function render(list) {
+      track.innerHTML = list.map(r => {
+        const n = Math.round(r.rating || 5);
+        const stars = '\u2605'.repeat(n) + '\u2606'.repeat(5 - n);
+        const initial = esc((r.author || '?').trim().charAt(0).toUpperCase());
+        const when = r.when ? '<small>' + esc(r.when) + '</small>' : '<small>Google review</small>';
+        const body = esc(r.text).replace(/\n{2,}/g, '<br><br>').replace(/\n/g, '<br>');
+        return '<article class="review-card">' +
+                 '<div class="stars" aria-label="' + n + ' out of 5 stars">' + stars + '</div>' +
+                 '<p class="review-body">\u201C' + body + '\u201D</p>' +
+                 '<button type="button" class="review-more" hidden>Read more</button>' +
+                 '<div class="review-foot">' +
+                   '<span class="review-avatar" aria-hidden="true">' + initial + '</span>' +
+                   '<span class="review-who"><strong>' + esc(r.author) + '</strong>' + when + '</span>' +
+                 '</div>' +
+               '</article>';
+      }).join('');
+
+      // Show "Read more" only where the text is actually clamped
+      track.querySelectorAll('.review-card').forEach(card => {
+        const body = card.querySelector('.review-body');
+        const btn  = card.querySelector('.review-more');
+        if (body.scrollHeight > body.clientHeight + 4) {
+          btn.hidden = false;
+          btn.addEventListener('click', () => {
+            const open = card.classList.toggle('is-open');
+            btn.textContent = open ? 'Show less' : 'Read more';
+            requestAnimationFrame(sync);
+          });
+        }
+      });
+
+      buildDots();
+      requestAnimationFrame(sync);
+    }
+
+    /* ---- paging helpers ---- */
+    function perView() {
+      const card = track.querySelector('.review-card');
+      if (!card) return 1;
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return Math.max(1, Math.round((track.clientWidth + gap) / (card.offsetWidth + gap)));
+    }
+    function pageCount() {
+      const total = track.querySelectorAll('.review-card').length;
+      return Math.max(1, Math.ceil(total / perView()));
+    }
+    function currentPage() {
+      const max = track.scrollWidth - track.clientWidth;
+      if (max <= 1) return 0;
+      return Math.round((track.scrollLeft / max) * (pageCount() - 1));
+    }
+    function goTo(page) {
+      const max = track.scrollWidth - track.clientWidth;
+      const pages = pageCount();
+      const target = pages <= 1 ? 0 : (max * (Math.min(Math.max(page, 0), pages - 1) / (pages - 1)));
+      track.scrollTo({ left: target, behavior: 'smooth' });
+    }
+
+    function buildDots() {
+      const pages = pageCount();
+      dotsBox.innerHTML = '';
+      if (pages <= 1) return;
+      for (let i = 0; i < pages; i++) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Go to review page ' + (i + 1));
+        b.addEventListener('click', () => goTo(i));
+        dotsBox.appendChild(b);
+      }
+    }
+
+    function sync() {
+      const max = track.scrollWidth - track.clientWidth;
+      const atStart = track.scrollLeft <= 2;
+      const atEnd   = track.scrollLeft >= max - 2;
+      const single  = max <= 2;
+
+      prevBtn.disabled = atStart || single;
+      nextBtn.disabled = atEnd   || single;
+      prevBtn.style.display = single ? 'none' : 'grid';
+      nextBtn.style.display = single ? 'none' : 'grid';
+
+      const cur = currentPage();
+      [...dotsBox.children].forEach((d, i) => d.classList.toggle('active', i === cur));
+    }
+
+    prevBtn.addEventListener('click', () => goTo(currentPage() - 1));
+    nextBtn.addEventListener('click', () => goTo(currentPage() + 1));
+    track.addEventListener('scroll', () => { clearTimeout(track._t); track._t = setTimeout(sync, 90); });
+    window.addEventListener('resize', () => { buildDots(); sync(); });
+
+    // keyboard support when the carousel has focus
+    track.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(currentPage() + 1); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(currentPage() - 1); }
+    });
+
+    /* ---- optional: pull live reviews from Google ---- */
+    function loadMaps(key) {
+      return new Promise((resolve, reject) => {
+        if (window.google && window.google.maps) return resolve();
+        const s = document.createElement('script');
+        s.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(key) + '&libraries=places&v=weekly';
+        s.async = true;
+        s.onload = resolve;
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    async function fetchGoogleReviews() {
+      const { placeId, apiKey } = GOOGLE_REVIEWS;
+      if (!placeId || !apiKey) return null;
+      await loadMaps(apiKey);
+      const { Place } = await google.maps.importLibrary('places');
+      const place = new Place({ id: placeId });
+      await place.fetchFields({ fields: ['reviews', 'rating', 'userRatingCount', 'googleMapsURI'] });
+
+      const reviews = (place.reviews || [])
+        .slice()
+        .sort((a, b) => new Date(b.publishTime || 0) - new Date(a.publishTime || 0))
+        .slice(0, 5)
+        .map(r => ({
+          author: (r.authorAttribution && r.authorAttribution.displayName) || 'Google user',
+          rating: r.rating || 5,
+          when:   r.relativePublishTimeDescription || 'Google review',
+          text:   typeof r.text === 'string' ? r.text : (r.text && r.text.text) || ''
+        }))
+        .filter(r => r.text);
+
+      return { reviews, rating: place.rating, count: place.userRatingCount, uri: place.googleMapsURI };
+    }
+
+    // Render manual reviews immediately, then upgrade to live data if configured.
+    render(REVIEWS);
+
+    fetchGoogleReviews().then(data => {
+      if (!data || !data.reviews.length) return;
+      render(data.reviews);
+      if (data.rating) gScore.textContent = Number(data.rating).toFixed(1);
+      gCount.textContent = 'On Google';
+      if (data.uri)    { badge.href = data.uri; allLink.href = data.uri; }
+    }).catch(err => console.warn('Google reviews unavailable, using manual list.', err));
+  })();
+
+</script>
+</body>
+</html>
