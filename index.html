@@ -81,7 +81,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
     rel="stylesheet" />
   <style>
     :root {
@@ -340,8 +340,7 @@
     .secondary-button:focus-visible,
     .header-cta:focus-visible,
     .theme-toggle:focus-visible,
-    .hamburger:focus-visible,
-    .carousel-nav:focus-visible {
+    .hamburger:focus-visible {
       outline: 2px solid var(--cta-bg);
       outline-offset: 3px;
     }
@@ -595,8 +594,7 @@
     .process-step h2,
     .listing-copy h2,
     .contact-facts h2,
-    .contact-card h2,
-    .why-title {
+    .contact-card h2 {
       font-size: clamp(1.3rem, 2.5vw, 1.7rem);
       line-height: 1.15;
     }
@@ -667,121 +665,6 @@
       touch-action: manipulation;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-      padding: 36px 32px;
-      border-radius: 36px;
-    }
-
-    .hero-content {
-      display: grid;
-      gap: 0;
-    }
-
-    .hero-content .eyebrow {
-      margin-bottom: 16px;
-    }
-
-    .hero-content h1 {
-      margin-bottom: 18px;
-    }
-
-    /* "Why work with Toni" checklist — informational, so no card chrome */
-    .why-toni {
-      margin-top: 30px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-      position: relative;
-    }
-
-    .why-toni::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 0;
-      width: 42px;
-      height: 1px;
-      background: var(--accent);
-      opacity: .9;
-    }
-
-    .why-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-
-    .why-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 9px 24px;
-    }
-
-    .why-list li {
-      position: relative;
-      padding-left: 24px;
-      font-size: .87rem;
-      line-height: 1.5;
-      color: var(--muted);
-    }
-
-    .why-list li::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: .82rem;
-    }
-
-    .hero-visual {
-      min-height: 560px;
-      height: 100%;
-      background-color: var(--panel);
-      border-radius: 32px;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      background-image: var(--toni-photo);
-      background-size: cover;
-      background-position: center 12%;
-      background-repeat: no-repeat;
-    }
-
-    /* transparent scrim so the copy reads without hiding the photo */
-    .hero-caption {
-      width: 100%;
-      padding: 46px 22px 20px;
-      border: none;
-      box-shadow: none;
-      border-radius: 0;
-      background: linear-gradient(180deg, rgba(10, 12, 18, 0) 0%, rgba(10, 12, 18, .62) 45%, rgba(10, 12, 18, .88) 100%);
-    }
-
-    .hero-caption p {
-      color: rgba(255, 255, 255, .86);
-      font-size: 0.88rem;
-      line-height: 1.65;
-      margin-bottom: 6px;
-      text-shadow: 0 1px 12px rgba(0, 0, 0, .45);
-    }
-
-    .hero-caption strong {
-      font-size: 0.95rem;
-      color: #fff;
-      text-shadow: 0 1px 12px rgba(0, 0, 0, .5);
-    }
-
     .split-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -794,8 +677,7 @@
     .page-grid>*,
     .card-grid>*,
     .listing-grid>*,
-    .process-grid>*,
-    .hero>* {
+    .process-grid>* {
       min-width: 0;
     }
 
@@ -877,80 +759,6 @@
 
     .superhost-badge figcaption strong {
       color: var(--text);
-    }
-
-    /* Featured communities */
-    .community-grid {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .community-grid li {
-      display: flex;
-    }
-
-    .community-grid a {
-      position: relative;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 18px 16px 18px 20px;
-      border-radius: 18px;
-      min-height: 48px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.22rem;
-      font-weight: 600;
-      color: var(--text);
-      overflow: hidden;
-      text-decoration: none;
-      transition: border-color .18s, transform .18s, background .18s;
-    }
-
-    .community-grid a::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 14px;
-      bottom: 14px;
-      width: 3px;
-      border-radius: 0 3px 3px 0;
-      background: var(--accent);
-      opacity: 1;
-    }
-
-    .community-grid a:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .community-grid a:focus-visible {
-      outline: 2px solid var(--cta-bg);
-      outline-offset: 3px;
-    }
-
-    .community-pin {
-      font-family: 'Inter', sans-serif;
-      font-size: .82rem;
-      color: var(--muted);
-      opacity: 0;
-      transform: translate(-3px, 3px);
-      transition: opacity .18s, transform .18s, color .18s;
-    }
-
-    .community-grid a:hover .community-pin {
-      opacity: 1;
-      transform: none;
-      color: var(--accent);
     }
 
     .str-services {
@@ -1133,236 +941,6 @@
     .quote-card small {
       color: var(--muted);
       font-size: 0.82rem;
-    }
-
-    /* ===== Google reviews carousel ===== */
-    .reviews-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .google-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      white-space: nowrap;
-      transition: border-color .18s, transform .18s;
-    }
-
-    .google-badge:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .google-badge .g-score {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: .01em;
-    }
-
-    .google-badge .g-meta {
-      display: grid;
-      gap: 1px;
-      line-height: 1.2;
-    }
-
-    .google-badge .g-meta small {
-      color: var(--muted);
-      font-size: .78rem;
-      font-weight: 500;
-    }
-
-    .google-badge .stars {
-      color: var(--star);
-      font-size: .9rem;
-      letter-spacing: 1.5px;
-    }
-
-    .reviews-carousel {
-      position: relative;
-    }
-
-    .reviews-viewport {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding: 4px 0;
-    }
-
-    .reviews-viewport::-webkit-scrollbar {
-      display: none;
-    }
-
-    .review-card {
-      flex: 0 0 calc((100% - 40px) / 3);
-      scroll-snap-align: start;
-      min-width: 0;
-      border-radius: 24px;
-      padding: 26px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .review-card .stars {
-      color: var(--star);
-      font-size: 1rem;
-      letter-spacing: 2px;
-    }
-
-    .review-body {
-      position: relative;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: .92rem;
-      font-style: italic;
-      display: -webkit-box;
-      -webkit-line-clamp: 9;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .review-card.is-open .review-body {
-      -webkit-line-clamp: unset;
-    }
-
-    .review-more {
-      align-self: flex-start;
-      background: none;
-      border: none;
-      padding: 0;
-      color: var(--accent);
-      font-size: .82rem;
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .review-foot {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 6px;
-    }
-
-    .review-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      font-weight: 800;
-      font-size: .9rem;
-    }
-
-    .review-who {
-      display: grid;
-      line-height: 1.35;
-      min-width: 0;
-    }
-
-    .review-who strong {
-      font-size: .95rem;
-    }
-
-    .review-who small {
-      color: var(--muted);
-      font-size: .78rem;
-    }
-
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      color: var(--text);
-      font-size: 1.1rem;
-      line-height: 1;
-      transition: border-color .18s, opacity .18s, transform .18s;
-    }
-
-    .carousel-nav:hover {
-      border-color: var(--cta-bg);
-      background: var(--btn-ghost-bg-hover);
-      transform: translateY(-50%) scale(1.06);
-    }
-
-    .carousel-nav[disabled] {
-      opacity: .28;
-      pointer-events: none;
-    }
-
-    .carousel-nav.prev {
-      left: -20px;
-    }
-
-    .carousel-nav.next {
-      right: -20px;
-    }
-
-    /* below ~1340px the shell hugs the viewport, so pull the arrows inside it */
-    @media (max-width: 1340px) {
-      .carousel-nav.prev {
-        left: -6px;
-      }
-
-      .carousel-nav.next {
-        right: -6px;
-      }
-    }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .carousel-dots button {
-      width: 8px;
-      height: 8px;
-      padding: 0;
-      border-radius: 50%;
-      border: none;
-      background: var(--border);
-      transition: background .2s, width .2s;
-    }
-
-    .carousel-dots button.active {
-      background: var(--cta-bg);
-      width: 22px;
-      border-radius: 999px;
     }
 
     .process-grid {
@@ -1700,17 +1278,8 @@
         gap: 7px;
       }
 
-      .hero,
       .split-layout {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 24px 22px;
-      }
-
-      .hero-visual {
-        min-height: 420px;
       }
 
       .card-grid,
@@ -1727,26 +1296,6 @@
       .superhost-badge {
         max-width: 320px;
         margin: 0 auto;
-      }
-
-      .review-card {
-        flex-basis: calc((100% - 20px) / 2);
-      }
-
-      .carousel-nav.prev {
-        left: -8px;
-      }
-
-      .carousel-nav.next {
-        right: -8px;
-      }
-
-      .why-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .community-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .button-row {
@@ -1831,84 +1380,6 @@
 
       .superhost-badge figcaption {
         font-size: .74rem;
-      }
-
-      .review-card {
-        flex-basis: 100%;
-        padding: 20px 18px;
-        border-radius: 18px;
-      }
-
-      .reviews-viewport {
-        gap: 12px;
-      }
-
-      .carousel-nav {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-      }
-
-      .carousel-nav.prev {
-        left: 2px;
-      }
-
-      .carousel-nav.next {
-        right: 2px;
-      }
-
-      .reviews-head {
-        align-items: flex-start;
-      }
-
-      .why-toni {
-        margin-top: 24px;
-        padding-top: 18px;
-      }
-
-      .why-title {
-        font-size: 1.28rem;
-        margin-bottom: 11px;
-      }
-
-      .why-list {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .community-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .community-grid a {
-        padding: 14px 12px 14px 16px;
-        font-size: 1.06rem;
-        border-radius: 14px;
-      }
-
-      .community-pin {
-        opacity: 1;
-        transform: none;
-      }
-
-      .why-list li {
-        font-size: .84rem;
-      }
-
-      .hero {
-        padding: 20px 18px;
-        gap: 20px;
-        border-radius: 26px;
-      }
-
-      .hero-visual {
-        min-height: 340px;
-        border-radius: 24px;
-      }
-
-      .hero-caption {
-        padding: 40px 16px 16px;
       }
 
       .split-layout,
@@ -2017,9 +1488,6 @@
     }
 
     @media (max-width: 420px) {
-      .why-list {
-        grid-template-columns: 1fr;
-      }
 
       .site-header {
         padding: 9px 11px;
@@ -2049,10 +1517,6 @@
         display: none;
       }
 
-      .hero {
-        padding: 18px 16px;
-      }
-
       .split-panel,
       .contact-card,
       .info-card,
@@ -2063,9 +1527,951 @@
       }
 
       .portrait-photo,
-      .large-photo,
-      .hero-visual {
+      .large-photo {
         min-height: 300px;
+      }
+    }
+
+    /* ===================== Homepage (editorial studio style) =====================
+       Warm cream / ink palette, oversized tight display type, mono labels.
+       Everything is scoped to .bh so the other pages keep their own look. */
+    :root {
+      --bh-bg: #171412;
+      --bh-ink: #fbf9ef;
+      --bh-soft: #8e827c;
+      --bh-muted: #b3a9a2;
+      --bh-card: #221e1b;
+      --bh-card-2: #2c2723;
+      --bh-line: rgba(251, 249, 239, 0.12);
+      --bh-accent: #f2b33d;
+      --bh-feature: #0f0d0c;
+      --bh-indigo: #3d2fa9;
+      --bh-strip-1: #f2d675;
+      --bh-strip-2: #785f47;
+    }
+
+    :root[data-theme="light"] {
+      --bh-bg: #fbf9ef;
+      --bh-ink: #171412;
+      --bh-soft: #8e827c;
+      --bh-muted: #6c6660;
+      --bh-card: #f2f0e7;
+      --bh-card-2: #e7e2d6;
+      --bh-line: rgba(23, 20, 18, 0.1);
+      --bh-accent: #ff7722;
+      --bh-feature: #171412;
+    }
+
+    /* the whole canvas goes flat cream/ink while the homepage is showing */
+    body:has(#page-home.active) {
+      background: var(--bh-bg);
+    }
+
+    .bh {
+      --bh-display: 'Inter Tight', 'Inter', Arial, sans-serif;
+      --bh-mono: 'IBM Plex Mono', ui-monospace, monospace;
+      display: grid;
+      gap: clamp(72px, 11vw, 150px);
+      color: var(--bh-ink);
+      padding-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .bh>* {
+      min-width: 0;
+    }
+
+    .bh-display,
+    .bh-heading,
+    .bh-card-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      color: var(--bh-ink);
+      text-wrap: balance;
+    }
+
+    .bh-display {
+      font-size: clamp(3rem, 8.6vw, 7.6rem);
+      line-height: 0.86;
+      letter-spacing: -0.06em;
+    }
+
+    .bh-heading {
+      font-size: clamp(2.5rem, 6.4vw, 5.6rem);
+      line-height: 0.88;
+      letter-spacing: -0.055em;
+    }
+
+    .bh-soft {
+      color: var(--bh-soft);
+    }
+
+    .bh-tag {
+      font-family: var(--bh-mono);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bh-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .bh-tag::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--bh-accent);
+      flex-shrink: 0;
+    }
+
+    .bh-lead,
+    .bh-intro {
+      color: var(--bh-muted);
+      font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+      line-height: 1.5;
+      max-width: 46ch;
+    }
+
+    .bh-num {
+      font-family: var(--bh-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--bh-soft);
+    }
+
+    /* ---- buttons: heavy uppercase pills ---- */
+    .bh-btn,
+    .bh-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 0 26px;
+      border-radius: 999px;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-family: var(--bh-display);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .bh-btn:hover,
+    .bh-pill:hover {
+      transform: translateY(-2px);
+    }
+
+    .bh-btn--light {
+      background: #fbf9ef;
+      color: #171412;
+    }
+
+    .bh-btn:focus-visible,
+    .bh-pill:focus-visible,
+    .bh-communities a:focus-visible,
+    .google-badge:focus-visible,
+    .carousel-nav:focus-visible {
+      outline: 2px solid var(--bh-accent);
+      outline-offset: 3px;
+    }
+
+    /* ---- hero ---- */
+    .bh-hero {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      padding: clamp(40px, 9vh, 110px) 0 0;
+    }
+
+    .bh-hero .bh-display {
+      max-width: 13ch;
+    }
+
+    .bh-intro {
+      margin: clamp(28px, 4vw, 44px) auto 30px;
+      color: var(--bh-ink);
+      max-width: 40ch;
+    }
+
+    .bh-pill {
+      padding: 6px 6px 6px 24px;
+      gap: 10px;
+      min-height: 56px;
+    }
+
+    .bh-pill-avatar,
+    .bh-pill-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .bh-pill-avatar {
+      margin-left: 6px;
+      /* zoomed in on Toni's face rather than the whole portrait */
+      background: var(--toni-photo) 31% 39% / 330% auto no-repeat, var(--bh-card-2);
+      border: 2px solid var(--bh-bg);
+    }
+
+    .bh-pill-icon {
+      display: grid;
+      place-items: center;
+      margin-left: -22px;
+      background: var(--bh-bg);
+      color: var(--bh-ink);
+      font-size: 1.1rem;
+      border: 2px solid var(--bh-ink);
+    }
+
+    /* ---- marquee (decorative duplicate of the tagline) ---- */
+    .bh-marquee {
+      overflow: hidden;
+      margin-top: calc(clamp(72px, 11vw, 150px) * -0.55);
+      border-block: 1px solid var(--bh-line);
+      padding: 18px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .bh-marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: max-content;
+      animation: bhMarquee 30s linear infinite;
+    }
+
+    .bh-marquee-track span {
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      letter-spacing: -0.03em;
+      color: var(--bh-soft);
+      white-space: nowrap;
+    }
+
+    .bh-marquee-track i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--bh-accent);
+      flex-shrink: 0;
+    }
+
+    @keyframes bhMarquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ---- feature card (dark media panel) ---- */
+    .bh-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      background: var(--bh-feature);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 560px;
+      margin-top: calc(clamp(72px, 11vw, 150px) * -0.45);
+    }
+
+    .bh-feature-photo {
+      background: var(--toni-photo) center 14% / cover no-repeat;
+      min-height: 100%;
+    }
+
+    .bh-feature-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      padding: clamp(28px, 4vw, 52px);
+    }
+
+    .bh-feature-line {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4.2vw, 3.9rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      color: #fbf9ef;
+      text-wrap: balance;
+      margin-top: auto;
+    }
+
+    .bh-feature-copy strong {
+      font-family: var(--bh-mono);
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8e827c;
+      border-top: 1px solid rgba(251, 249, 239, 0.14);
+      padding-top: 18px;
+    }
+
+    /* ---- why: numbered tiles ---- */
+    .bh-why {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: clamp(32px, 5vw, 56px);
+    }
+
+    .bh-why li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 48px;
+      min-height: 210px;
+      padding: 24px 26px 28px;
+      border-radius: 16px;
+      background: var(--bh-card);
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.1vw, 1.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--bh-ink);
+    }
+
+    .bh-why .bh-num {
+      align-self: flex-end;
+    }
+
+    .bh-why li:nth-child(even) {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+    }
+
+    /* ---- brand promise ---- */
+    .bh-promise {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: end;
+    }
+
+    .bh-promise-copy .bh-lead {
+      margin: 28px 0 32px;
+    }
+
+    .bh-promise-photo {
+      min-height: 520px;
+      border-radius: 20px;
+    }
+
+    /* ---- STR consulting: colour card with stacked strips peeking out below ---- */
+    .bh-stack {
+      position: relative;
+      padding-bottom: 36px;
+    }
+
+    .bh-stack::before,
+    .bh-stack::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 60px;
+      border-radius: 0 0 18px 18px;
+    }
+
+    .bh-stack::before {
+      width: 86%;
+      bottom: 18px;
+      background: var(--bh-strip-1);
+      z-index: 1;
+    }
+
+    .bh-stack::after {
+      width: 76%;
+      bottom: 0;
+      background: var(--bh-strip-2);
+    }
+
+    .bh-card {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+      padding: clamp(28px, 4.5vw, 60px);
+      border-radius: 20px;
+      background: var(--bh-indigo);
+      color: #fbf9ef;
+    }
+
+    .bh-card .bh-tag {
+      color: rgba(251, 249, 239, 0.7);
+    }
+
+    .bh-card .bh-tag::before {
+      background: var(--bh-strip-1);
+    }
+
+    .bh-card-title {
+      color: #fbf9ef;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+    }
+
+    .bh-card-lead {
+      margin: 22px 0 26px;
+      color: rgba(251, 249, 239, 0.72);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 52ch;
+    }
+
+    .bh-chips {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .bh-chips li {
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(251, 249, 239, 0.12);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .bh-superhost {
+      display: grid;
+      gap: 14px;
+      max-width: 340px;
+      justify-self: end;
+    }
+
+    .bh-superhost .superhost-img {
+      border-radius: 16px;
+      transform: rotate(3deg);
+      box-shadow: 0 30px 60px rgba(10, 6, 40, 0.45);
+    }
+
+    .bh-superhost figcaption {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: rgba(251, 249, 239, 0.72);
+    }
+
+    .bh-superhost figcaption strong {
+      color: #fbf9ef;
+    }
+
+    /* ---- communities: big index tiles ---- */
+    .bh-section-head .bh-lead {
+      margin-top: 26px;
+    }
+
+    .bh-communities {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: clamp(32px, 5vw, 56px);
+    }
+
+    .bh-communities a {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      min-height: 180px;
+      padding: 20px 22px 24px;
+      border-radius: 16px;
+      background: var(--bh-card);
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 2.3vw, 2rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: var(--bh-ink);
+      transition: background .25s ease, color .25s ease, transform .25s ease;
+    }
+
+    .bh-communities li:nth-child(4n + 2) a,
+    .bh-communities li:nth-child(4n + 3) a {
+      background: var(--bh-card-2);
+    }
+
+    .bh-communities a:hover {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      transform: translateY(-3px);
+    }
+
+    .bh-arrow {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 1.2rem;
+      transition: transform .25s ease;
+    }
+
+    .bh-communities a:hover .bh-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    /* ---- reviews ---- */
+    .bh-reviews-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .bh-reviews-head>div {
+      max-width: 880px;
+    }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px 10px 12px;
+      border-radius: 999px;
+      background: var(--bh-card);
+      white-space: nowrap;
+      transition: transform .2s ease;
+    }
+
+    .google-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    .google-badge .g-score {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-family: var(--bh-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .google-badge .g-meta {
+      display: grid;
+      gap: 2px;
+      line-height: 1.2;
+    }
+
+    .google-badge .g-meta small {
+      font-family: var(--bh-mono);
+      color: var(--bh-soft);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .google-badge .stars,
+    .review-card .stars {
+      color: var(--bh-accent);
+      letter-spacing: 3px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+      margin-top: clamp(28px, 4vw, 48px);
+    }
+
+    /* vertical padding gives the tilted cards room inside the scroll box */
+    .reviews-viewport {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 26px 6px;
+    }
+
+    .reviews-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      flex: 0 0 calc((100% - 32px) / 3);
+      scroll-snap-align: start;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 28px 28px 24px;
+      border-radius: 18px;
+      background: var(--bh-card);
+      color: var(--bh-ink);
+      transform: rotate(-1.6deg);
+      transition: transform .3s ease;
+    }
+
+    .review-card:nth-child(even) {
+      background: var(--bh-soft);
+      color: #fbf9ef;
+      transform: rotate(1.4deg);
+    }
+
+    .review-card:nth-child(even) .stars {
+      color: #fbf9ef;
+    }
+
+    .review-card:hover {
+      transform: rotate(0) translateY(-4px);
+    }
+
+    .review-body {
+      font-family: var(--bh-display);
+      font-size: 1.12rem;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .review-card.is-open .review-body {
+      -webkit-line-clamp: unset;
+    }
+
+    .review-more {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+      font-family: var(--bh-mono);
+      font-size: .74rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .review-foot {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-family: var(--bh-display);
+      font-weight: 800;
+    }
+
+    .review-card:nth-child(even) .review-avatar {
+      background: #fbf9ef;
+      color: #171412;
+    }
+
+    .review-who {
+      display: grid;
+      line-height: 1.3;
+      min-width: 0;
+    }
+
+    .review-who strong {
+      font-size: .95rem;
+    }
+
+    .review-who small {
+      font-family: var(--bh-mono);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      opacity: .7;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: none;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-size: 1.15rem;
+      transform: translateY(-50%);
+      transition: opacity .2s, transform .2s;
+    }
+
+    .carousel-nav:hover {
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-nav[disabled] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .carousel-nav.prev {
+      left: -8px;
+    }
+
+    .carousel-nav.next {
+      right: -8px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .carousel-dots button {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: var(--bh-line);
+      transition: background .2s, width .2s;
+    }
+
+    .carousel-dots button.active {
+      width: 26px;
+      border-radius: 999px;
+      background: var(--bh-ink);
+    }
+
+    .bh-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 36px;
+    }
+
+    /* ---- scroll reveal (progressive: browsers without scroll timelines just show everything) ---- */
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .bh-reveal {
+          animation: bhRise linear both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 45%;
+        }
+      }
+    }
+
+    @keyframes bhRise {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bh-marquee-track {
+        animation: none;
+      }
+    }
+
+    /* ---- responsive ---- */
+    @media (max-width: 980px) {
+      .bh-feature {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .bh-feature-photo {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+      }
+
+      .bh-feature-copy {
+        gap: 24px;
+      }
+
+      .bh-feature-line {
+        margin-top: 0;
+      }
+
+      .bh-why {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bh-why li:nth-child(even) {
+        background: var(--bh-card);
+        color: var(--bh-ink);
+      }
+
+      .bh-why li:nth-child(4n + 2),
+      .bh-why li:nth-child(4n + 3) {
+        background: var(--bh-ink);
+        color: var(--bh-bg);
+      }
+
+      .bh-promise,
+      .bh-card {
+        grid-template-columns: 1fr;
+      }
+
+      .bh-promise-photo {
+        min-height: 380px;
+      }
+
+      .bh-superhost {
+        justify-self: center;
+      }
+
+      .bh-communities {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bh-communities li:nth-child(4n + 2) a,
+      .bh-communities li:nth-child(4n + 3) a {
+        background: var(--bh-card);
+      }
+
+      .bh-communities li:nth-child(4n + 1) a,
+      .bh-communities li:nth-child(4n + 4) a {
+        background: var(--bh-card-2);
+      }
+
+      .review-card {
+        flex-basis: calc((100% - 16px) / 2);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bh-hero {
+        padding-top: 28px;
+      }
+
+      .bh-display {
+        letter-spacing: -0.055em;
+      }
+
+      .bh-feature {
+        border-radius: 16px;
+      }
+
+      .bh-feature-photo {
+        aspect-ratio: 4 / 5;
+      }
+
+      .bh-why {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .bh-why li,
+      .bh-why li:nth-child(n) {
+        min-height: 0;
+        gap: 22px;
+        padding: 20px 20px 22px;
+        background: var(--bh-card);
+        color: var(--bh-ink);
+      }
+
+      .bh-why li:nth-child(even) {
+        background: var(--bh-ink);
+        color: var(--bh-bg);
+      }
+
+      .bh-promise-photo {
+        min-height: 300px;
+        border-radius: 16px;
+      }
+
+      .bh-stack::before {
+        width: 90%;
+        height: 50px;
+      }
+
+      .bh-stack::after {
+        width: 80%;
+        height: 50px;
+      }
+
+      .bh-card {
+        border-radius: 16px;
+      }
+
+      .bh-communities {
+        gap: 8px;
+      }
+
+      .bh-communities a {
+        min-height: 130px;
+        gap: 24px;
+        padding: 16px 16px 18px;
+        font-size: 1.3rem;
+      }
+
+      .bh-arrow {
+        top: 12px;
+        right: 14px;
+      }
+
+      .review-card {
+        flex-basis: 88%;
+        padding: 22px 20px 20px;
+      }
+
+      .review-body {
+        font-size: 1.02rem;
+      }
+
+      .carousel-nav {
+        width: 40px;
+        height: 40px;
+      }
+
+      .carousel-nav.prev {
+        left: -4px;
+      }
+
+      .carousel-nav.next {
+        right: -4px;
+      }
+
+      .bh-btn {
+        width: 100%;
+      }
+
+      .bh-center .bh-btn {
+        width: auto;
       }
     }
   </style>
@@ -2114,117 +2520,136 @@
 
       <!-- HOME -->
       <section class="page active" id="page-home">
-        <div class="page-grid">
-          <div class="hero glass-panel">
-            <div class="hero-content">
-              <p class="eyebrow">Calgary Realtor &middot; Investor Specialist</p>
-              <h1>Curated Calgary real estate with a polished, modern feel.</h1>
-              <p class="lead">A luxury-inspired experience for buyers, sellers, and investors who want thoughtful
-                strategy, sharp presentation, and responsive communication.</p>
-              <div class="button-row">
-                <a class="secondary-button" href="/about" data-page="about">Meet Toni</a>
-              </div>
-              <div class="why-toni">
-                <h2 class="why-title">Why Work With Toni?</h2>
-                <ul class="why-list">
-                  <li>Investor mindset&mdash;not just sales</li>
-                  <li>Airbnb and cash-flow expertise</li>
-                  <li>Professional marketing that makes listings stand out</li>
-                  <li>Strong negotiation skills</li>
-                  <li>Local Calgary market expertise</li>
-                  <li>Concierge-level service from start to finish</li>
-                </ul>
-              </div>
-            </div>
-            <div class="hero-visual">
-              <div class="hero-caption">
-                <p>Helping Calgary clients buy, sell, and invest with confidence.</p>
-                <strong>Luxury presentation. Local insight. Real strategy.</strong>
-              </div>
+        <div class="bh">
+
+          <div class="bh-hero">
+            <p class="bh-tag">Calgary Realtor &middot; Investor Specialist</p>
+            <h1 class="bh-display">The Art of Seeing <span class="bh-soft">Potential.</span></h1>
+            <p class="bh-intro">Where thoughtful design meets strategic real estate insight - uncovering possibilities,
+              recognizing value, and seeing beyond whats there.</p>
+            <a class="bh-pill" href="/about" data-page="about">
+              <span>Meet Toni</span>
+              <span class="bh-pill-avatar" aria-hidden="true"></span>
+              <span class="bh-pill-icon" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="bh-marquee" aria-hidden="true">
+            <div class="bh-marquee-track">
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
             </div>
           </div>
-          <div class="split-layout">
-            <div class="split-panel">
-              <p class="eyebrow">Brand Promise</p>
-              <h2>Modern, boutique, and easy to navigate.</h2>
-              <p class="lead">A high-touch experience tailored for Calgary buyers, sellers, and investors. Premium
+
+          <figure class="bh-feature bh-reveal">
+            <div class="bh-feature-photo" role="img" aria-label="Toni Tsim, Calgary realtor"></div>
+            <figcaption class="bh-feature-copy">
+              <p class="bh-tag">YYCToni &middot; Calgary</p>
+              <p class="bh-feature-line">Helping Calgary clients buy, sell, and invest with confidence.</p>
+              <strong>Luxury presentation. Local insight. Real strategy.</strong>
+            </figcaption>
+          </figure>
+
+          <section class="bh-section" aria-labelledby="bhWhy">
+            <h2 class="bh-heading" id="bhWhy">Why work <span class="bh-soft">with Toni?</span></h2>
+            <ol class="bh-why">
+              <li class="bh-reveal"><span class="bh-num">(01)</span>Investor mindset&mdash;not just sales</li>
+              <li class="bh-reveal"><span class="bh-num">(02)</span>Airbnb and cash-flow expertise</li>
+              <li class="bh-reveal"><span class="bh-num">(03)</span>Professional marketing that makes listings stand out
+              </li>
+              <li class="bh-reveal"><span class="bh-num">(04)</span>Strong negotiation skills</li>
+              <li class="bh-reveal"><span class="bh-num">(05)</span>Local Calgary market expertise</li>
+              <li class="bh-reveal"><span class="bh-num">(06)</span>Concierge-level service from start to finish</li>
+            </ol>
+          </section>
+
+          <section class="bh-section bh-promise" aria-labelledby="bhPromise">
+            <div class="bh-promise-copy">
+              <p class="bh-tag">Brand Promise</p>
+              <h2 class="bh-heading" id="bhPromise">Modern, boutique, <span class="bh-soft">and easy to
+                  navigate.</span></h2>
+              <p class="bh-lead">A high-touch experience tailored for Calgary buyers, sellers, and investors. Premium
                 presentation meets practical, grounded market advice.</p>
-              <div class="button-row"><a class="secondary-button" href="/services" data-page="services">My Services
-                  &rarr;</a></div>
+              <a class="bh-btn" href="/services" data-page="services">My Services &rarr;</a>
             </div>
-            <div class="large-photo"></div>
-          </div>
+            <div class="large-photo bh-promise-photo bh-reveal"></div>
+          </section>
 
-          <div class="split-panel split-panel--wide str-panel">
-            <div class="str-panel-copy">
-              <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
-              <h2>Built for investors, end to end.</h2>
-              <p class="lead">Toni specializes in Airbnb and short-term rental consulting &mdash; identifying
-                high-performing investment opportunities and preparing properties for launch, with a strategic, hands-on
-                approach to maximizing returns.</p>
-              <ul class="str-services">
-                <li>Investment analysis</li>
-                <li>Furnishing &amp; setup guidance</li>
-                <li>Listing optimization</li>
-                <li>Pricing strategy</li>
-                <li>Guest experience design</li>
-                <li>Operational consulting</li>
-              </ul>
-              <div class="button-row">
-                <a class="primary-button" href="/services" data-page="services">See how it works</a>
+          <section class="bh-stack bh-reveal" aria-labelledby="bhStr">
+            <div class="bh-card">
+              <div class="bh-card-copy">
+                <p class="bh-tag">Airbnb &amp; Short-Term Rental Consulting</p>
+                <h2 class="bh-card-title" id="bhStr">Built for investors, end to end.</h2>
+                <p class="bh-card-lead">Toni specializes in Airbnb and short-term rental consulting &mdash; identifying
+                  high-performing investment opportunities and preparing properties for launch, with a strategic,
+                  hands-on approach to maximizing returns.</p>
+                <ul class="bh-chips">
+                  <li>Investment analysis</li>
+                  <li>Furnishing &amp; setup guidance</li>
+                  <li>Listing optimization</li>
+                  <li>Pricing strategy</li>
+                  <li>Guest experience design</li>
+                  <li>Operational consulting</li>
+                </ul>
+                <a class="bh-btn bh-btn--light" href="/services" data-page="services">See how it works</a>
               </div>
+              <figure class="bh-superhost">
+                <div class="superhost-img" role="img"
+                  aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+                <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with
+                  consistently outstanding ratings, reliability, and guest experience.</figcaption>
+              </figure>
             </div>
-            <figure class="superhost-badge">
-              <div class="superhost-img" role="img"
-                aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
-              <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently
-                outstanding ratings, reliability, and guest experience.</figcaption>
-            </figure>
-          </div>
+          </section>
 
-          <div class="page-grid">
-            <div class="section-head">
-              <p class="eyebrow">Featured Communities</p>
-              <h2>Neighbourhoods Toni knows inside out.</h2>
-              <p class="lead">From inner-city character to newer master-planned communities &mdash; local knowledge that
-                shapes smarter buying, selling, and investing decisions.</p>
+          <section class="bh-section" aria-labelledby="bhCommunities">
+            <div class="bh-section-head">
+              <p class="bh-tag">Featured Communities</p>
+              <h2 class="bh-heading" id="bhCommunities">Neighbourhoods Toni knows <span class="bh-soft">inside
+                  out.</span></h2>
+              <p class="bh-lead">From inner-city character to newer master-planned communities &mdash; local knowledge
+                that shapes smarter buying, selling, and investing decisions.</p>
             </div>
-            <ul class="community-grid">
+            <ul class="bh-communities">
               <li><a href="https://www.google.com/maps/search/?api=1&query=Altadore%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="View Altadore, Calgary on Google Maps">Altadore<span class="community-pin"
-                    aria-hidden="true">&#8599;</span></a></li>
+                  target="_blank" rel="noopener noreferrer" aria-label="View Altadore, Calgary on Google Maps"><span
+                    class="bh-num">01</span>Altadore<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Marda%20Loop%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer" aria-label="View Marda Loop, Calgary on Google Maps">Marda
-                  Loop<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+                  target="_blank" rel="noopener noreferrer" aria-label="View Marda Loop, Calgary on Google Maps"><span
+                    class="bh-num">02</span>Marda Loop<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Beltline%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="View Beltline, Calgary on Google Maps">Beltline<span class="community-pin"
-                    aria-hidden="true">&#8599;</span></a></li>
+                  target="_blank" rel="noopener noreferrer" aria-label="View Beltline, Calgary on Google Maps"><span
+                    class="bh-num">03</span>Beltline<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Mahogany%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="View Mahogany, Calgary on Google Maps">Mahogany<span class="community-pin"
-                    aria-hidden="true">&#8599;</span></a></li>
+                  target="_blank" rel="noopener noreferrer" aria-label="View Mahogany, Calgary on Google Maps"><span
+                    class="bh-num">04</span>Mahogany<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Seton%2C%20Calgary%2C%20AB" target="_blank"
-                  rel="noopener noreferrer" aria-label="View Seton, Calgary on Google Maps">Seton<span
-                    class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+                  rel="noopener noreferrer" aria-label="View Seton, Calgary on Google Maps"><span
+                    class="bh-num">05</span>Seton<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Currie%2C%20Calgary%2C%20AB" target="_blank"
-                  rel="noopener noreferrer" aria-label="View Currie, Calgary on Google Maps">Currie<span
-                    class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+                  rel="noopener noreferrer" aria-label="View Currie, Calgary on Google Maps"><span
+                    class="bh-num">06</span>Currie<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Aspen%20Woods%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer" aria-label="View Aspen Woods, Calgary on Google Maps">Aspen
-                  Woods<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+                  target="_blank" rel="noopener noreferrer" aria-label="View Aspen Woods, Calgary on Google Maps"><span
+                    class="bh-num">07</span>Aspen Woods<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
               <li><a href="https://www.google.com/maps/search/?api=1&query=Signal%20Hill%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer" aria-label="View Signal Hill, Calgary on Google Maps">Signal
-                  Hill<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
+                  target="_blank" rel="noopener noreferrer" aria-label="View Signal Hill, Calgary on Google Maps"><span
+                    class="bh-num">08</span>Signal Hill<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
             </ul>
-          </div>
+          </section>
 
-          <div class="page-grid">
-            <div class="section-head reviews-head">
+          <section class="bh-section" aria-labelledby="bhReviews">
+            <div class="bh-section-head bh-reviews-head">
               <div>
-                <p class="eyebrow">Google Reviews</p>
-                <h2>What clients say about working together.</h2>
+                <p class="bh-tag">Google Reviews</p>
+                <h2 class="bh-heading" id="bhReviews">What clients say <span class="bh-soft">about working
+                    together.</span></h2>
               </div>
               <a class="google-badge" id="googleBadge" href="#" target="_blank" rel="noopener">
                 <span class="g-score" id="gScore">4.9</span>
@@ -2236,17 +2661,18 @@
             </div>
 
             <div class="reviews-carousel">
-              <button class="carousel-nav prev" id="revPrev" aria-label="Previous reviews">&#10094;</button>
+              <button class="carousel-nav prev" id="revPrev" aria-label="Previous reviews">&#8592;</button>
               <div class="reviews-viewport" id="reviewsTrack" tabindex="0" aria-label="Client reviews"></div>
-              <button class="carousel-nav next" id="revNext" aria-label="Next reviews">&#10095;</button>
+              <button class="carousel-nav next" id="revNext" aria-label="Next reviews">&#8594;</button>
             </div>
             <div class="carousel-dots" id="revDots"></div>
 
-            <div class="center-row">
-              <a class="secondary-button" id="allReviewsLink" href="#" target="_blank" rel="noopener">Read all reviews
-                on Google &rarr;</a>
+            <div class="bh-center">
+              <a class="bh-btn" id="allReviewsLink" href="#" target="_blank" rel="noopener">Read all reviews on Google
+                &rarr;</a>
             </div>
-          </div>
+          </section>
+
         </div>
       </section>
 
