@@ -1374,6 +1374,110 @@
       color: var(--bh-bg);
     }
 
+    /* text for screen readers only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---- first-time buyers card ---- */
+    .bh-firsthome {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      padding: clamp(26px, 4.5vw, 60px);
+      border-radius: 20px;
+      background: var(--bh-card);
+    }
+
+    .bh-firsthome-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+      color: var(--bh-ink);
+      text-wrap: balance;
+    }
+
+    .bh-firsthome-steps {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: clamp(24px, 3vw, 36px);
+    }
+
+    .bh-firsthome-steps li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--bh-line);
+      font-family: var(--bh-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bh-muted);
+    }
+
+    .bh-firsthome-body {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .bh-firsthome-body p {
+      color: var(--bh-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .bh-firsthome-body p:first-child {
+      color: var(--bh-ink);
+      font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+      line-height: 1.5;
+    }
+
+    .bh-firsthome-body .bh-firsthome-cta-line {
+      color: var(--bh-ink);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .bh-firsthome-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 22px;
+      margin-top: 8px;
+    }
+
+    .bh-firsthome-link {
+      display: inline-block;
+      margin-top: 26px;
+      color: var(--bh-ink);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--bh-soft);
+      text-underline-offset: 4px;
+    }
+
+    .bh-firsthome-link:hover {
+      text-decoration-color: var(--bh-ink);
+    }
+
+    .bh-firsthome-link:focus-visible {
+      outline: 2px solid var(--bh-accent);
+      outline-offset: 3px;
+    }
+
     /* ---- join the team: compact always-dark recruiting panel ---- */
     .bh-join {
       display: grid;
@@ -2159,7 +2263,8 @@
         --tilt-k: 0.6;
       }
 
-      .bh-join-top {
+      .bh-join-top,
+      .bh-firsthome {
         grid-template-columns: 1fr;
       }
 
@@ -2904,6 +3009,39 @@
                 <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with
                   consistently outstanding ratings, reliability, and guest experience.</figcaption>
               </figure>
+            </div>
+          </section>
+
+          <section class="bh-firsthome bh-reveal" aria-labelledby="bhFirstHome">
+            <div class="bh-firsthome-head">
+              <p class="bh-tag">First-Time Buyers</p>
+              <h2 class="bh-firsthome-title" id="bhFirstHome">Buying your first home <span class="bh-soft">in
+                  Calgary?</span></h2>
+              <ul class="bh-firsthome-steps" aria-hidden="true">
+                <li>Financing</li>
+                <li>Neighbourhoods</li>
+                <li>Property values</li>
+                <li>Offers</li>
+                <li>Inspections</li>
+                <li>Closing costs</li>
+              </ul>
+              <a class="bh-firsthome-link"
+                href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/gst-hst-rebates/first-time-home-buyers-gst-hst-rebate.html"
+                target="_blank" rel="noopener noreferrer">Government of Canada: First-time home buyers&rsquo; GST/HST
+                rebate<span aria-hidden="true"> &#8599;</span><span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+            <div class="bh-firsthome-body">
+              <p>The process can feel overwhelming when you&rsquo;re trying to understand financing, neighbourhoods,
+                property values, offers, inspections, and closing costs all at once.</p>
+              <p>Toni breaks the process down into clear steps so you know what to expect, what to look for, and when
+                to make your next move.</p>
+              <p>From your initial search through negotiations and closing, you&rsquo;ll have a clear strategy and a
+                trusted point of contact along the way.</p>
+              <p class="bh-firsthome-cta-line">Not sure where to start? Book a free consultation and let&rsquo;s map
+                it out.</p>
+              <div class="bh-firsthome-actions">
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Book a free consultation</a>
+              </div>
             </div>
           </section>
 
