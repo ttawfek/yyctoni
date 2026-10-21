@@ -1374,21 +1374,300 @@
       color: var(--bh-bg);
     }
 
-    /* ---- brand promise ---- */
-    .bh-promise {
+    /* ---- join the team: compact always-dark recruiting panel ---- */
+    .bh-join {
+      display: grid;
+      gap: 28px;
+      padding: clamp(24px, 3.4vw, 44px);
+      border-radius: 20px;
+      background: var(--bh-feature);
+      color: #fbf9ef;
+    }
+
+    .bh-join .bh-tag {
+      margin-bottom: 14px;
+    }
+
+    .bh-join-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      color: #fbf9ef;
+      text-wrap: balance;
+    }
+
+    .bh-join-top {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: clamp(28px, 5vw, 72px);
+      gap: 20px clamp(24px, 4vw, 56px);
       align-items: end;
     }
 
-    .bh-promise-copy .bh-lead {
-      margin: 28px 0 32px;
+    .bh-join-pitch p {
+      color: rgba(251, 249, 239, 0.72);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
     }
 
-    .bh-promise-photo {
-      min-height: 520px;
-      border-radius: 20px;
+    .bh-join-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px 20px;
+    }
+
+    .bh-join-stats>div {
+      padding-top: 16px;
+      border-top: 1px solid rgba(251, 249, 239, 0.14);
+    }
+
+    .bh-join-stats dt {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 0.85;
+      letter-spacing: -0.055em;
+      color: var(--bh-gold);
+    }
+
+    .bh-join-stats dd {
+      margin-top: 10px;
+      color: rgba(251, 249, 239, 0.66);
+      font-size: 0.8rem;
+      line-height: 1.45;
+      max-width: 26ch;
+    }
+
+    .bh-join-note {
+      margin-top: -16px;
+      font-family: var(--bh-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8e827c;
+    }
+
+    /* benefits as compact rows rather than cards */
+    .bh-join-perks {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 4px 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(251, 249, 239, 0.14);
+    }
+
+    .bh-join-perks li {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: rgba(251, 249, 239, 0.66);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .bh-join-perks strong {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fbf9ef;
+    }
+
+    /* ---- offer pillars: four tall cards, alternately tilted ----
+       Sizes live in variables so the scroll scene (.is-animated) can blend each
+       pillar from its card size (…0) to full screen (…1) with --k (0 → 1). */
+    .bh-pillars {
+      --pillar-h: clamp(360px, 34vw, 480px);
+      --tilt-k: 1;
+      --pad0: 22px;
+      --pad1: clamp(24px, 5vw, 72px);
+      --pad1-top: clamp(104px, 14vh, 140px);
+      --rad0: 18px;
+      --fs0: clamp(1.8rem, 2.9vw, 2.8rem);
+      --fs1: clamp(3rem, 11vw, 10.5rem);
+    }
+
+    .bh-pillar-row {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding: 24px 6px 40px;
+    }
+
+    .bh-pillar-row li:nth-child(1) {
+      --tilt: -4deg;
+    }
+
+    .bh-pillar-row li:nth-child(2) {
+      --tilt: 3deg;
+      margin-top: 36px;
+    }
+
+    .bh-pillar-row li:nth-child(3) {
+      --tilt: -2.5deg;
+    }
+
+    .bh-pillar-row li:nth-child(4) {
+      --tilt: 4deg;
+      margin-top: 36px;
+    }
+
+    .bh-pillar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: var(--pillar-h);
+      padding: var(--pad0) var(--pad0) calc(var(--pad0) + 4px);
+      border-radius: var(--rad0);
+      color: #fbf9ef;
+      transform: rotate(calc(var(--tilt, 0deg) * var(--tilt-k)));
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    a.bh-pillar:hover {
+      transform: rotate(0deg) translateY(-8px);
+      box-shadow: 0 24px 50px rgba(15, 13, 12, 0.28);
+    }
+
+    .bh-pillar .bh-num {
+      color: inherit;
+      opacity: .7;
+    }
+
+    .bh-pillar-title {
+      margin-top: auto;
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: var(--fs0);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+    }
+
+    .bh-pillar .bh-arrow {
+      top: 18px;
+      right: 20px;
+      font-size: 1.4rem;
+    }
+
+    a.bh-pillar:hover .bh-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .bh-pillar-chip {
+      align-self: flex-start;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(251, 249, 239, 0.16);
+      font-family: var(--bh-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bh-pillar--indigo {
+      background: var(--bh-indigo);
+    }
+
+    .bh-pillar--ink {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+    }
+
+    .bh-pillar--photo {
+      /* darkened at both ends so the number, arrow and title stay readable over the photo */
+      background: linear-gradient(180deg, rgba(15, 13, 12, 0.55), rgba(15, 13, 12, 0.08) 30%, rgba(15, 13, 12, 0.08) 55%, rgba(15, 13, 12, 0.75)),
+        url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80') center / cover,
+        var(--bh-card);
+    }
+
+    .bh-pillar--soon {
+      background: var(--bh-strip-2);
+    }
+
+    .bh-pillar:focus-visible {
+      outline: 2px solid var(--bh-accent);
+      outline-offset: 4px;
+    }
+
+    /* scroll scene (added by JS unless reduced motion): the stage pins full screen and
+       each pillar grows from its card into the whole viewport, one after another */
+    .bh-pillars.is-animated {
+      /* 1 screen for the stage + 4 expansions + a short hold on the last one */
+      height: 550vh;
+      height: 550svh;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      /* the card row has to fit on one screen while pinned */
+      --pillar-h: min(clamp(360px, 34vw, 480px), calc(100svh - 260px));
+    }
+
+    .is-animated .bh-pillars-stage {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100svh;
+      display: grid;
+      place-items: center;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+
+    .is-animated .bh-pillar-row {
+      width: min(1280px, calc(100% - 32px));
+      padding: 0;
+    }
+
+    .is-animated .bh-pillar-row li {
+      height: var(--pillar-h);
+    }
+
+    .is-animated .bh-reveal {
+      animation: none;
+    }
+
+    .is-animated .bh-pillar {
+      position: absolute;
+      height: auto;
+      transition: none;
+      padding: calc(var(--pad0) + (var(--pad1-top) - var(--pad0)) * var(--k, 0)) calc(var(--pad0) + (var(--pad1) - var(--pad0)) * var(--k, 0)) calc(var(--pad0) + (var(--pad1) - var(--pad0)) * var(--k, 0) + 4px);
+    }
+
+    .is-animated li:nth-child(2) .bh-pillar {
+      z-index: 2;
+    }
+
+    .is-animated li:nth-child(3) .bh-pillar {
+      z-index: 3;
+    }
+
+    .is-animated li:nth-child(4) .bh-pillar {
+      z-index: 4;
+    }
+
+    .is-animated .bh-pillar-title {
+      font-size: calc(var(--fs0) + (var(--fs1) - var(--fs0)) * var(--k, 0));
+    }
+
+    .is-animated .bh-pillar .bh-num {
+      font-size: calc(0.78rem + 0.3rem * var(--k, 0));
+    }
+
+    .is-animated .bh-pillar .bh-arrow {
+      top: calc(var(--pad0) + (var(--pad1-top) - var(--pad0)) * var(--k, 0) - 4px);
+      right: calc(var(--pad0) + (var(--pad1) - var(--pad0)) * var(--k, 0));
+      font-size: calc(1.3rem + 2.2rem * var(--k, 0));
+    }
+
+    .is-animated .bh-pillar-chip {
+      font-size: calc(0.68rem + 0.3rem * var(--k, 0));
     }
 
     /* ---- STR consulting: colour card with stacked strips peeking out below ---- */
@@ -1862,13 +2141,36 @@
         color: var(--bh-bg);
       }
 
-      .bh-promise,
       .bh-card {
         grid-template-columns: 1fr;
       }
 
-      .bh-promise-photo {
-        min-height: 380px;
+      .bh-pillar-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 14px;
+      }
+
+      .bh-pillar-row li:nth-child(n) {
+        margin-top: 0;
+      }
+
+      .bh-pillars {
+        --pillar-h: 320px;
+        --tilt-k: 0.6;
+      }
+
+      .bh-join-top {
+        grid-template-columns: 1fr;
+      }
+
+      .bh-join-stats,
+      .bh-join-perks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      /* 2×2 cards must fit one screen while the stage is pinned */
+      .bh-pillars.is-animated {
+        --pillar-h: min(320px, calc((100svh - 150px) / 2));
       }
 
       .bh-superhost {
@@ -1930,9 +2232,46 @@
         color: var(--bh-bg);
       }
 
-      .bh-promise-photo {
-        min-height: 300px;
+      .bh-pillar-row {
+        gap: 14px 10px;
+        padding: 16px 2px 24px;
+      }
+
+      .bh-pillars {
+        --pillar-h: 230px;
+        --pad0: 16px;
+        --rad0: 14px;
+        --fs0: 1.4rem;
+        --pad1-top: 104px;
+      }
+
+      .bh-pillars.is-animated {
+        --pillar-h: min(230px, calc((100svh - 150px) / 2));
+      }
+
+      .bh-join {
         border-radius: 16px;
+        gap: 24px;
+      }
+
+      .bh-join-stats {
+        gap: 16px 14px;
+      }
+
+      .bh-join-perks {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .bh-pillar .bh-arrow {
+        top: 13px;
+        right: 14px;
+        font-size: 1.15rem;
+      }
+
+      .bh-pillar-chip {
+        padding: 5px 8px;
+        font-size: 0.6rem;
       }
 
       .bh-stack::before {
@@ -2459,16 +2798,86 @@
             </ol>
           </section>
 
-          <section class="bh-section bh-promise" aria-labelledby="bhPromise">
-            <div class="bh-promise-copy">
-              <p class="bh-tag">Brand Promise</p>
-              <h2 class="bh-heading" id="bhPromise">Modern, boutique, <span class="bh-soft">and easy to
-                  navigate.</span></h2>
-              <p class="bh-lead">A high-touch experience tailored for Calgary buyers, sellers, and investors. Premium
-                presentation meets practical, grounded market advice.</p>
-              <a class="bh-btn" href="/services" data-page="services">My Services &rarr;</a>
+          <section class="bh-pillars" aria-label="What Toni offers">
+            <div class="bh-pillars-stage">
+              <ul class="bh-pillar-row">
+                <li class="bh-reveal">
+                  <a class="bh-pillar bh-pillar--indigo" href="/services" data-page="services">
+                    <span class="bh-num">(01)</span>
+                    <span class="bh-pillar-title">Airbnb</span>
+                    <span class="bh-arrow" aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+                <li class="bh-reveal">
+                  <a class="bh-pillar bh-pillar--ink" href="/services" data-page="services">
+                    <span class="bh-num">(02)</span>
+                    <span class="bh-pillar-title">Buy/<wbr>Sell/<wbr>Invest</span>
+                    <span class="bh-arrow" aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+                <li class="bh-reveal">
+                  <a class="bh-pillar bh-pillar--photo" href="/listings" data-page="listings">
+                    <span class="bh-num">(03)</span>
+                    <span class="bh-pillar-title">My Listings</span>
+                    <span class="bh-arrow" aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+                <li class="bh-reveal">
+                  <div class="bh-pillar bh-pillar--soon">
+                    <span class="bh-num">(04)</span>
+                    <span class="bh-pillar-title">Luxury Corporate Rentals</span>
+                    <span class="bh-pillar-chip">Coming Soon</span>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div class="large-photo bh-promise-photo bh-reveal"></div>
+          </section>
+
+          <section class="bh-join bh-reveal" aria-labelledby="bhJoin">
+            <div class="bh-join-top">
+              <div>
+                <p class="bh-tag">Join the Team</p>
+                <h2 class="bh-join-title" id="bhJoin">Build your career <span class="bh-soft">with Imperial Real Estate
+                    Group.</span></h2>
+              </div>
+              <div class="bh-join-pitch">
+                <p>Toni&rsquo;s team, Imperial Real Estate Group, is part of Century 21 Bravo Realty &mdash; one of the
+                  top-producing Century 21 offices in Canada. Whether you&rsquo;re newly licensed or an experienced
+                  agent looking for your next move, there&rsquo;s room to grow here.</p>
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Ask Toni about joining &rarr;</a>
+              </div>
+            </div>
+
+            <dl class="bh-join-stats">
+              <div>
+                <dt>#9</dt>
+                <dd>Century 21 office in Canada by production &amp; units, out of 407</dd>
+              </div>
+              <div>
+                <dt>#2</dt>
+                <dd>Office in Alberta &amp; the Northwest Territories, out of 66</dd>
+              </div>
+              <div>
+                <dt>#16</dt>
+                <dd>Office by production worldwide, out of 16,000 Century 21 offices</dd>
+              </div>
+              <div>
+                <dt>200+</dt>
+                <dd>Agents across the brokerage, based in the heart of Calgary</dd>
+              </div>
+            </dl>
+            <p class="bh-join-note">Century 21 Bravo Realty brokerage rankings, 2025.</p>
+
+            <ul class="bh-join-perks">
+              <li><strong>Mentorship &amp; training</strong>In-house programs for new
+                agents, experienced agents, and those adding commercial real estate.</li>
+              <li><strong>Century 21 systems</strong>State-of-the-art tools and
+                technology that come with the Century 21 brand.</li>
+              <li><strong>In-house support</strong>Conveyancing and marketing services
+                under one roof.</li>
+              <li><strong>A team that has your back</strong>A supportive culture where
+                you can ask anyone for help &mdash; plus charitable work in the community.</li>
+            </ul>
           </section>
 
           <section class="bh-stack bh-reveal" aria-labelledby="bhStr">
@@ -2907,6 +3316,7 @@
                     <option>Selling a home</option>
                     <option>Airbnb / short-term rental investing</option>
                     <option>Investment property</option>
+                    <option>Joining the team</option>
                     <option>Just exploring / not sure yet</option>
                   </select>
                 </label>
@@ -3460,6 +3870,80 @@
         gCount.textContent = 'On Google';
         if (data.uri) { badge.href = data.uri; allLink.href = data.uri; }
       }).catch(err => console.warn('Google reviews unavailable, using manual list.', err));
+    })();
+
+    /* ===================== Homepage pillars: pinned scroll scene ===================== */
+    /* The stage pins full screen; as you scroll, each pillar grows from its tilted card
+       into the whole viewport, one after another. Reduced motion keeps the static row. */
+    (function initPillars() {
+      const section = document.querySelector('.bh-pillars');
+      if (!section) return;
+      const stage = section.querySelector('.bh-pillars-stage');
+      const slots = [...section.querySelectorAll('.bh-pillar-row li')];
+      const panels = slots.map(li => li.querySelector('.bh-pillar'));
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const HOLD = 0.5;   // extra screens of scroll with the last pillar full screen
+      let geo = null;
+      let queued = false;
+
+      const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+      const lerp = (a, b, t) => a + (b - a) * t;
+      const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+      // card positions relative to the stage (the panels are absolutely positioned, so they don't affect this)
+      function measure() {
+        const s = stage.getBoundingClientRect();
+        const cs = getComputedStyle(section);
+        geo = {
+          w: s.width,
+          h: s.height,
+          tiltK: parseFloat(cs.getPropertyValue('--tilt-k')) || 1,
+          radius: parseFloat(cs.getPropertyValue('--rad0')) || 18,
+          slots: slots.map(li => {
+            const r = li.getBoundingClientRect();
+            return { x: r.left - s.left, y: r.top - s.top, w: r.width, h: r.height, tilt: parseFloat(getComputedStyle(li).getPropertyValue('--tilt')) || 0 };
+          })
+        };
+      }
+
+      function render() {
+        queued = false;
+        if (!section.classList.contains('is-animated') || !stage.offsetWidth) return;   // homepage hidden
+        if (!geo || geo.w !== stage.offsetWidth || geo.h !== stage.offsetHeight) measure();
+
+        const travel = section.offsetHeight - stage.offsetHeight;
+        const scrolled = clamp(-section.getBoundingClientRect().top, 0, travel);
+        const step = travel / (panels.length + HOLD);
+
+        panels.forEach((el, i) => {
+          const t = ease(clamp((scrolled - i * step) / step, 0, 1));
+          const s = geo.slots[i];
+          el.style.left = lerp(s.x, 0, t) + 'px';
+          el.style.top = lerp(s.y, 0, t) + 'px';
+          el.style.width = lerp(s.w, geo.w, t) + 'px';
+          el.style.height = lerp(s.h, geo.h, t) + 'px';
+          el.style.borderRadius = lerp(geo.radius, 0, t) + 'px';
+          el.style.transform = 'rotate(' + lerp(s.tilt * geo.tiltK, 0, t) + 'deg)';
+          el.style.setProperty('--k', t.toFixed(4));
+        });
+      }
+
+      const queue = () => { if (!queued) { queued = true; requestAnimationFrame(render); } };
+
+      function setMode() {
+        const on = !reduceMotion.matches;
+        section.classList.toggle('is-animated', on);
+        if (!on) panels.forEach(el => el.removeAttribute('style'));
+        geo = null;
+        queue();
+      }
+
+      window.addEventListener('scroll', queue, { passive: true });
+      window.addEventListener('resize', () => { geo = null; queue(); });
+      // re-measure when the homepage is shown again (stage goes from 0 to full size)
+      if ('ResizeObserver' in window) new ResizeObserver(() => { geo = null; queue(); }).observe(stage);
+      reduceMotion.addEventListener('change', setMode);
+      setMode();
     })();
 
   </script>
