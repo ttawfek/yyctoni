@@ -1,0 +1,5 @@
+# Source images (large, not used by the site)
+images/*-original.*
+
+# Editor settings
+.vscode/

@@ -163,9 +163,10 @@
       cursor: pointer;
     }
 
+    /* overflow-x lives on body only: setting it on html too turns body into
+       its own scroll container, which breaks the sticky header */
     html,
     body {
-      overflow-x: hidden;
       max-width: 100%;
     }
 
