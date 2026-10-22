@@ -8,8 +8,8 @@
   <meta name="description"
     content="Toni Tsim — Calgary investor-focused realtor specializing in Airbnb & short-term rental properties." />
   <meta name="author" content="Toni Tsim" />
-  <meta name="theme-color" content="#0b0d14" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#f4efe7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#171412" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fbf9ef" media="(prefers-color-scheme: light)" />
   <link rel="canonical" href="https://yyctoni.com/" />
 
   <!-- Favicons -->
@@ -81,49 +81,65 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <style>
+    /* One palette for the whole site: warm cream / ink, oversized display type, mono labels.
+       The bh-* tokens are the source of truth; the older names below alias them so every
+       component (header, drawer, form, footer) follows the same theme. */
     :root {
       --toni-photo: image-set(url('images/toni-tsim.webp') type('image/webp'), url('images/toni-tsim.jpg') type('image/jpeg'));
       --superhost-img: image-set(url('images/superhost.webp') type('image/webp'), url('images/superhost.jpg') type('image/jpeg'));
-      --bg: #0b0d14;
-      --bg-soft: rgba(255, 255, 255, 0.06);
-      --panel: rgba(17, 21, 33, 0.72);
-      --text: #f5f2eb;
-      --muted: #b5b8c5;
-      --border: rgba(255, 255, 255, 0.10);
-      --accent: #f2d675;
-      /* CTA tokens: identical in both themes so buttons never shift identity */
-      --cta-bg: #f2d675;
-      --cta-bg-hover: #e8c85c;
-      --cta-text: #14161c;
-      --star: #f2d675;
-      --cta-ring: rgba(242, 214, 117, 0.32);
-      /* ghost/secondary buttons (theme-aware surface, same shape language) */
-      --btn-ghost-bg: rgba(255, 255, 255, 0.06);
-      --btn-ghost-bg-hover: rgba(255, 255, 255, 0.13);
-      --btn-ghost-border: rgba(255, 255, 255, 0.16);
-      --accent-strong: #dcbc5a;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.30);
-      --grad-bg: radial-gradient(circle at top left, rgba(217, 183, 124, 0.16), transparent 32%), radial-gradient(circle at top right, rgba(166, 124, 82, 0.14), transparent 26%), #0b0d14;
+      --bh-display: 'Inter Tight', 'Inter', Arial, sans-serif;
+      --bh-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+      /* dark theme (default) */
+      --bh-bg: #171412;
+      --bh-ink: #fbf9ef;
+      --bh-soft: #8e827c;
+      --bh-muted: #b3a9a2;
+      --bh-card: #221e1b;
+      --bh-card-2: #2c2723;
+      --bh-line: rgba(251, 249, 239, 0.12);
+      --bh-accent: #f2b33d;
+      --bh-feature: #0f0d0c;
+      --bh-indigo: #3d2fa9;
+      --bh-strip-1: #f2d675;
+      --bh-strip-2: #785f47;
+      /* brand gold: the TT mark and every "Book…" button, identical in both themes */
+      --bh-gold: #f2d675;
+      --bh-gold-hover: #e8c85c;
+      --bh-gold-text: #14161c;
+
+      /* legacy aliases */
+      --bg: var(--bh-bg);
+      --bg-soft: var(--bh-card);
+      --panel: color-mix(in srgb, var(--bh-bg) 86%, transparent);
+      --text: var(--bh-ink);
+      --muted: var(--bh-muted);
+      --border: var(--bh-line);
+      --accent: var(--bh-accent);
+      --cta-bg: var(--bh-ink);
+      --cta-bg-hover: var(--bh-soft);
+      --cta-text: var(--bh-bg);
+      --star: var(--bh-accent);
+      --btn-ghost-bg: transparent;
+      --btn-ghost-bg-hover: var(--bh-card);
+      --btn-ghost-border: var(--bh-line);
+      --shadow: none;
+      --grad-bg: var(--bh-bg);
     }
 
     :root[data-theme="light"] {
-      --bg: #f4efe7;
-      --bg-soft: rgba(255, 255, 255, 0.82);
-      --panel: rgba(255, 255, 255, 0.82);
-      --text: #1d2230;
-      --muted: #5d6473;
-      --border: rgba(29, 34, 48, 0.10);
-      --accent: #856416;
-      --star: #a87b16;
-      --btn-ghost-bg: rgba(29, 34, 48, 0.05);
-      --btn-ghost-bg-hover: rgba(29, 34, 48, 0.11);
-      --btn-ghost-border: rgba(29, 34, 48, 0.16);
-      --accent-strong: #6f5211;
-      --shadow: 0 20px 50px rgba(45, 37, 24, 0.12);
-      --grad-bg: radial-gradient(circle at top left, rgba(217, 183, 124, 0.22), transparent 32%), radial-gradient(circle at top right, rgba(166, 124, 82, 0.18), transparent 26%), #f4efe7;
+      --bh-bg: #fbf9ef;
+      --bh-ink: #171412;
+      --bh-soft: #8e827c;
+      --bh-muted: #6c6660;
+      --bh-card: #f2f0e7;
+      --bh-card-2: #e7e2d6;
+      --bh-line: rgba(23, 20, 18, 0.1);
+      --bh-accent: #ff7722;
+      --bh-feature: #171412;
     }
 
     *,
@@ -195,7 +211,6 @@
     .glass-panel {
       background: var(--panel);
       border: 1px solid var(--border);
-      box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
     }
@@ -208,8 +223,8 @@
       grid-template-columns: auto 1fr auto;
       align-items: center;
       gap: 12px;
-      padding: 14px 22px;
-      border-radius: 28px;
+      padding: 10px 10px 10px 14px;
+      border-radius: 18px;
       margin-bottom: 24px;
       transition: background 0.3s, border-color 0.3s;
     }
@@ -224,33 +239,41 @@
     .brand-mark {
       width: 44px;
       height: 44px;
-      border-radius: 14px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      background: var(--cta-bg);
-      color: var(--cta-text);
+      background: var(--bh-gold);
+      color: var(--bh-gold-text);
+      font-family: var(--bh-display);
       font-weight: 800;
       font-size: 1rem;
+      letter-spacing: -0.04em;
       flex-shrink: 0;
     }
 
     .brand-copy {
       display: grid;
-      line-height: 1.3;
+      line-height: 1.15;
     }
 
     .brand-copy strong {
-      font-size: 1rem;
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.04em;
     }
 
     .brand-copy small {
-      color: var(--muted);
-      font-size: 0.75rem;
+      font-family: var(--bh-mono);
+      color: var(--bh-soft);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .site-nav {
       display: flex;
-      gap: 4px;
+      gap: 2px;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
@@ -259,41 +282,44 @@
     .site-nav a {
       padding: 9px 14px;
       border-radius: 999px;
-      color: var(--muted);
+      color: var(--bh-muted);
       transition: color 0.18s, background 0.18s;
-      font-size: 0.875rem;
+      font-size: 0.92rem;
       font-weight: 500;
       white-space: nowrap;
     }
 
-    .site-nav a:hover,
+    .site-nav a:hover {
+      color: var(--bh-ink);
+    }
+
     .site-nav a.active {
-      color: var(--text);
-      background: var(--bg-soft);
+      color: var(--bh-ink);
+      background: var(--bh-card);
     }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       justify-content: flex-end;
     }
 
     .theme-toggle {
-      background: var(--btn-ghost-bg);
-      border: 1px solid var(--btn-ghost-border);
+      background: transparent;
+      border: 1px solid var(--bh-line);
       border-radius: 999px;
       padding: 8px 14px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--text);
+      color: var(--bh-ink);
       transition: border-color .2s, background .2s;
     }
 
     .theme-toggle:hover {
-      background: var(--btn-ghost-bg-hover);
-      border-color: var(--cta-bg);
+      background: var(--bh-card);
     }
 
     .theme-icon {
@@ -302,23 +328,21 @@
     }
 
     .theme-label {
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-family: var(--bh-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
 
     .toggle-track {
-      width: 40px;
+      width: 38px;
       height: 22px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
+      background: var(--bh-card-2);
       position: relative;
       display: inline-block;
       transition: background 0.3s;
       flex-shrink: 0;
-    }
-
-    :root[data-theme="dark"] .toggle-track {
-      background: rgba(217, 183, 124, 0.35);
     }
 
     .toggle-thumb {
@@ -328,118 +352,111 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: #fff;
+      background: var(--bh-ink);
       transition: transform 0.22s ease;
     }
 
     :root[data-theme="dark"] .toggle-thumb {
-      transform: translateX(18px);
+      transform: translateX(16px);
     }
 
-    .primary-button:focus-visible,
-    .secondary-button:focus-visible,
     .header-cta:focus-visible,
     .theme-toggle:focus-visible,
     .hamburger:focus-visible,
-    .carousel-nav:focus-visible {
-      outline: 2px solid var(--cta-bg);
+    .site-nav a:focus-visible,
+    .mobile-nav-drawer a:focus-visible,
+    .footer-links a:focus-visible {
+      outline: 2px solid var(--bh-accent);
       outline-offset: 3px;
     }
 
     .header-cta {
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      font-weight: 700;
+      background: var(--bh-gold);
+      color: var(--bh-gold-text);
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
       border-radius: 999px;
-      border: 1px solid transparent;
-      padding: 10px 16px;
+      padding: 0 20px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.8rem;
       line-height: 1.1;
       white-space: nowrap;
-      transition: background .18s, transform .18s, box-shadow .18s;
+      transition: transform .18s;
     }
 
     .header-cta:hover {
-      background: var(--cta-bg-hover);
+      background: var(--bh-gold-hover);
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px var(--cta-ring);
     }
 
     .hamburger {
       display: none;
-      background: var(--btn-ghost-bg);
-      border: 1px solid var(--btn-ghost-border);
+      width: 44px;
+      height: 44px;
+      background: var(--bh-ink);
+      border: none;
       border-radius: 12px;
-      padding: 8px 10px;
-      color: var(--text);
+      color: var(--bh-bg);
       font-size: 1.2rem;
       align-items: center;
       justify-content: center;
-      transition: background .18s, border-color .18s;
+      transition: transform .18s;
     }
 
     .hamburger:hover {
-      background: var(--btn-ghost-bg-hover);
-      border-color: var(--cta-bg);
+      transform: scale(1.04);
     }
 
     .mobile-nav-drawer {
       display: none;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
       padding: 12px 0 4px;
     }
 
     .mobile-nav-drawer a {
       padding: 12px 16px;
-      border-radius: 14px;
-      color: var(--muted);
+      border-radius: 12px;
+      color: var(--bh-ink);
+      font-family: var(--bh-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1.1;
       transition: color 0.18s, background 0.18s;
-      font-weight: 500;
     }
 
-    .mobile-nav-drawer a:hover,
+    .mobile-nav-drawer a:hover {
+      background: var(--bh-card);
+    }
+
     .mobile-nav-drawer a.active {
-      color: var(--text);
-      background: var(--bg-soft);
+      color: var(--bh-soft);
     }
 
     /* CTA pinned to the bottom of the drawer */
     .mobile-nav-drawer .drawer-cta,
     .mobile-nav-drawer .drawer-cta:hover,
     .mobile-nav-drawer .drawer-cta.active {
-      margin-top: 8px;
+      margin-top: 10px;
       padding: 14px 18px;
-      border-radius: 14px;
-      min-height: 48px;
+      border-radius: 999px;
+      min-height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      font-weight: 700;
+      background: var(--bh-gold);
+      color: var(--bh-gold-text);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
       line-height: 1.25;
-    }
-
-    .mobile-nav-drawer .drawer-cta:hover {
-      background: var(--cta-bg-hover);
-    }
-
-    /* the drawer's CTA is a button, not a nav link — keep the dark-on-gold treatment */
-    .mobile-nav-drawer a.primary-button,
-    .mobile-nav-drawer a.primary-button:hover,
-    .mobile-nav-drawer a.primary-button.active {
-      color: var(--cta-text);
-      background: var(--cta-bg);
-      font-weight: 700;
-    }
-
-    .mobile-nav-drawer a.primary-button:hover {
-      background: var(--cta-bg-hover);
     }
 
     .mobile-nav-drawer.open {
@@ -450,6 +467,7 @@
       /* above the header (100) and the backdrop (110) */
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
+      background: var(--bh-bg);
       animation: drawerIn .18s ease both;
     }
 
@@ -469,7 +487,7 @@
       position: fixed;
       inset: 0;
       z-index: 110;
-      background: rgba(8, 10, 16, .55);
+      background: rgba(15, 13, 12, .6);
       backdrop-filter: blur(2px);
       opacity: 0;
       transition: opacity .18s ease;
@@ -483,53 +501,73 @@
       overflow: hidden;
     }
 
+    /* footer: always-dark closing panel with an oversized wordmark */
     .site-footer {
-      margin-top: 32px;
-      border-radius: 28px;
-      padding: 28px 32px;
+      margin-top: clamp(72px, 10vw, 140px);
+      border-radius: 20px;
+      padding: clamp(28px, 4vw, 48px);
       display: flex;
       justify-content: space-between;
-      gap: 24px;
-      align-items: center;
+      gap: 28px 40px;
+      align-items: flex-end;
       flex-wrap: wrap;
+      background: var(--bh-feature);
+      border: none;
+      color: #fbf9ef;
     }
 
     .site-footer p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      max-width: 500px;
-      font-size: 0.9rem;
-      line-height: 1.7;
+      margin: 10px 0 0;
+      color: #8e827c;
+      max-width: 520px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .footer-brand {
+      display: block;
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(3.2rem, 9vw, 7rem);
+      line-height: 0.85;
+      letter-spacing: -0.06em;
     }
 
     .footer-links {
       display: flex;
-      gap: 16px;
+      gap: 4px 22px;
       flex-wrap: wrap;
     }
 
     .footer-links a {
-      color: var(--muted);
-      font-size: 0.9rem;
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+      color: #fbf9ef;
       transition: color 0.18s;
     }
 
     .footer-links a:hover {
-      color: var(--text);
+      color: #8e827c;
     }
 
     .footer-link {
-      color: var(--muted);
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(251, 249, 239, 0.25);
+      text-underline-offset: 3px;
     }
 
-    .footer-brand {
-      font-size: 1.1rem;
+    .footer-link:hover {
+      color: #fbf9ef;
     }
 
-    .footer-copy {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 6px;
+    .site-footer .footer-copy {
+      font-family: var(--bh-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .page {
@@ -553,25 +591,12 @@
       }
     }
 
-    .page-grid {
-      display: grid;
-      gap: 28px;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 0.74rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
     h1,
     h2,
     h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
+      font-family: var(--bh-display);
+      font-weight: 800;
+      letter-spacing: -0.045em;
       line-height: 1;
       overflow-wrap: break-word;
       word-wrap: break-word;
@@ -590,270 +615,12 @@
       line-height: 1.15;
     }
 
-    /* headings promoted to h2 for a valid outline keep their card-level size */
-    .info-card h2,
-    .process-step h2,
-    .listing-copy h2,
-    .contact-facts h2,
-    .contact-card h2,
-    .why-title {
-      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-      line-height: 1.15;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 1.02rem;
-      line-height: 1.82;
-      max-width: 64ch;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .button-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 24px;
-    }
-
-    .primary-button {
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      font-weight: 700;
-      padding: 13px 22px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background .18s, transform .18s, box-shadow .18s;
-    }
-
-    .primary-button:hover {
-      background: var(--cta-bg-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px var(--cta-ring);
-    }
-
-    .secondary-button {
-      background: var(--cta-bg);
-      border: 1px solid transparent;
-      color: var(--cta-text);
-      font-weight: 700;
-      padding: 13px 22px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background .18s, transform .18s, box-shadow .18s;
-    }
-
-    .secondary-button:hover {
-      background: var(--cta-bg-hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px var(--cta-ring);
-    }
-
-    .primary-button,
-    .secondary-button,
     .header-cta,
     .theme-toggle,
     .hamburger,
     .mobile-nav-drawer a {
       min-height: 44px;
       touch-action: manipulation;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-      padding: 36px 32px;
-      border-radius: 36px;
-    }
-
-    .hero-content {
-      display: grid;
-      gap: 0;
-    }
-
-    .hero-content .eyebrow {
-      margin-bottom: 16px;
-    }
-
-    .hero-content h1 {
-      margin-bottom: 18px;
-    }
-
-    /* "Why work with Toni" checklist — informational, so no card chrome */
-    .why-toni {
-      margin-top: 30px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-      position: relative;
-    }
-
-    .why-toni::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 0;
-      width: 42px;
-      height: 1px;
-      background: var(--accent);
-      opacity: .9;
-    }
-
-    .why-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-
-    .why-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 9px 24px;
-    }
-
-    .why-list li {
-      position: relative;
-      padding-left: 24px;
-      font-size: .87rem;
-      line-height: 1.5;
-      color: var(--muted);
-    }
-
-    .why-list li::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: .82rem;
-    }
-
-    .hero-visual {
-      min-height: 560px;
-      height: 100%;
-      background-color: var(--panel);
-      border-radius: 32px;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      background-image: var(--toni-photo);
-      background-size: cover;
-      background-position: center 12%;
-      background-repeat: no-repeat;
-    }
-
-    /* transparent scrim so the copy reads without hiding the photo */
-    .hero-caption {
-      width: 100%;
-      padding: 46px 22px 20px;
-      border: none;
-      box-shadow: none;
-      border-radius: 0;
-      background: linear-gradient(180deg, rgba(10, 12, 18, 0) 0%, rgba(10, 12, 18, .62) 45%, rgba(10, 12, 18, .88) 100%);
-    }
-
-    .hero-caption p {
-      color: rgba(255, 255, 255, .86);
-      font-size: 0.88rem;
-      line-height: 1.65;
-      margin-bottom: 6px;
-      text-shadow: 0 1px 12px rgba(0, 0, 0, .45);
-    }
-
-    .hero-caption strong {
-      font-size: 0.95rem;
-      color: #fff;
-      text-shadow: 0 1px 12px rgba(0, 0, 0, .5);
-    }
-
-    .split-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    /* grid/flex items default to min-width:auto, which lets long headings blow out the column */
-    .split-layout>*,
-    .page-grid>*,
-    .card-grid>*,
-    .listing-grid>*,
-    .process-grid>*,
-    .hero>* {
-      min-width: 0;
-    }
-
-    .split-panel {
-      min-width: 0;
-      overflow: hidden;
-      border-radius: 28px;
-      padding: 32px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    /* headings inside a half-width panel need their own scale */
-    .split-panel h1 {
-      font-size: clamp(1.9rem, 3.4vw, 3.1rem);
-      line-height: 1.06;
-    }
-
-    /* full-bleed intro panel: heading returns to display scale, copy stays readable */
-    .split-panel--wide {
-      width: 100%;
-      max-width: none;
-    }
-
-    .split-panel--wide h1 {
-      font-size: clamp(2.4rem, 5.2vw, 4.2rem);
-    }
-
-    .split-panel--wide .lead {
-      max-width: 68ch;
-    }
-
-    /* Superhost proof-point beside the STR copy */
-    .str-panel {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .str-panel-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .superhost-badge {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      min-width: 0;
     }
 
     .superhost-img {
@@ -868,556 +635,12 @@
       box-shadow: var(--shadow);
     }
 
-    .superhost-badge figcaption {
-      font-size: .8rem;
-      line-height: 1.65;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    .superhost-badge figcaption strong {
-      color: var(--text);
-    }
-
-    /* Featured communities */
-    .community-grid {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .community-grid li {
-      display: flex;
-    }
-
-    .community-grid a {
-      position: relative;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 18px 16px 18px 20px;
-      border-radius: 18px;
-      min-height: 48px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.22rem;
-      font-weight: 600;
-      color: var(--text);
-      overflow: hidden;
-      text-decoration: none;
-      transition: border-color .18s, transform .18s, background .18s;
-    }
-
-    .community-grid a::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 14px;
-      bottom: 14px;
-      width: 3px;
-      border-radius: 0 3px 3px 0;
-      background: var(--accent);
-      opacity: 1;
-    }
-
-    .community-grid a:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .community-grid a:focus-visible {
-      outline: 2px solid var(--cta-bg);
-      outline-offset: 3px;
-    }
-
-    .community-pin {
-      font-family: 'Inter', sans-serif;
-      font-size: .82rem;
-      color: var(--muted);
-      opacity: 0;
-      transform: translate(-3px, 3px);
-      transition: opacity .18s, transform .18s, color .18s;
-    }
-
-    .community-grid a:hover .community-pin {
-      opacity: 1;
-      transform: none;
-      color: var(--accent);
-    }
-
-    .str-services {
-      list-style: none;
-      padding: 0;
-      margin: 6px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .str-services li {
-      font-size: .82rem;
-      color: var(--text);
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: var(--btn-ghost-bg);
-      border: 1px solid var(--btn-ghost-border);
-    }
-
-    .str-services li::before {
-      content: '\2713';
-      color: var(--accent);
-      font-weight: 700;
-      margin-right: 7px;
-      font-size: .78rem;
-    }
-
-    .split-panel h2 {
-      font-size: clamp(1.7rem, 3vw, 2.7rem);
-      line-height: 1.08;
-    }
-
-    .split-panel h1,
-    .split-panel h2 {
-      margin: 0;
-    }
-
-    .split-panel .lead {
-      margin: 0;
-    }
-
     .large-photo {
       min-height: 460px;
       border-radius: 32px;
       background-size: cover;
       background-position: center;
       background-image: linear-gradient(180deg, rgba(14, 18, 28, 0.08), rgba(14, 18, 28, 0.35)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80');
-    }
-
-    .portrait-photo {
-      min-height: 480px;
-      border-radius: 32px;
-      background-size: cover;
-      background-position: center 18%;
-      background-repeat: no-repeat;
-      aspect-ratio: 4 / 5;
-    }
-
-    .section-head {
-      display: grid;
-      gap: 10px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .info-card {
-      border-radius: 24px;
-      padding: 26px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .info-card h2,
-    .info-card h3 {
-      font-size: 1.4rem;
-    }
-
-    .info-card p {
-      font-size: 0.9rem;
-      line-height: 1.75;
-    }
-
-    .listing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .listing-card {
-      display: grid;
-      gap: 0;
-      border-radius: 28px;
-      overflow: hidden;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: transform 0.22s;
-    }
-
-    .listing-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .listing-image {
-      height: 260px;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: flex-start;
-      padding: 16px;
-    }
-
-    .listing-image span {
-      background: rgba(10, 10, 14, 0.70);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      backdrop-filter: blur(6px);
-    }
-
-    .listing-copy {
-      padding: 20px 22px 24px;
-      display: grid;
-      gap: 6px;
-    }
-
-    .listing-copy h2,
-    .listing-copy h3 {
-      font-size: 1.25rem;
-      margin-bottom: 2px;
-    }
-
-    .listing-copy strong {
-      color: var(--accent);
-      font-size: 1.1rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-    }
-
-    .listing-copy p {
-      font-size: 0.86rem;
-    }
-
-    .quote-card {
-      border-radius: 24px;
-      padding: 26px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .quote-card p {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 0.92rem;
-      font-style: italic;
-    }
-
-    .quote-card strong {
-      font-size: 0.95rem;
-    }
-
-    .quote-card small {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
-
-    /* ===== Google reviews carousel ===== */
-    .reviews-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .google-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      white-space: nowrap;
-      transition: border-color .18s, transform .18s;
-    }
-
-    .google-badge:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .google-badge .g-score {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: .01em;
-    }
-
-    .google-badge .g-meta {
-      display: grid;
-      gap: 1px;
-      line-height: 1.2;
-    }
-
-    .google-badge .g-meta small {
-      color: var(--muted);
-      font-size: .78rem;
-      font-weight: 500;
-    }
-
-    .google-badge .stars {
-      color: var(--star);
-      font-size: .9rem;
-      letter-spacing: 1.5px;
-    }
-
-    .reviews-carousel {
-      position: relative;
-    }
-
-    .reviews-viewport {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding: 4px 0;
-    }
-
-    .reviews-viewport::-webkit-scrollbar {
-      display: none;
-    }
-
-    .review-card {
-      flex: 0 0 calc((100% - 40px) / 3);
-      scroll-snap-align: start;
-      min-width: 0;
-      border-radius: 24px;
-      padding: 26px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .review-card .stars {
-      color: var(--star);
-      font-size: 1rem;
-      letter-spacing: 2px;
-    }
-
-    .review-body {
-      position: relative;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: .92rem;
-      font-style: italic;
-      display: -webkit-box;
-      -webkit-line-clamp: 9;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .review-card.is-open .review-body {
-      -webkit-line-clamp: unset;
-    }
-
-    .review-more {
-      align-self: flex-start;
-      background: none;
-      border: none;
-      padding: 0;
-      color: var(--accent);
-      font-size: .82rem;
-      font-weight: 600;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .review-foot {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 6px;
-    }
-
-    .review-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      background: var(--cta-bg);
-      color: var(--cta-text);
-      font-weight: 800;
-      font-size: .9rem;
-    }
-
-    .review-who {
-      display: grid;
-      line-height: 1.35;
-      min-width: 0;
-    }
-
-    .review-who strong {
-      font-size: .95rem;
-    }
-
-    .review-who small {
-      color: var(--muted);
-      font-size: .78rem;
-    }
-
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      color: var(--text);
-      font-size: 1.1rem;
-      line-height: 1;
-      transition: border-color .18s, opacity .18s, transform .18s;
-    }
-
-    .carousel-nav:hover {
-      border-color: var(--cta-bg);
-      background: var(--btn-ghost-bg-hover);
-      transform: translateY(-50%) scale(1.06);
-    }
-
-    .carousel-nav[disabled] {
-      opacity: .28;
-      pointer-events: none;
-    }
-
-    .carousel-nav.prev {
-      left: -20px;
-    }
-
-    .carousel-nav.next {
-      right: -20px;
-    }
-
-    /* below ~1340px the shell hugs the viewport, so pull the arrows inside it */
-    @media (max-width: 1340px) {
-      .carousel-nav.prev {
-        left: -6px;
-      }
-
-      .carousel-nav.next {
-        right: -6px;
-      }
-    }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .carousel-dots button {
-      width: 8px;
-      height: 8px;
-      padding: 0;
-      border-radius: 50%;
-      border: none;
-      background: var(--border);
-      transition: background .2s, width .2s;
-    }
-
-    .carousel-dots button.active {
-      background: var(--cta-bg);
-      width: 22px;
-      border-radius: 999px;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .process-step {
-      border-radius: 24px;
-      padding: 26px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .process-step .step-num {
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 1.5rem;
-      font-family: 'Cormorant Garamond', serif;
-    }
-
-    .process-step p {
-      font-size: 0.88rem;
-      line-height: 1.75;
-    }
-
-    .contact-card {
-      border-radius: 28px;
-      padding: 32px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-    }
-
-    .center-row {
-      text-align: center;
-      padding: 4px 0;
-    }
-
-    .center-row .primary-button,
-    .center-row .secondary-button {
-      display: inline-flex;
-    }
-
-    .disclaimer {
-      text-align: center;
-      margin: 0 auto;
-      font-size: .82rem;
     }
 
     .mobile-nav-drawer {
@@ -1430,21 +653,22 @@
     .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin: 16px 0 4px;
+      gap: 14px;
+      margin: 22px 0 4px;
     }
 
     .field {
       display: grid;
-      gap: 6px;
+      gap: 7px;
     }
 
     .field>span {
-      font-size: .78rem;
-      letter-spacing: .06em;
+      font-family: var(--bh-mono);
+      font-size: .7rem;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600;
+      color: var(--bh-soft);
+      font-weight: 500;
     }
 
     .field>span em {
@@ -1459,40 +683,39 @@
     .contact-form textarea {
       width: 100%;
       font: inherit;
-      font-size: .92rem;
-      color: var(--text);
-      background: var(--btn-ghost-bg);
-      border: 1px solid var(--btn-ghost-border);
+      font-size: .95rem;
+      color: var(--bh-ink);
+      background: var(--bh-bg);
+      border: 1px solid var(--bh-line);
       border-radius: 12px;
       padding: 12px 14px;
-      min-height: 46px;
-      transition: border-color .18s, background .18s;
+      min-height: 48px;
+      transition: border-color .18s;
     }
 
     .contact-form textarea {
       resize: vertical;
-      min-height: 96px;
+      min-height: 110px;
       line-height: 1.6;
     }
 
     .contact-form input::placeholder,
     .contact-form textarea::placeholder {
-      color: var(--muted);
-      opacity: .75;
+      color: var(--bh-soft);
+      opacity: 1;
     }
 
     .contact-form input:focus,
     .contact-form select:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: var(--cta-bg);
-      background: var(--btn-ghost-bg-hover);
+      border-color: var(--bh-ink);
     }
 
     .contact-form input:focus-visible,
     .contact-form select:focus-visible,
     .contact-form textarea:focus-visible {
-      outline: 2px solid var(--cta-bg);
+      outline: 2px solid var(--bh-accent);
       outline-offset: 2px;
     }
 
@@ -1500,7 +723,7 @@
       appearance: none;
       -webkit-appearance: none;
       cursor: pointer;
-      background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+      background-image: linear-gradient(45deg, transparent 50%, var(--bh-soft) 50%), linear-gradient(135deg, var(--bh-soft) 50%, transparent 50%);
       background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
       background-size: 5px 5px, 5px 5px;
       background-repeat: no-repeat;
@@ -1508,30 +731,35 @@
     }
 
     .contact-form select option {
-      background: var(--bg);
-      color: var(--text);
+      background: var(--bh-bg);
+      color: var(--bh-ink);
     }
 
     .form-submit {
       width: 100%;
-      justify-content: center;
-      margin-top: 4px;
+      margin-top: 6px;
+      border: none;
       cursor: pointer;
     }
 
+    .form-submit:disabled {
+      opacity: .6;
+      cursor: progress;
+    }
+
     .form-note {
-      font-size: .8rem;
+      font-size: .82rem;
       text-align: center;
-      margin-top: 2px;
+      color: var(--bh-muted);
     }
 
     .req {
-      color: var(--accent);
+      color: var(--bh-accent);
       font-weight: 700;
     }
 
     .contact-form :required:invalid:not(:placeholder-shown) {
-      border-color: #e06a5f;
+      border-color: #e0564a;
     }
 
     /* iOS zooms the viewport when a focused input is under 16px */
@@ -1542,14 +770,10 @@
       .contact-form textarea {
         font-size: 16px;
       }
-
-      .contact-facts {
-        gap: 14px;
-      }
     }
 
     .form-note a {
-      color: var(--accent);
+      color: var(--bh-ink);
       text-decoration: underline;
       text-underline-offset: 3px;
     }
@@ -1567,59 +791,55 @@
       border-radius: 12px;
       font-size: .9rem;
       margin-bottom: 4px;
-      border: 1px solid var(--btn-ghost-border);
-      background: var(--btn-ghost-bg);
+      border: 1px solid var(--bh-line);
+      background: var(--bh-bg);
     }
 
     .form-status.ok {
-      border-color: var(--cta-bg);
-    }
-
-    /* ---- Contact page supporting detail ---- */
-    .contact-facts {
-      display: grid;
-      gap: 18px;
-      margin-top: 22px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-facts h2,
-    .contact-facts h3 {
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-    }
-
-    .contact-facts p {
-      font-size: .88rem;
-      line-height: 1.7;
+      border-color: var(--bh-ink);
     }
 
     .contact-links {
       display: grid;
-      gap: 12px;
-      margin-top: 16px;
+      margin-top: 26px;
     }
 
     .contact-links a {
-      color: var(--text);
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
+      color: var(--bh-ink);
+      padding: 14px 0;
+      border-top: 1px solid var(--bh-line);
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr) auto;
       align-items: center;
       gap: 10px;
-      font-size: 0.95rem;
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      overflow-wrap: anywhere;
       transition: color 0.18s;
     }
 
     .contact-links a:hover {
-      color: var(--accent);
+      color: var(--bh-soft);
+    }
+
+    .contact-links i {
+      font-style: normal;
+      transition: transform .2s;
+    }
+
+    .contact-links a:hover i {
+      transform: translate(2px, -2px);
     }
 
     .contact-icon {
-      font-size: 1.1rem;
-      width: 24px;
-      text-align: center;
+      font-family: var(--bh-mono);
+      font-weight: 500;
+      font-size: .68rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--bh-soft);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1700,64 +920,6 @@
         gap: 7px;
       }
 
-      .hero,
-      .split-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 24px 22px;
-      }
-
-      .hero-visual {
-        min-height: 420px;
-      }
-
-      .card-grid,
-      .listing-grid,
-      .process-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .str-panel {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .superhost-badge {
-        max-width: 320px;
-        margin: 0 auto;
-      }
-
-      .review-card {
-        flex-basis: calc((100% - 20px) / 2);
-      }
-
-      .carousel-nav.prev {
-        left: -8px;
-      }
-
-      .carousel-nav.next {
-        right: -8px;
-      }
-
-      .why-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .community-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .button-row {
-        gap: 12px;
-      }
-
-      .button-row a {
-        flex: 1 1 calc(50% - 6px);
-        justify-content: center;
-      }
-
       .mobile-nav-drawer {
         margin-bottom: 16px;
       }
@@ -1819,123 +981,9 @@
         font-size: 1.1rem;
       }
 
-      .card-grid,
-      .listing-grid,
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .superhost-badge {
-        max-width: 260px;
-      }
-
-      .superhost-badge figcaption {
-        font-size: .74rem;
-      }
-
-      .review-card {
-        flex-basis: 100%;
-        padding: 20px 18px;
-        border-radius: 18px;
-      }
-
-      .reviews-viewport {
-        gap: 12px;
-      }
-
-      .carousel-nav {
-        width: 38px;
-        height: 38px;
-        font-size: 1rem;
-      }
-
-      .carousel-nav.prev {
-        left: 2px;
-      }
-
-      .carousel-nav.next {
-        right: 2px;
-      }
-
-      .reviews-head {
-        align-items: flex-start;
-      }
-
-      .why-toni {
-        margin-top: 24px;
-        padding-top: 18px;
-      }
-
-      .why-title {
-        font-size: 1.28rem;
-        margin-bottom: 11px;
-      }
-
-      .why-list {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
-
-      .community-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .community-grid a {
-        padding: 14px 12px 14px 16px;
-        font-size: 1.06rem;
-        border-radius: 14px;
-      }
-
-      .community-pin {
-        opacity: 1;
-        transform: none;
-      }
-
-      .why-list li {
-        font-size: .84rem;
-      }
-
-      .hero {
-        padding: 20px 18px;
-        gap: 20px;
-        border-radius: 26px;
-      }
-
-      .hero-visual {
-        min-height: 340px;
-        border-radius: 24px;
-      }
-
-      .hero-caption {
-        padding: 40px 16px 16px;
-      }
-
-      .split-layout,
-      .page-grid {
-        gap: 18px;
-      }
-
-      .portrait-photo,
       .large-photo {
         min-height: 360px;
         border-radius: 24px;
-      }
-
-      .portrait-photo {
-        background-size: contain !important;
-        background-position: center top !important;
-        background-color: rgba(255, 255, 255, 0.04);
-        aspect-ratio: 4 / 5;
-      }
-
-      .split-panel,
-      .contact-card,
-      .info-card,
-      .process-step,
-      .quote-card,
-      .listing-copy {
-        padding: 22px;
       }
 
       .theme-label {
@@ -1953,23 +1001,6 @@
 
       .header-cta {
         padding: 11px 16px;
-      }
-
-      .primary-button,
-      .secondary-button {
-        width: 100%;
-        justify-content: center;
-        padding: 14px 18px;
-        font-size: 0.95rem;
-      }
-
-      .button-row {
-        width: 100%;
-        gap: 10px;
-      }
-
-      .button-row a {
-        flex: 1 1 100%;
       }
 
       .mobile-nav-drawer {
@@ -2010,16 +1041,9 @@
         line-height: 1.08;
       }
 
-      .lead {
-        font-size: 0.98rem;
-        line-height: 1.75;
-      }
     }
 
     @media (max-width: 420px) {
-      .why-list {
-        grid-template-columns: 1fr;
-      }
 
       .site-header {
         padding: 9px 11px;
@@ -2049,23 +1073,1739 @@
         display: none;
       }
 
-      .hero {
-        padding: 18px 16px;
-      }
-
-      .split-panel,
-      .contact-card,
-      .info-card,
-      .process-step,
-      .quote-card,
-      .listing-copy {
-        padding: 18px;
-      }
-
-      .portrait-photo,
-      .large-photo,
-      .hero-visual {
+      .large-photo {
         min-height: 300px;
+      }
+    }
+
+    /* ===================== Homepage (editorial studio style) =====================
+       Warm cream / ink palette, oversized tight display type, mono labels.
+       Everything is scoped to .bh so the other pages keep their own look. */
+    .bh {
+      display: grid;
+      gap: clamp(72px, 11vw, 150px);
+      color: var(--bh-ink);
+      padding-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .bh>* {
+      min-width: 0;
+    }
+
+    .bh-display,
+    .bh-heading,
+    .bh-card-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      color: var(--bh-ink);
+      text-wrap: balance;
+    }
+
+    .bh-display {
+      font-size: clamp(3rem, 8.6vw, 7.6rem);
+      line-height: 0.86;
+      letter-spacing: -0.06em;
+    }
+
+    .bh-heading {
+      font-size: clamp(2.5rem, 6.4vw, 5.6rem);
+      line-height: 0.88;
+      letter-spacing: -0.055em;
+    }
+
+    .bh-soft {
+      color: var(--bh-soft);
+    }
+
+    .bh-tag {
+      font-family: var(--bh-mono);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bh-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .bh-tag::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--bh-accent);
+      flex-shrink: 0;
+    }
+
+    .bh-lead,
+    .bh-intro {
+      color: var(--bh-muted);
+      font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+      line-height: 1.5;
+      max-width: 46ch;
+    }
+
+    .bh-num {
+      font-family: var(--bh-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--bh-soft);
+    }
+
+    /* ---- buttons: heavy uppercase pills ---- */
+    .bh-btn,
+    .bh-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 0 26px;
+      border-radius: 999px;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-family: var(--bh-display);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .bh-btn:hover,
+    .bh-pill:hover {
+      transform: translateY(-2px);
+    }
+
+    .bh-btn--light {
+      background: #fbf9ef;
+      color: #171412;
+    }
+
+    .bh-btn--gold {
+      background: var(--bh-gold);
+      color: var(--bh-gold-text);
+    }
+
+    .bh-btn--gold:hover {
+      background: var(--bh-gold-hover);
+    }
+
+    .bh-btn:focus-visible,
+    .bh-pill:focus-visible,
+    .bh-communities a:focus-visible,
+    .google-badge:focus-visible,
+    .carousel-nav:focus-visible {
+      outline: 2px solid var(--bh-accent);
+      outline-offset: 3px;
+    }
+
+    /* ---- hero ---- */
+    .bh-hero {
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      padding: clamp(40px, 9vh, 110px) 0 0;
+    }
+
+    .bh-hero .bh-display {
+      max-width: 13ch;
+    }
+
+    .bh-intro {
+      margin: clamp(28px, 4vw, 44px) auto 30px;
+      color: var(--bh-ink);
+      max-width: 40ch;
+    }
+
+    .bh-pill {
+      padding: 6px 6px 6px 24px;
+      gap: 10px;
+      min-height: 56px;
+    }
+
+    .bh-pill-avatar,
+    .bh-pill-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .bh-pill-avatar {
+      margin-left: 6px;
+      /* zoomed in on Toni's face rather than the whole portrait */
+      background: var(--toni-photo) 31% 39% / 330% auto no-repeat, var(--bh-card-2);
+      border: 2px solid var(--bh-bg);
+    }
+
+    .bh-pill-icon {
+      display: grid;
+      place-items: center;
+      margin-left: -22px;
+      background: var(--bh-bg);
+      color: var(--bh-ink);
+      font-size: 1.1rem;
+      border: 2px solid var(--bh-ink);
+    }
+
+    /* ---- marquee (decorative duplicate of the tagline) ---- */
+    .bh-marquee {
+      overflow: hidden;
+      margin-top: calc(clamp(72px, 11vw, 150px) * -0.55);
+      border-block: 1px solid var(--bh-line);
+      padding: 18px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    }
+
+    .bh-marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: max-content;
+      animation: bhMarquee 30s linear infinite;
+    }
+
+    .bh-marquee-track span {
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      letter-spacing: -0.03em;
+      color: var(--bh-soft);
+      white-space: nowrap;
+    }
+
+    .bh-marquee-track i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--bh-accent);
+      flex-shrink: 0;
+    }
+
+    @keyframes bhMarquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ---- feature card (dark media panel) ---- */
+    .bh-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      background: var(--bh-feature);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 560px;
+      margin-top: calc(clamp(72px, 11vw, 150px) * -0.45);
+    }
+
+    .bh-feature-photo {
+      background: var(--toni-photo) center 14% / cover no-repeat;
+      min-height: 100%;
+    }
+
+    .bh-feature-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      padding: clamp(28px, 4vw, 52px);
+    }
+
+    .bh-feature-line {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4.2vw, 3.9rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      color: #fbf9ef;
+      text-wrap: balance;
+      margin-top: auto;
+    }
+
+    .bh-feature-copy strong {
+      font-family: var(--bh-mono);
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8e827c;
+      border-top: 1px solid rgba(251, 249, 239, 0.14);
+      padding-top: 18px;
+    }
+
+    /* ---- why: numbered tiles ---- */
+    .bh-why {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: clamp(32px, 5vw, 56px);
+    }
+
+    .bh-why li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 48px;
+      min-height: 210px;
+      padding: 24px 26px 28px;
+      border-radius: 16px;
+      background: var(--bh-card);
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.1vw, 1.75rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      color: var(--bh-ink);
+    }
+
+    .bh-why .bh-num {
+      align-self: flex-end;
+    }
+
+    .bh-why li:nth-child(even) {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+    }
+
+    /* text for screen readers only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ---- first-time buyers card ---- */
+    .bh-firsthome {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      padding: clamp(26px, 4.5vw, 60px);
+      border-radius: 20px;
+      background: var(--bh-card);
+    }
+
+    .bh-firsthome-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+      color: var(--bh-ink);
+      text-wrap: balance;
+    }
+
+    .bh-firsthome-steps {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: clamp(24px, 3vw, 36px);
+    }
+
+    .bh-firsthome-steps li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--bh-line);
+      font-family: var(--bh-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--bh-muted);
+    }
+
+    .bh-firsthome-body {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .bh-firsthome-body p {
+      color: var(--bh-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .bh-firsthome-body p:first-child {
+      color: var(--bh-ink);
+      font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+      line-height: 1.5;
+    }
+
+    .bh-firsthome-body .bh-firsthome-cta-line {
+      color: var(--bh-ink);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    .bh-firsthome-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 22px;
+      margin-top: 8px;
+    }
+
+    .bh-firsthome-link {
+      display: inline-block;
+      margin-top: 26px;
+      color: var(--bh-ink);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--bh-soft);
+      text-underline-offset: 4px;
+    }
+
+    .bh-firsthome-link:hover {
+      text-decoration-color: var(--bh-ink);
+    }
+
+    .bh-firsthome-link:focus-visible {
+      outline: 2px solid var(--bh-accent);
+      outline-offset: 3px;
+    }
+
+    /* ---- join the team: compact always-dark recruiting panel ---- */
+    .bh-join {
+      display: grid;
+      gap: 28px;
+      padding: clamp(24px, 3.4vw, 44px);
+      border-radius: 20px;
+      background: var(--bh-feature);
+      color: #fbf9ef;
+    }
+
+    .bh-join .bh-tag {
+      margin-bottom: 14px;
+    }
+
+    .bh-join-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      color: #fbf9ef;
+      text-wrap: balance;
+    }
+
+    .bh-join-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px clamp(24px, 4vw, 56px);
+      align-items: end;
+    }
+
+    .bh-join-pitch p {
+      color: rgba(251, 249, 239, 0.72);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .bh-join-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px 20px;
+    }
+
+    .bh-join-stats>div {
+      padding-top: 16px;
+      border-top: 1px solid rgba(251, 249, 239, 0.14);
+    }
+
+    .bh-join-stats dt {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      line-height: 0.85;
+      letter-spacing: -0.055em;
+      color: var(--bh-gold);
+    }
+
+    .bh-join-stats dd {
+      margin-top: 10px;
+      color: rgba(251, 249, 239, 0.66);
+      font-size: 0.8rem;
+      line-height: 1.45;
+      max-width: 26ch;
+    }
+
+    .bh-join-note {
+      margin-top: -16px;
+      font-family: var(--bh-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8e827c;
+    }
+
+    /* benefits as compact rows rather than cards */
+    .bh-join-perks {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 4px 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(251, 249, 239, 0.14);
+    }
+
+    .bh-join-perks li {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: rgba(251, 249, 239, 0.66);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .bh-join-perks strong {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: 1rem;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fbf9ef;
+    }
+
+    /* ---- offer pillars: four tall cards, alternately tilted ----
+       Sizes live in variables so the scroll scene (.is-animated) can blend each
+       pillar from its card size (…0) to full screen (…1) with --k (0 → 1). */
+    .bh-pillars {
+      --pillar-h: clamp(360px, 34vw, 480px);
+      --tilt-k: 1;
+      --pad0: 22px;
+      --pad1: clamp(24px, 5vw, 72px);
+      --pad1-top: clamp(104px, 14vh, 140px);
+      --rad0: 18px;
+      --fs0: clamp(1.8rem, 2.9vw, 2.8rem);
+      --fs1: clamp(3rem, 11vw, 10.5rem);
+    }
+
+    .bh-pillar-row {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding: 24px 6px 40px;
+    }
+
+    .bh-pillar-row li:nth-child(1) {
+      --tilt: -4deg;
+    }
+
+    .bh-pillar-row li:nth-child(2) {
+      --tilt: 3deg;
+      margin-top: 36px;
+    }
+
+    .bh-pillar-row li:nth-child(3) {
+      --tilt: -2.5deg;
+    }
+
+    .bh-pillar-row li:nth-child(4) {
+      --tilt: 4deg;
+      margin-top: 36px;
+    }
+
+    .bh-pillar {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: var(--pillar-h);
+      padding: var(--pad0) var(--pad0) calc(var(--pad0) + 4px);
+      border-radius: var(--rad0);
+      color: #fbf9ef;
+      transform: rotate(calc(var(--tilt, 0deg) * var(--tilt-k)));
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    a.bh-pillar:hover {
+      transform: rotate(0deg) translateY(-8px);
+      box-shadow: 0 24px 50px rgba(15, 13, 12, 0.28);
+    }
+
+    .bh-pillar .bh-num {
+      color: inherit;
+      opacity: .7;
+    }
+
+    .bh-pillar-title {
+      margin-top: auto;
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: var(--fs0);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      text-wrap: balance;
+    }
+
+    .bh-pillar .bh-arrow {
+      top: 18px;
+      right: 20px;
+      font-size: 1.4rem;
+    }
+
+    a.bh-pillar:hover .bh-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .bh-pillar-chip {
+      align-self: flex-start;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(251, 249, 239, 0.16);
+      font-family: var(--bh-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bh-pillar--indigo {
+      background: var(--bh-indigo);
+    }
+
+    .bh-pillar--ink {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+    }
+
+    .bh-pillar--photo {
+      /* darkened at both ends so the number, arrow and title stay readable over the photo */
+      background: linear-gradient(180deg, rgba(15, 13, 12, 0.55), rgba(15, 13, 12, 0.08) 30%, rgba(15, 13, 12, 0.08) 55%, rgba(15, 13, 12, 0.75)),
+        url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80') center / cover,
+        var(--bh-card);
+    }
+
+    .bh-pillar--soon {
+      background: var(--bh-strip-2);
+    }
+
+    .bh-pillar:focus-visible {
+      outline: 2px solid var(--bh-accent);
+      outline-offset: 4px;
+    }
+
+    /* scroll scene (added by JS unless reduced motion): the stage pins full screen and
+       each pillar grows from its card into the whole viewport, one after another */
+    .bh-pillars.is-animated {
+      /* 1 screen for the stage + 4 expansions + a short hold on the last one */
+      height: 550vh;
+      height: 550svh;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      /* the card row has to fit on one screen while pinned */
+      --pillar-h: min(clamp(360px, 34vw, 480px), calc(100svh - 260px));
+    }
+
+    .is-animated .bh-pillars-stage {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      height: 100svh;
+      display: grid;
+      place-items: center;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+
+    .is-animated .bh-pillar-row {
+      width: min(1280px, calc(100% - 32px));
+      padding: 0;
+    }
+
+    .is-animated .bh-pillar-row li {
+      height: var(--pillar-h);
+    }
+
+    .is-animated .bh-reveal {
+      animation: none;
+    }
+
+    .is-animated .bh-pillar {
+      position: absolute;
+      height: auto;
+      transition: none;
+      padding: calc(var(--pad0) + (var(--pad1-top) - var(--pad0)) * var(--k, 0)) calc(var(--pad0) + (var(--pad1) - var(--pad0)) * var(--k, 0)) calc(var(--pad0) + (var(--pad1) - var(--pad0)) * var(--k, 0) + 4px);
+    }
+
+    .is-animated li:nth-child(2) .bh-pillar {
+      z-index: 2;
+    }
+
+    .is-animated li:nth-child(3) .bh-pillar {
+      z-index: 3;
+    }
+
+    .is-animated li:nth-child(4) .bh-pillar {
+      z-index: 4;
+    }
+
+    .is-animated .bh-pillar-title {
+      font-size: calc(var(--fs0) + (var(--fs1) - var(--fs0)) * var(--k, 0));
+    }
+
+    .is-animated .bh-pillar .bh-num {
+      font-size: calc(0.78rem + 0.3rem * var(--k, 0));
+    }
+
+    .is-animated .bh-pillar .bh-arrow {
+      top: calc(var(--pad0) + (var(--pad1-top) - var(--pad0)) * var(--k, 0) - 4px);
+      right: calc(var(--pad0) + (var(--pad1) - var(--pad0)) * var(--k, 0));
+      font-size: calc(1.3rem + 2.2rem * var(--k, 0));
+    }
+
+    .is-animated .bh-pillar-chip {
+      font-size: calc(0.68rem + 0.3rem * var(--k, 0));
+    }
+
+    /* ---- STR consulting: colour card with stacked strips peeking out below ---- */
+    .bh-stack {
+      position: relative;
+      padding-bottom: 36px;
+    }
+
+    .bh-stack::before,
+    .bh-stack::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 60px;
+      border-radius: 0 0 18px 18px;
+    }
+
+    .bh-stack::before {
+      width: 86%;
+      bottom: 18px;
+      background: var(--bh-strip-1);
+      z-index: 1;
+    }
+
+    .bh-stack::after {
+      width: 76%;
+      bottom: 0;
+      background: var(--bh-strip-2);
+    }
+
+    .bh-card {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+      padding: clamp(28px, 4.5vw, 60px);
+      border-radius: 20px;
+      background: var(--bh-indigo);
+      color: #fbf9ef;
+    }
+
+    .bh-card .bh-tag {
+      color: rgba(251, 249, 239, 0.7);
+    }
+
+    .bh-card .bh-tag::before {
+      background: var(--bh-strip-1);
+    }
+
+    .bh-card-title {
+      color: #fbf9ef;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+    }
+
+    .bh-card-lead {
+      margin: 22px 0 26px;
+      color: rgba(251, 249, 239, 0.72);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 52ch;
+    }
+
+    .bh-chips {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .bh-chips li {
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(251, 249, 239, 0.12);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .bh-superhost {
+      display: grid;
+      gap: 14px;
+      max-width: 340px;
+      justify-self: end;
+    }
+
+    .bh-superhost .superhost-img {
+      border-radius: 16px;
+      transform: rotate(3deg);
+      box-shadow: 0 30px 60px rgba(10, 6, 40, 0.45);
+    }
+
+    .bh-superhost figcaption {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: rgba(251, 249, 239, 0.72);
+    }
+
+    .bh-superhost figcaption strong {
+      color: #fbf9ef;
+    }
+
+    /* ---- communities: big index tiles ---- */
+    .bh-section-head .bh-lead {
+      margin-top: 26px;
+    }
+
+    .bh-communities {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: clamp(32px, 5vw, 56px);
+    }
+
+    .bh-communities a {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      min-height: 180px;
+      padding: 20px 22px 24px;
+      border-radius: 16px;
+      background: var(--bh-card);
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 2.3vw, 2rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: var(--bh-ink);
+      transition: background .25s ease, color .25s ease, transform .25s ease;
+    }
+
+    .bh-communities li:nth-child(4n + 2) a,
+    .bh-communities li:nth-child(4n + 3) a {
+      background: var(--bh-card-2);
+    }
+
+    .bh-communities a:hover {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      transform: translateY(-3px);
+    }
+
+    .bh-arrow {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 1.2rem;
+      transition: transform .25s ease;
+    }
+
+    .bh-communities a:hover .bh-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    /* ---- reviews ---- */
+    .bh-reviews-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .bh-reviews-head>div {
+      max-width: 880px;
+    }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 20px 10px 12px;
+      border-radius: 999px;
+      background: var(--bh-card);
+      white-space: nowrap;
+      transition: transform .2s ease;
+    }
+
+    .google-badge:hover {
+      transform: translateY(-2px);
+    }
+
+    .google-badge .g-score {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-family: var(--bh-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .google-badge .g-meta {
+      display: grid;
+      gap: 2px;
+      line-height: 1.2;
+    }
+
+    .google-badge .g-meta small {
+      font-family: var(--bh-mono);
+      color: var(--bh-soft);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .google-badge .stars,
+    .review-card .stars {
+      color: var(--bh-accent);
+      letter-spacing: 3px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+      margin-top: clamp(28px, 4vw, 48px);
+    }
+
+    /* vertical padding gives the tilted cards room inside the scroll box */
+    .reviews-viewport {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 26px 6px;
+    }
+
+    .reviews-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      flex: 0 0 calc((100% - 32px) / 3);
+      scroll-snap-align: start;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 28px 28px 24px;
+      border-radius: 18px;
+      background: var(--bh-card);
+      color: var(--bh-ink);
+      transform: rotate(-1.6deg);
+      transition: transform .3s ease;
+    }
+
+    .review-card:nth-child(even) {
+      background: var(--bh-soft);
+      color: #fbf9ef;
+      transform: rotate(1.4deg);
+    }
+
+    .review-card:nth-child(even) .stars {
+      color: #fbf9ef;
+    }
+
+    .review-card:hover {
+      transform: rotate(0) translateY(-4px);
+    }
+
+    .review-body {
+      font-family: var(--bh-display);
+      font-size: 1.12rem;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .review-card.is-open .review-body {
+      -webkit-line-clamp: unset;
+    }
+
+    .review-more {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+      font-family: var(--bh-mono);
+      font-size: .74rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .review-foot {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-family: var(--bh-display);
+      font-weight: 800;
+    }
+
+    .review-card:nth-child(even) .review-avatar {
+      background: #fbf9ef;
+      color: #171412;
+    }
+
+    .review-who {
+      display: grid;
+      line-height: 1.3;
+      min-width: 0;
+    }
+
+    .review-who strong {
+      font-size: .95rem;
+    }
+
+    .review-who small {
+      font-family: var(--bh-mono);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      opacity: .7;
+    }
+
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: none;
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      font-size: 1.15rem;
+      transform: translateY(-50%);
+      transition: opacity .2s, transform .2s;
+    }
+
+    .carousel-nav:hover {
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-nav[disabled] {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .carousel-nav.prev {
+      left: -8px;
+    }
+
+    .carousel-nav.next {
+      right: -8px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .carousel-dots button {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: var(--bh-line);
+      transition: background .2s, width .2s;
+    }
+
+    .carousel-dots button.active {
+      width: 26px;
+      border-radius: 999px;
+      background: var(--bh-ink);
+    }
+
+    .bh-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 36px;
+    }
+
+    /* ---- scroll reveal (progressive: browsers without scroll timelines just show everything) ---- */
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .bh-reveal {
+          animation: bhRise linear both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 45%;
+        }
+      }
+    }
+
+    @keyframes bhRise {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bh-marquee-track {
+        animation: none;
+      }
+    }
+
+    /* ---- responsive ---- */
+    @media (max-width: 980px) {
+      .bh-feature {
+        grid-template-columns: 1fr;
+        min-height: 0;
+      }
+
+      .bh-feature-photo {
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+      }
+
+      .bh-feature-copy {
+        gap: 24px;
+      }
+
+      .bh-feature-line {
+        margin-top: 0;
+      }
+
+      .bh-why {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bh-why li:nth-child(even) {
+        background: var(--bh-card);
+        color: var(--bh-ink);
+      }
+
+      .bh-why li:nth-child(4n + 2),
+      .bh-why li:nth-child(4n + 3) {
+        background: var(--bh-ink);
+        color: var(--bh-bg);
+      }
+
+      .bh-card {
+        grid-template-columns: 1fr;
+      }
+
+      .bh-pillar-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 14px;
+      }
+
+      .bh-pillar-row li:nth-child(n) {
+        margin-top: 0;
+      }
+
+      .bh-pillars {
+        --pillar-h: 320px;
+        --tilt-k: 0.6;
+      }
+
+      .bh-join-top,
+      .bh-firsthome {
+        grid-template-columns: 1fr;
+      }
+
+      .bh-join-stats,
+      .bh-join-perks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      /* 2×2 cards must fit one screen while the stage is pinned */
+      .bh-pillars.is-animated {
+        --pillar-h: min(320px, calc((100svh - 150px) / 2));
+      }
+
+      .bh-superhost {
+        justify-self: center;
+      }
+
+      .bh-communities {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bh-communities li:nth-child(4n + 2) a,
+      .bh-communities li:nth-child(4n + 3) a {
+        background: var(--bh-card);
+      }
+
+      .bh-communities li:nth-child(4n + 1) a,
+      .bh-communities li:nth-child(4n + 4) a {
+        background: var(--bh-card-2);
+      }
+
+      .review-card {
+        flex-basis: calc((100% - 16px) / 2);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bh-hero {
+        padding-top: 28px;
+      }
+
+      .bh-display {
+        letter-spacing: -0.055em;
+      }
+
+      .bh-feature {
+        border-radius: 16px;
+      }
+
+      .bh-feature-photo {
+        aspect-ratio: 4 / 5;
+      }
+
+      .bh-why {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .bh-why li,
+      .bh-why li:nth-child(n) {
+        min-height: 0;
+        gap: 22px;
+        padding: 20px 20px 22px;
+        background: var(--bh-card);
+        color: var(--bh-ink);
+      }
+
+      .bh-why li:nth-child(even) {
+        background: var(--bh-ink);
+        color: var(--bh-bg);
+      }
+
+      .bh-pillar-row {
+        gap: 14px 10px;
+        padding: 16px 2px 24px;
+      }
+
+      .bh-pillars {
+        --pillar-h: 230px;
+        --pad0: 16px;
+        --rad0: 14px;
+        --fs0: 1.4rem;
+        --pad1-top: 104px;
+      }
+
+      .bh-pillars.is-animated {
+        --pillar-h: min(230px, calc((100svh - 150px) / 2));
+      }
+
+      .bh-join {
+        border-radius: 16px;
+        gap: 24px;
+      }
+
+      .bh-join-stats {
+        gap: 16px 14px;
+      }
+
+      .bh-join-perks {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .bh-pillar .bh-arrow {
+        top: 13px;
+        right: 14px;
+        font-size: 1.15rem;
+      }
+
+      .bh-pillar-chip {
+        padding: 5px 8px;
+        font-size: 0.6rem;
+      }
+
+      .bh-stack::before {
+        width: 90%;
+        height: 50px;
+      }
+
+      .bh-stack::after {
+        width: 80%;
+        height: 50px;
+      }
+
+      .bh-card {
+        border-radius: 16px;
+      }
+
+      .bh-communities {
+        gap: 8px;
+      }
+
+      .bh-communities a {
+        min-height: 130px;
+        gap: 24px;
+        padding: 16px 16px 18px;
+        font-size: 1.3rem;
+      }
+
+      .bh-arrow {
+        top: 12px;
+        right: 14px;
+      }
+
+      .review-card {
+        flex-basis: 88%;
+        padding: 22px 20px 20px;
+      }
+
+      .review-body {
+        font-size: 1.02rem;
+      }
+
+      .carousel-nav {
+        width: 40px;
+        height: 40px;
+      }
+
+      .carousel-nav.prev {
+        left: -4px;
+      }
+
+      .carousel-nav.next {
+        right: -4px;
+      }
+
+      .bh-btn {
+        width: 100%;
+      }
+
+      .bh-center .bh-btn {
+        width: auto;
+      }
+    }
+
+    /* ===================== Inner pages (About, Services, Listings, Contact) =====================
+       Same building blocks as the homepage, plus a few page-level layouts. */
+    .bh-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      color: var(--bh-ink);
+      text-wrap: balance;
+      font-size: clamp(2.5rem, 5.2vw, 4.8rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+    }
+
+    .bh-title--xl {
+      font-size: clamp(3rem, 8vw, 7.2rem);
+      line-height: 0.86;
+      letter-spacing: -0.06em;
+      max-width: 14ch;
+    }
+
+    .bh-page-head {
+      padding-top: clamp(28px, 6vh, 72px);
+    }
+
+    .bh-page-head .bh-lead {
+      margin-top: clamp(24px, 3vw, 36px);
+    }
+
+    .bh-prose {
+      display: grid;
+      gap: 16px;
+      margin-top: clamp(24px, 3vw, 34px);
+      max-width: 60ch;
+    }
+
+    .bh-prose p {
+      color: var(--bh-muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .bh-prose p:first-child {
+      color: var(--bh-ink);
+      font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+      line-height: 1.55;
+    }
+
+    .bh-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .bh-btn--ghost {
+      background: transparent;
+      color: var(--bh-ink);
+      box-shadow: inset 0 0 0 1.5px var(--bh-ink);
+    }
+
+    /* two-column page intro (About: photo + copy, Contact: copy + form) */
+    .bh-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: start;
+    }
+
+    .bh-split--contact {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    }
+
+    .bh-portrait {
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      background: url('images/pfp1.jpeg') center 18% / cover no-repeat, var(--bh-card);
+      position: sticky;
+      top: 110px;
+    }
+
+    /* info tiles: tag on top, heading + copy at the bottom; even tiles flip to ink */
+    .bh-tiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .bh-tile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 56px;
+      min-height: 320px;
+      padding: 26px 26px 30px;
+      border-radius: 16px;
+      background: var(--bh-card);
+      color: var(--bh-ink);
+    }
+
+    .bh-tile .bh-tag {
+      margin-bottom: 0;
+    }
+
+    .bh-tile h2 {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      margin-bottom: 14px;
+    }
+
+    .bh-tile p:not(.bh-tag) {
+      color: var(--bh-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .bh-tile:nth-child(even) {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+    }
+
+    .bh-tile:nth-child(even) p:not(.bh-tag) {
+      color: color-mix(in srgb, var(--bh-bg) 68%, var(--bh-ink));
+    }
+
+    /* process steps: oversized numerals over a hairline */
+    .bh-steps {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px 28px;
+      margin-top: clamp(32px, 5vw, 56px);
+    }
+
+    .bh-steps li {
+      border-top: 1px solid var(--bh-line);
+      padding-top: 22px;
+    }
+
+    .bh-step-num {
+      display: block;
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(4rem, 8vw, 7rem);
+      line-height: 0.8;
+      letter-spacing: -0.07em;
+      color: var(--bh-soft);
+      margin-bottom: 26px;
+    }
+
+    .bh-steps h3 {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      color: var(--bh-ink);
+      margin-bottom: 12px;
+    }
+
+    .bh-steps p {
+      color: var(--bh-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 38ch;
+    }
+
+    .bh-section>.bh-actions {
+      margin-top: clamp(36px, 5vw, 56px);
+    }
+
+    /* listings: case-study style photo cards */
+    .bh-listings {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(28px, 4vw, 44px) 16px;
+    }
+
+    .bh-listing-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      background-color: var(--bh-card);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: transform .35s ease;
+    }
+
+    .bh-listing:hover .bh-listing-img {
+      transform: scale(0.985);
+    }
+
+    .bh-listing-chip {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #171412;
+      color: #fbf9ef;
+      font-family: var(--bh-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bh-listing-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: baseline;
+      gap: 4px 16px;
+      padding: 18px 4px 0;
+    }
+
+    .bh-listing-body h2,
+    .bh-listing-body strong {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.25rem, 1.7vw, 1.55rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      color: var(--bh-ink);
+    }
+
+    .bh-listing-body strong {
+      color: var(--bh-soft);
+    }
+
+    .bh-listing-body p {
+      grid-column: 1 / -1;
+      font-family: var(--bh-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--bh-soft);
+    }
+
+    .bh-center--stack {
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      margin-top: calc(clamp(72px, 11vw, 150px) * -0.5);
+      text-align: center;
+    }
+
+    .bh-note {
+      font-family: var(--bh-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      color: var(--bh-soft);
+      max-width: 60ch;
+    }
+
+    /* contact: numbered facts + form card */
+    .bh-facts {
+      display: grid;
+      margin-top: clamp(32px, 4vw, 48px);
+    }
+
+    .bh-facts>div {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 6px 12px;
+      padding: 20px 0;
+      border-top: 1px solid var(--bh-line);
+    }
+
+    .bh-facts .bh-num {
+      grid-row: span 2;
+      padding-top: 4px;
+    }
+
+    .bh-facts h2 {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .bh-facts p {
+      color: var(--bh-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .bh-form-card {
+      border-radius: 20px;
+      background: var(--bh-card);
+      padding: clamp(24px, 3.4vw, 44px);
+    }
+
+    .bh-form-card>h2 {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    .bh-wide-photo {
+      min-height: clamp(300px, 42vw, 560px);
+      border-radius: 20px;
+    }
+
+    @media (max-width: 980px) {
+
+      .bh-listings {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bh-split,
+      .bh-split--contact {
+        grid-template-columns: 1fr;
+      }
+
+      .bh-portrait {
+        position: static;
+        max-width: 520px;
+        width: 100%;
+      }
+
+      .bh-tiles {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .bh-tile {
+        min-height: 0;
+        gap: 36px;
+      }
+
+      .bh-steps {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .bh-step-num {
+        margin-bottom: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bh-listings {
+        grid-template-columns: 1fr;
+      }
+
+      .bh-tile {
+        padding: 20px 20px 24px;
+      }
+
+      .bh-actions .bh-btn {
+        flex: 1 1 100%;
+      }
+
+      .bh-facts>div {
+        grid-template-columns: 44px minmax(0, 1fr);
+      }
+
+      .bh-wide-photo {
+        border-radius: 16px;
       }
     }
   </style>
@@ -2114,117 +2854,239 @@
 
       <!-- HOME -->
       <section class="page active" id="page-home">
-        <div class="page-grid">
-          <div class="hero glass-panel">
-            <div class="hero-content">
-              <p class="eyebrow">Calgary Realtor &middot; Investor Specialist</p>
-              <h1>Curated Calgary real estate with a polished, modern feel.</h1>
-              <p class="lead">A luxury-inspired experience for buyers, sellers, and investors who want thoughtful
-                strategy, sharp presentation, and responsive communication.</p>
-              <div class="button-row">
-                <a class="secondary-button" href="/about" data-page="about">Meet Toni</a>
-              </div>
-              <div class="why-toni">
-                <h2 class="why-title">Why Work With Toni?</h2>
-                <ul class="why-list">
-                  <li>Investor mindset&mdash;not just sales</li>
-                  <li>Airbnb and cash-flow expertise</li>
-                  <li>Professional marketing that makes listings stand out</li>
-                  <li>Strong negotiation skills</li>
-                  <li>Local Calgary market expertise</li>
-                  <li>Concierge-level service from start to finish</li>
-                </ul>
-              </div>
-            </div>
-            <div class="hero-visual">
-              <div class="hero-caption">
-                <p>Helping Calgary clients buy, sell, and invest with confidence.</p>
-                <strong>Luxury presentation. Local insight. Real strategy.</strong>
-              </div>
-            </div>
-          </div>
-          <div class="split-layout">
-            <div class="split-panel">
-              <p class="eyebrow">Brand Promise</p>
-              <h2>Modern, boutique, and easy to navigate.</h2>
-              <p class="lead">A high-touch experience tailored for Calgary buyers, sellers, and investors. Premium
-                presentation meets practical, grounded market advice.</p>
-              <div class="button-row"><a class="secondary-button" href="/services" data-page="services">My Services
-                  &rarr;</a></div>
-            </div>
-            <div class="large-photo"></div>
+        <div class="bh">
+
+          <div class="bh-hero">
+            <p class="bh-tag">Calgary Realtor &middot; Investor Specialist</p>
+            <h1 class="bh-display">The Art of Seeing <span class="bh-soft">Potential.</span></h1>
+            <p class="bh-intro">Where thoughtful design meets strategic real estate insight - uncovering possibilities,
+              recognizing value, and seeing beyond whats there.</p>
+            <a class="bh-pill" href="/about" data-page="about">
+              <span>Meet Toni</span>
+              <span class="bh-pill-avatar" aria-hidden="true"></span>
+              <span class="bh-pill-icon" aria-hidden="true">&rarr;</span>
+            </a>
           </div>
 
-          <div class="split-panel split-panel--wide str-panel">
-            <div class="str-panel-copy">
-              <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
-              <h2>Built for investors, end to end.</h2>
-              <p class="lead">Toni specializes in Airbnb and short-term rental consulting &mdash; identifying
-                high-performing investment opportunities and preparing properties for launch, with a strategic, hands-on
-                approach to maximizing returns.</p>
-              <ul class="str-services">
-                <li>Investment analysis</li>
-                <li>Furnishing &amp; setup guidance</li>
-                <li>Listing optimization</li>
-                <li>Pricing strategy</li>
-                <li>Guest experience design</li>
-                <li>Operational consulting</li>
+          <div class="bh-marquee" aria-hidden="true">
+            <div class="bh-marquee-track">
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+              <span>Airbnb</span><i></i><span>Buy/Sell/Invest</span><i></i><span>My
+                listings</span><i></i><span>Luxury corporate rentals (coming soon)</span><i></i>
+            </div>
+          </div>
+
+          <figure class="bh-feature bh-reveal">
+            <div class="bh-feature-photo" role="img" aria-label="Toni Tsim, Calgary realtor"></div>
+            <figcaption class="bh-feature-copy">
+              <p class="bh-tag">YYCToni &middot; Calgary</p>
+              <p class="bh-feature-line">Helping Calgary clients buy, sell, and invest with confidence.</p>
+              <strong>Luxury presentation. Local insight. Real strategy.</strong>
+            </figcaption>
+          </figure>
+
+          <section class="bh-section" aria-labelledby="bhWhy">
+            <h2 class="bh-heading" id="bhWhy">Why work <span class="bh-soft">with Toni?</span></h2>
+            <ol class="bh-why">
+              <li class="bh-reveal"><span class="bh-num">(01)</span>Investor mindset&mdash;not just sales</li>
+              <li class="bh-reveal"><span class="bh-num">(02)</span>Airbnb and cash-flow expertise</li>
+              <li class="bh-reveal"><span class="bh-num">(03)</span>Professional marketing that makes listings stand out
+              </li>
+              <li class="bh-reveal"><span class="bh-num">(04)</span>Strong negotiation skills</li>
+              <li class="bh-reveal"><span class="bh-num">(05)</span>Local Calgary market expertise</li>
+              <li class="bh-reveal"><span class="bh-num">(06)</span>Concierge-level service from start to finish</li>
+            </ol>
+          </section>
+
+          <section class="bh-pillars" aria-label="What Toni offers">
+            <div class="bh-pillars-stage">
+              <ul class="bh-pillar-row">
+                <li class="bh-reveal">
+                  <a class="bh-pillar bh-pillar--indigo" href="/services" data-page="services">
+                    <span class="bh-num">(01)</span>
+                    <span class="bh-pillar-title">Airbnb</span>
+                    <span class="bh-arrow" aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+                <li class="bh-reveal">
+                  <a class="bh-pillar bh-pillar--ink" href="/services" data-page="services">
+                    <span class="bh-num">(02)</span>
+                    <span class="bh-pillar-title">Buy/<wbr>Sell/<wbr>Invest</span>
+                    <span class="bh-arrow" aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+                <li class="bh-reveal">
+                  <a class="bh-pillar bh-pillar--photo" href="/listings" data-page="listings">
+                    <span class="bh-num">(03)</span>
+                    <span class="bh-pillar-title">My Listings</span>
+                    <span class="bh-arrow" aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+                <li class="bh-reveal">
+                  <div class="bh-pillar bh-pillar--soon">
+                    <span class="bh-num">(04)</span>
+                    <span class="bh-pillar-title">Luxury Corporate Rentals</span>
+                    <span class="bh-pillar-chip">Coming Soon</span>
+                  </div>
+                </li>
               </ul>
-              <div class="button-row">
-                <a class="primary-button" href="/services" data-page="services">See how it works</a>
+            </div>
+          </section>
+
+          <section class="bh-join bh-reveal" aria-labelledby="bhJoin">
+            <div class="bh-join-top">
+              <div>
+                <p class="bh-tag">Join the Team</p>
+                <h2 class="bh-join-title" id="bhJoin">Build your career <span class="bh-soft">with Imperial Real Estate
+                    Group.</span></h2>
+              </div>
+              <div class="bh-join-pitch">
+                <p>Toni&rsquo;s team, Imperial Real Estate Group, is part of Century 21 Bravo Realty &mdash; one of the
+                  top-producing Century 21 offices in Canada. Whether you&rsquo;re newly licensed or an experienced
+                  agent looking for your next move, there&rsquo;s room to grow here.</p>
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Ask Toni about joining &rarr;</a>
               </div>
             </div>
-            <figure class="superhost-badge">
-              <div class="superhost-img" role="img"
-                aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
-              <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently
-                outstanding ratings, reliability, and guest experience.</figcaption>
-            </figure>
-          </div>
 
-          <div class="page-grid">
-            <div class="section-head">
-              <p class="eyebrow">Featured Communities</p>
-              <h2>Neighbourhoods Toni knows inside out.</h2>
-              <p class="lead">From inner-city character to newer master-planned communities &mdash; local knowledge that
-                shapes smarter buying, selling, and investing decisions.</p>
-            </div>
-            <ul class="community-grid">
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Altadore%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="View Altadore, Calgary on Google Maps">Altadore<span class="community-pin"
-                    aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Marda%20Loop%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer" aria-label="View Marda Loop, Calgary on Google Maps">Marda
-                  Loop<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Beltline%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="View Beltline, Calgary on Google Maps">Beltline<span class="community-pin"
-                    aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Mahogany%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label="View Mahogany, Calgary on Google Maps">Mahogany<span class="community-pin"
-                    aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Seton%2C%20Calgary%2C%20AB" target="_blank"
-                  rel="noopener noreferrer" aria-label="View Seton, Calgary on Google Maps">Seton<span
-                    class="community-pin" aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Currie%2C%20Calgary%2C%20AB" target="_blank"
-                  rel="noopener noreferrer" aria-label="View Currie, Calgary on Google Maps">Currie<span
-                    class="community-pin" aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Aspen%20Woods%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer" aria-label="View Aspen Woods, Calgary on Google Maps">Aspen
-                  Woods<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
-              <li><a href="https://www.google.com/maps/search/?api=1&query=Signal%20Hill%2C%20Calgary%2C%20AB"
-                  target="_blank" rel="noopener noreferrer" aria-label="View Signal Hill, Calgary on Google Maps">Signal
-                  Hill<span class="community-pin" aria-hidden="true">&#8599;</span></a></li>
-            </ul>
-          </div>
-
-          <div class="page-grid">
-            <div class="section-head reviews-head">
+            <dl class="bh-join-stats">
               <div>
-                <p class="eyebrow">Google Reviews</p>
-                <h2>What clients say about working together.</h2>
+                <dt>#9</dt>
+                <dd>Century 21 office in Canada by production &amp; units, out of 407</dd>
+              </div>
+              <div>
+                <dt>#2</dt>
+                <dd>Office in Alberta &amp; the Northwest Territories, out of 66</dd>
+              </div>
+              <div>
+                <dt>#16</dt>
+                <dd>Office by production worldwide, out of 16,000 Century 21 offices</dd>
+              </div>
+              <div>
+                <dt>200+</dt>
+                <dd>Agents across the brokerage, based in the heart of Calgary</dd>
+              </div>
+            </dl>
+            <p class="bh-join-note">Century 21 Bravo Realty brokerage rankings, 2025.</p>
+
+            <ul class="bh-join-perks">
+              <li><strong>Mentorship &amp; training</strong>In-house programs for new
+                agents, experienced agents, and those adding commercial real estate.</li>
+              <li><strong>Century 21 systems</strong>State-of-the-art tools and
+                technology that come with the Century 21 brand.</li>
+              <li><strong>In-house support</strong>Conveyancing and marketing services
+                under one roof.</li>
+              <li><strong>A team that has your back</strong>A supportive culture where
+                you can ask anyone for help &mdash; plus charitable work in the community.</li>
+            </ul>
+          </section>
+
+          <section class="bh-stack bh-reveal" aria-labelledby="bhStr">
+            <div class="bh-card">
+              <div class="bh-card-copy">
+                <p class="bh-tag">Airbnb &amp; Short-Term Rental Consulting</p>
+                <h2 class="bh-card-title" id="bhStr">Built for investors, end to end.</h2>
+                <p class="bh-card-lead">Toni specializes in Airbnb and short-term rental consulting &mdash; identifying
+                  high-performing investment opportunities and preparing properties for launch, with a strategic,
+                  hands-on approach to maximizing returns.</p>
+                <ul class="bh-chips">
+                  <li>Investment analysis</li>
+                  <li>Furnishing &amp; setup guidance</li>
+                  <li>Listing optimization</li>
+                  <li>Pricing strategy</li>
+                  <li>Guest experience design</li>
+                  <li>Operational consulting</li>
+                </ul>
+                <a class="bh-btn bh-btn--light" href="/services" data-page="services">See how it works</a>
+              </div>
+              <figure class="bh-superhost">
+                <div class="superhost-img" role="img"
+                  aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+                <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with
+                  consistently outstanding ratings, reliability, and guest experience.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="bh-firsthome bh-reveal" aria-labelledby="bhFirstHome">
+            <div class="bh-firsthome-head">
+              <p class="bh-tag">First-Time Buyers</p>
+              <h2 class="bh-firsthome-title" id="bhFirstHome">Buying your first home <span class="bh-soft">in
+                  Calgary?</span></h2>
+              <ul class="bh-firsthome-steps" aria-hidden="true">
+                <li>Financing</li>
+                <li>Neighbourhoods</li>
+                <li>Property values</li>
+                <li>Offers</li>
+                <li>Inspections</li>
+                <li>Closing costs</li>
+              </ul>
+              <a class="bh-firsthome-link"
+                href="https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/gst-hst-rebates/first-time-home-buyers-gst-hst-rebate.html"
+                target="_blank" rel="noopener noreferrer">Government of Canada: First-time home buyers&rsquo; GST/HST
+                rebate<span aria-hidden="true"> &#8599;</span><span class="sr-only"> (opens in a new tab)</span></a>
+            </div>
+            <div class="bh-firsthome-body">
+              <p>The process can feel overwhelming when you&rsquo;re trying to understand financing, neighbourhoods,
+                property values, offers, inspections, and closing costs all at once.</p>
+              <p>Toni breaks the process down into clear steps so you know what to expect, what to look for, and when
+                to make your next move.</p>
+              <p>From your initial search through negotiations and closing, you&rsquo;ll have a clear strategy and a
+                trusted point of contact along the way.</p>
+              <p class="bh-firsthome-cta-line">Not sure where to start? Book a free consultation and let&rsquo;s map
+                it out.</p>
+              <div class="bh-firsthome-actions">
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Book a free consultation</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="bh-section" aria-labelledby="bhCommunities">
+            <div class="bh-section-head">
+              <p class="bh-tag">Featured Communities</p>
+              <h2 class="bh-heading" id="bhCommunities">Neighbourhoods Toni knows <span class="bh-soft">inside
+                  out.</span></h2>
+              <p class="bh-lead">From inner-city character to newer master-planned communities &mdash; local knowledge
+                that shapes smarter buying, selling, and investing decisions.</p>
+            </div>
+            <ul class="bh-communities">
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Altadore%2C%20Calgary%2C%20AB"
+                  target="_blank" rel="noopener noreferrer" aria-label="View Altadore, Calgary on Google Maps"><span
+                    class="bh-num">01</span>Altadore<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Marda%20Loop%2C%20Calgary%2C%20AB"
+                  target="_blank" rel="noopener noreferrer" aria-label="View Marda Loop, Calgary on Google Maps"><span
+                    class="bh-num">02</span>Marda Loop<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Beltline%2C%20Calgary%2C%20AB"
+                  target="_blank" rel="noopener noreferrer" aria-label="View Beltline, Calgary on Google Maps"><span
+                    class="bh-num">03</span>Beltline<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Mahogany%2C%20Calgary%2C%20AB"
+                  target="_blank" rel="noopener noreferrer" aria-label="View Mahogany, Calgary on Google Maps"><span
+                    class="bh-num">04</span>Mahogany<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Seton%2C%20Calgary%2C%20AB" target="_blank"
+                  rel="noopener noreferrer" aria-label="View Seton, Calgary on Google Maps"><span
+                    class="bh-num">05</span>Seton<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Currie%2C%20Calgary%2C%20AB" target="_blank"
+                  rel="noopener noreferrer" aria-label="View Currie, Calgary on Google Maps"><span
+                    class="bh-num">06</span>Currie<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Aspen%20Woods%2C%20Calgary%2C%20AB"
+                  target="_blank" rel="noopener noreferrer" aria-label="View Aspen Woods, Calgary on Google Maps"><span
+                    class="bh-num">07</span>Aspen Woods<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Signal%20Hill%2C%20Calgary%2C%20AB"
+                  target="_blank" rel="noopener noreferrer" aria-label="View Signal Hill, Calgary on Google Maps"><span
+                    class="bh-num">08</span>Signal Hill<span class="bh-arrow" aria-hidden="true">&#8599;</span></a></li>
+            </ul>
+          </section>
+
+          <section class="bh-section" aria-labelledby="bhReviews">
+            <div class="bh-section-head bh-reviews-head">
+              <div>
+                <p class="bh-tag">Google Reviews</p>
+                <h2 class="bh-heading" id="bhReviews">What clients say <span class="bh-soft">about working
+                    together.</span></h2>
               </div>
               <a class="google-badge" id="googleBadge" href="#" target="_blank" rel="noopener">
                 <span class="g-score" id="gScore">4.9</span>
@@ -2236,303 +3098,332 @@
             </div>
 
             <div class="reviews-carousel">
-              <button class="carousel-nav prev" id="revPrev" aria-label="Previous reviews">&#10094;</button>
+              <button class="carousel-nav prev" id="revPrev" aria-label="Previous reviews">&#8592;</button>
               <div class="reviews-viewport" id="reviewsTrack" tabindex="0" aria-label="Client reviews"></div>
-              <button class="carousel-nav next" id="revNext" aria-label="Next reviews">&#10095;</button>
+              <button class="carousel-nav next" id="revNext" aria-label="Next reviews">&#8594;</button>
             </div>
             <div class="carousel-dots" id="revDots"></div>
 
-            <div class="center-row">
-              <a class="secondary-button" id="allReviewsLink" href="#" target="_blank" rel="noopener">Read all reviews
-                on Google &rarr;</a>
+            <div class="bh-center">
+              <a class="bh-btn" id="allReviewsLink" href="#" target="_blank" rel="noopener">Read all reviews on Google
+                &rarr;</a>
             </div>
-          </div>
+          </section>
+
         </div>
       </section>
 
       <!-- ABOUT -->
       <section class="page" id="page-about">
-        <div class="page-grid">
-          <div class="split-layout">
-            <div class="portrait-photo"
-              style="background-image: var(--toni-photo); background-size: cover; background-position: center top;">
-            </div>
-            <div class="split-panel">
-              <p class="eyebrow">About Toni</p>
-              <h1>Calgary&rsquo;s investor-focused realtor with a short-term rental edge.</h1>
-              <p class="lead">Toni Tsim is a Calgary-based realtor with Imperial Real Estate Group - Century 21 Bravo
-                Realty: specializing in residential real estate, investment properties, and short-term rentals.</p>
-              <p class="lead">Whether you’re buying, selling, or building an investment portfolio, Toni combines market
-                expertise, strategic marketing, and skilled negotiation to help clients achieve exceptional results.
-                With a strong understanding of Calgary’s real estate market and short-term rental landscape, she
-                provides practical, data-driven guidance tailored to each client’s goals.</p>
-              <p class="lead">Known for her professionalism, clear communication, and results-focused approach, Toni is
-                committed to making every real estate experience seamless, strategic, and successful.</p>
-              <div class="button-row">
-                <a class="primary-button" href="/contact" data-page="contact">Start the conversation</a>
-                <a class="secondary-button" href="/services" data-page="services">Explore services</a>
+        <div class="bh">
+
+          <div class="bh-split bh-page-head">
+            <div class="bh-portrait" role="img" aria-label="Toni Tsim, Calgary realtor"></div>
+            <div>
+              <p class="bh-tag">About Toni</p>
+              <h1 class="bh-title">Calgary&rsquo;s investor-focused realtor <span class="bh-soft">with a short-term
+                  rental edge.</span></h1>
+              <div class="bh-prose">
+                <p>Toni Tsim is a Calgary-based realtor with Imperial Real Estate Group - Century 21 Bravo
+                  Realty: specializing in residential real estate, investment properties, and short-term rentals.</p>
+                <p>Whether you’re buying, selling, or building an investment portfolio, Toni combines market
+                  expertise, strategic marketing, and skilled negotiation to help clients achieve exceptional results.
+                  With a strong understanding of Calgary’s real estate market and short-term rental landscape, she
+                  provides practical, data-driven guidance tailored to each client’s goals.</p>
+                <p>Known for her professionalism, clear communication, and results-focused approach, Toni is
+                  committed to making every real estate experience seamless, strategic, and successful.</p>
+              </div>
+              <div class="bh-actions">
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Start the conversation</a>
+                <a class="bh-btn bh-btn--ghost" href="/services" data-page="services">Explore services</a>
               </div>
             </div>
           </div>
-          <div class="card-grid">
-            <article class="info-card">
-              <p class="eyebrow">Approach</p>
-              <h2>Tailored over templated</h2>
-              <p class="muted">Every client has different goals, timelines, and financial priorities &mdash; so the
-                process adapts instead of feeling generic.</p>
+
+          <div class="bh-tiles">
+            <article class="bh-tile bh-reveal">
+              <p class="bh-tag">Approach</p>
+              <div>
+                <h2>Tailored over templated</h2>
+                <p>Every client has different goals, timelines, and financial priorities &mdash; so the
+                  process adapts instead of feeling generic.</p>
+              </div>
             </article>
-            <article class="info-card">
-              <p class="eyebrow">STR Expertise</p>
-              <h2>Airbnb-savvy from day one</h2>
-              <p class="muted">Toni knows which Calgary buildings permit short-term rentals, how to underwrite STR cash
-                flow, and how to position a listing for maximum bookings.</p>
+            <article class="bh-tile bh-reveal">
+              <p class="bh-tag">STR Expertise</p>
+              <div>
+                <h2>Airbnb-savvy from day one</h2>
+                <p>Toni knows which Calgary buildings permit short-term rentals, how to underwrite STR cash
+                  flow, and how to position a listing for maximum bookings.</p>
+              </div>
             </article>
-            <article class="info-card">
-              <p class="eyebrow">Presentation</p>
-              <h2>Luxury-inspired details</h2>
-              <p class="muted">Design, photography, story, and online positioning all matter when you want a listing or
-                a brand to stand out in the Calgary market.</p>
+            <article class="bh-tile bh-reveal">
+              <p class="bh-tag">Presentation</p>
+              <div>
+                <h2>Luxury-inspired details</h2>
+                <p>Design, photography, story, and online positioning all matter when you want a listing or
+                  a brand to stand out in the Calgary market.</p>
+              </div>
             </article>
           </div>
 
-          <div class="split-panel split-panel--wide str-panel">
-            <div class="str-panel-copy">
-              <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
-              <h2>Built for investors, end to end.</h2>
-              <p class="lead">Alongside residential real estate, Toni consults on Airbnb and short-term rentals &mdash;
-                helping investors find properties that actually perform, then getting them launch-ready and running
-                well.</p>
-              <ul class="str-services">
-                <li>Investment analysis</li>
-                <li>Furnishing &amp; setup guidance</li>
-                <li>Listing optimization</li>
-                <li>Pricing strategy</li>
-                <li>Guest experience design</li>
-                <li>Operational consulting</li>
-              </ul>
-              <div class="button-row">
-                <a class="primary-button" href="/contact" data-page="contact">Talk STR strategy</a>
+          <section class="bh-stack bh-reveal" aria-labelledby="aboutStr">
+            <div class="bh-card">
+              <div class="bh-card-copy">
+                <p class="bh-tag">Airbnb &amp; Short-Term Rental Consulting</p>
+                <h2 class="bh-card-title" id="aboutStr">Built for investors, end to end.</h2>
+                <p class="bh-card-lead">Alongside residential real estate, Toni consults on Airbnb and short-term
+                  rentals &mdash; helping investors find properties that actually perform, then getting them
+                  launch-ready and running well.</p>
+                <ul class="bh-chips">
+                  <li>Investment analysis</li>
+                  <li>Furnishing &amp; setup guidance</li>
+                  <li>Listing optimization</li>
+                  <li>Pricing strategy</li>
+                  <li>Guest experience design</li>
+                  <li>Operational consulting</li>
+                </ul>
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Talk STR strategy</a>
               </div>
+              <figure class="bh-superhost">
+                <div class="superhost-img" role="img"
+                  aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+                <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with
+                  consistently outstanding ratings, reliability, and guest experience.</figcaption>
+              </figure>
             </div>
-            <figure class="superhost-badge">
-              <div class="superhost-img" role="img"
-                aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
-              <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently
-                outstanding ratings, reliability, and guest experience.</figcaption>
-            </figure>
-          </div>
+          </section>
+
         </div>
       </section>
 
       <!-- SERVICES -->
       <section class="page" id="page-services">
-        <div class="page-grid">
-          <div class="split-panel split-panel--wide">
-            <p class="eyebrow">Services</p>
-            <h1>Support for buying, selling, and investing.</h1>
-            <p class="lead">Dedicated support for each path &mdash; including a specialized focus on Airbnb and
+        <div class="bh">
+
+          <div class="bh-page-head">
+            <p class="bh-tag">Services</p>
+            <h1 class="bh-title bh-title--xl">Support for buying, selling, <span class="bh-soft">and
+                investing.</span></h1>
+            <p class="bh-lead">Dedicated support for each path &mdash; including a specialized focus on Airbnb and
               short-term rental investment properties across Calgary.</p>
           </div>
-          <div class="card-grid">
-            <article class="info-card">
-              <p class="eyebrow">Buying</p>
-              <h2>Buy with a plan</h2>
-              <p class="muted">From neighbourhood fit to offer strategy, the buying process is designed to stay focused,
-                informed, and efficient &mdash; whether it&rsquo;s a primary home or an investment property.</p>
-            </article>
-            <article class="info-card">
-              <p class="eyebrow">Airbnb &amp; STR</p>
-              <h2>Short-term rental strategy</h2>
-              <p class="muted">Identify STR-friendly buildings, model cash flow, and find properties positioned to
-                perform on Airbnb. Toni specializes in Calgary&rsquo;s growing short-term rental market.</p>
-            </article>
-            <article class="info-card">
-              <p class="eyebrow">Selling</p>
-              <h2>Sell with standout marketing</h2>
-              <p class="muted">Pricing, presentation, photography, positioning, and launch strategy are all handled with
-                a polished, cohesive feel.</p>
-            </article>
-          </div>
 
-          <div class="split-panel split-panel--wide str-panel">
-            <div class="str-panel-copy">
-              <p class="eyebrow">Airbnb &amp; Short-Term Rental Consulting</p>
-              <h2>Built for investors, end to end.</h2>
-              <p class="lead">In addition to residential real estate, Toni specializes in Airbnb and short-term rental
-                consulting. From identifying high-performing investment opportunities to preparing properties for
-                launch, she helps investors maximize their returns with a strategic, hands-on approach. Services include
-                investment analysis, furnishing and setup guidance, listing optimization, pricing strategy, guest
-                experience design, and ongoing operational consulting&mdash;whether you&rsquo;re launching your first
-                short-term rental or expanding an existing portfolio.</p>
-              <ul class="str-services">
-                <li>Investment analysis</li>
-                <li>Furnishing &amp; setup guidance</li>
-                <li>Listing optimization</li>
-                <li>Pricing strategy</li>
-                <li>Guest experience design</li>
-                <li>Operational consulting</li>
-              </ul>
-              <div class="button-row">
-                <a class="primary-button" href="/contact" data-page="contact">Talk STR strategy</a>
+          <div class="bh-tiles">
+            <article class="bh-tile bh-reveal">
+              <p class="bh-tag">Buying</p>
+              <div>
+                <h2>Buy with a plan</h2>
+                <p>From neighbourhood fit to offer strategy, the buying process is designed to stay focused,
+                  informed, and efficient &mdash; whether it&rsquo;s a primary home or an investment property.</p>
               </div>
-            </div>
-            <figure class="superhost-badge">
-              <div class="superhost-img" role="img"
-                aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
-              <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with consistently
-                outstanding ratings, reliability, and guest experience.</figcaption>
-            </figure>
+            </article>
+            <article class="bh-tile bh-reveal">
+              <p class="bh-tag">Airbnb &amp; STR</p>
+              <div>
+                <h2>Short-term rental strategy</h2>
+                <p>Identify STR-friendly buildings, model cash flow, and find properties positioned to
+                  perform on Airbnb. Toni specializes in Calgary&rsquo;s growing short-term rental market.</p>
+              </div>
+            </article>
+            <article class="bh-tile bh-reveal">
+              <p class="bh-tag">Selling</p>
+              <div>
+                <h2>Sell with standout marketing</h2>
+                <p>Pricing, presentation, photography, positioning, and launch strategy are all handled with
+                  a polished, cohesive feel.</p>
+              </div>
+            </article>
           </div>
 
-          <div class="section-head">
-            <p class="eyebrow">How it works</p>
-            <h2>A clear, three-step process.</h2>
-          </div>
-          <div class="process-grid">
-            <article class="process-step">
-              <span class="step-num">01</span>
-              <h2>Discover your goals</h2>
-              <p class="muted">Start with timing, budget, lifestyle, and the outcome that matters most &mdash; whether
-                that&rsquo;s a family home or a cash-flowing rental.</p>
-            </article>
-            <article class="process-step">
-              <span class="step-num">02</span>
-              <h2>Build the strategy</h2>
-              <p class="muted">Create a roadmap tailored to the current Calgary market and your priorities, including
-                STR income projections where relevant.</p>
-            </article>
-            <article class="process-step">
-              <span class="step-num">03</span>
-              <h2>Move with confidence</h2>
-              <p class="muted">Get organized guidance, tight communication, and a smooth path to closing.</p>
-            </article>
-          </div>
-          <div class="button-row">
-            <a class="primary-button" href="/contact" data-page="contact">Book a Free Consultation</a>
-          </div>
+          <section class="bh-stack bh-reveal" aria-labelledby="servicesStr">
+            <div class="bh-card">
+              <div class="bh-card-copy">
+                <p class="bh-tag">Airbnb &amp; Short-Term Rental Consulting</p>
+                <h2 class="bh-card-title" id="servicesStr">Built for investors, end to end.</h2>
+                <p class="bh-card-lead">In addition to residential real estate, Toni specializes in Airbnb and
+                  short-term rental consulting. From identifying high-performing investment opportunities to preparing
+                  properties for launch, she helps investors maximize their returns with a strategic, hands-on
+                  approach. Services include investment analysis, furnishing and setup guidance, listing optimization,
+                  pricing strategy, guest experience design, and ongoing operational consulting&mdash;whether
+                  you&rsquo;re launching your first short-term rental or expanding an existing portfolio.</p>
+                <ul class="bh-chips">
+                  <li>Investment analysis</li>
+                  <li>Furnishing &amp; setup guidance</li>
+                  <li>Listing optimization</li>
+                  <li>Pricing strategy</li>
+                  <li>Guest experience design</li>
+                  <li>Operational consulting</li>
+                </ul>
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Talk STR strategy</a>
+              </div>
+              <figure class="bh-superhost">
+                <div class="superhost-img" role="img"
+                  aria-label="Airbnb notification: Congrats, Toni! You're a Superhost."></div>
+                <figcaption>Recognized as an Airbnb <strong>Superhost</strong> &mdash; awarded to hosts with
+                  consistently outstanding ratings, reliability, and guest experience.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="bh-section" aria-labelledby="servicesSteps">
+            <p class="bh-tag">How it works</p>
+            <h2 class="bh-heading" id="servicesSteps">A clear, <span class="bh-soft">three-step process.</span></h2>
+            <ol class="bh-steps">
+              <li class="bh-reveal">
+                <span class="bh-step-num" aria-hidden="true">01</span>
+                <h3>Discover your goals</h3>
+                <p>Start with timing, budget, lifestyle, and the outcome that matters most &mdash; whether
+                  that&rsquo;s a family home or a cash-flowing rental.</p>
+              </li>
+              <li class="bh-reveal">
+                <span class="bh-step-num" aria-hidden="true">02</span>
+                <h3>Build the strategy</h3>
+                <p>Create a roadmap tailored to the current Calgary market and your priorities, including
+                  STR income projections where relevant.</p>
+              </li>
+              <li class="bh-reveal">
+                <span class="bh-step-num" aria-hidden="true">03</span>
+                <h3>Move with confidence</h3>
+                <p>Get organized guidance, tight communication, and a smooth path to closing.</p>
+              </li>
+            </ol>
+            <div class="bh-actions">
+              <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Book a Free Consultation</a>
+            </div>
+          </section>
+
         </div>
       </section>
 
       <!-- LISTINGS -->
       <section class="page" id="page-listings">
-        <div class="page-grid">
-          <div class="split-panel split-panel--wide">
-            <p class="eyebrow">Listings</p>
-            <h1>Calgary homes and investment properties.</h1>
-            <p class="lead">Active listings, recent sales, and short-term rental opportunities across the city. For the
-              full, always-current MLS&reg; feed &mdash; including listings not shown here &mdash; reach out and Toni
-              will set up a personalized search.</p>
-            <div class="button-row">
-              <a class="primary-button" href="/contact" data-page="contact">Get new listings first</a>
+        <div class="bh">
+
+          <div class="bh-page-head">
+            <p class="bh-tag">Listings</p>
+            <h1 class="bh-title bh-title--xl">Calgary homes <span class="bh-soft">and investment
+                properties.</span></h1>
+            <p class="bh-lead">Active listings, recent sales, and short-term rental opportunities across the city. For
+              the full, always-current MLS&reg; feed &mdash; including listings not shown here &mdash; reach out and
+              Toni will set up a personalized search.</p>
+            <div class="bh-actions">
+              <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Get new listings first</a>
             </div>
           </div>
 
-          <div class="listing-grid">
-            <article class="listing-card">
-              <div class="listing-image"
-                style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
-                <span>Featured</span>
+          <div class="bh-listings">
+            <article class="bh-listing bh-reveal">
+              <div class="bh-listing-img"
+                style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
+                <span class="bh-listing-chip">Featured</span>
               </div>
-              <div class="listing-copy">
+              <div class="bh-listing-body">
                 <h2>Modern inner-city home</h2><strong>$849,900</strong>
-                <p class="muted">4 bed &middot; 3.5 bath &middot; Altadore</p>
+                <p>4 bed &middot; 3.5 bath &middot; Altadore</p>
               </div>
             </article>
-            <article class="listing-card">
-              <div class="listing-image"
-                style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
-                <span>Just listed</span>
+            <article class="bh-listing bh-reveal">
+              <div class="bh-listing-img"
+                style="background-image: url('https://images.unsplash.com/photo-1576941089067-2de3c901e126?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
+                <span class="bh-listing-chip">Just listed</span>
               </div>
-              <div class="listing-copy">
+              <div class="bh-listing-body">
                 <h2>Bright family retreat</h2><strong>$679,900</strong>
-                <p class="muted">3 bed &middot; 2.5 bath &middot; Mahogany</p>
+                <p>3 bed &middot; 2.5 bath &middot; Mahogany</p>
               </div>
             </article>
-            <article class="listing-card">
-              <div class="listing-image"
-                style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
-                <span>Airbnb ready</span>
+            <article class="bh-listing bh-reveal">
+              <div class="bh-listing-img"
+                style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
+                <span class="bh-listing-chip">Airbnb ready</span>
               </div>
-              <div class="listing-copy">
+              <div class="bh-listing-body">
                 <h2>Stylish condo investment</h2><strong>$329,900</strong>
-                <p class="muted">2 bed &middot; 2 bath &middot; Beltline &middot; STR-friendly</p>
+                <p>2 bed &middot; 2 bath &middot; Beltline &middot; STR-friendly</p>
               </div>
             </article>
-            <article class="listing-card">
-              <div class="listing-image"
-                style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
-                <span>Coming soon</span>
+            <article class="bh-listing bh-reveal">
+              <div class="bh-listing-img"
+                style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
+                <span class="bh-listing-chip">Coming soon</span>
               </div>
-              <div class="listing-copy">
+              <div class="bh-listing-body">
                 <h2>Charming bungalow</h2><strong>$524,000</strong>
-                <p class="muted">3 bed &middot; 2 bath &middot; Signal Hill</p>
+                <p>3 bed &middot; 2 bath &middot; Signal Hill</p>
               </div>
             </article>
-            <article class="listing-card">
-              <div class="listing-image"
-                style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
-                <span>Sold</span>
+            <article class="bh-listing bh-reveal">
+              <div class="bh-listing-img"
+                style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
+                <span class="bh-listing-chip">Sold</span>
               </div>
-              <div class="listing-copy">
+              <div class="bh-listing-body">
                 <h2>Executive estate</h2><strong>$1,249,000</strong>
-                <p class="muted">5 bed &middot; 4 bath &middot; Aspen Woods</p>
+                <p>5 bed &middot; 4 bath &middot; Aspen Woods</p>
               </div>
             </article>
-            <article class="listing-card">
-              <div class="listing-image"
-                style="background-image: linear-gradient(180deg, rgba(10,10,14,0.08), rgba(10,10,14,0.45)), url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
-                <span>Investor pick</span>
+            <article class="bh-listing bh-reveal">
+              <div class="bh-listing-img"
+                style="background-image: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80')">
+                <span class="bh-listing-chip">Investor pick</span>
               </div>
-              <div class="listing-copy">
+              <div class="bh-listing-body">
                 <h2>Downtown loft</h2><strong>$289,900</strong>
-                <p class="muted">1 bed &middot; 1 bath &middot; Currie</p>
+                <p>1 bed &middot; 1 bath &middot; Currie</p>
               </div>
             </article>
           </div>
 
-          <p class="lead disclaimer">Listing details are illustrative. Contact Toni for current availability, pricing,
-            and MLS&reg; listings.</p>
-
-          <div class="center-row">
-            <a class="primary-button" href="/contact" data-page="contact">Inquire about a listing</a>
+          <div class="bh-center bh-center--stack">
+            <p class="bh-note">Listing details are illustrative. Contact Toni for current availability, pricing,
+              and MLS&reg; listings.</p>
+            <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Inquire about a listing</a>
           </div>
+
         </div>
       </section>
 
       <!-- CONTACT -->
       <section class="page" id="page-contact">
-        <div class="page-grid">
-          <div class="split-layout">
-            <div class="split-panel">
-              <p class="eyebrow">Contact</p>
-              <h1>Ready to make your next move in Calgary?</h1>
-              <p class="lead">Reach out to talk about buying, selling, or investing &mdash; including Airbnb and
-                short-term rental properties. The first conversation can stay simple, whether you&rsquo;re ready now or
-                just exploring options.</p>
-              <p class="lead">Toni Tsim works with buyers, sellers, and investors across Calgary, AB with a focus on
-                clear communication and premium presentation.</p>
+        <div class="bh">
 
-              <div class="contact-facts">
+          <div class="bh-split bh-split--contact bh-page-head">
+            <div>
+              <p class="bh-tag">Contact</p>
+              <h1 class="bh-title">Ready to make your next move <span class="bh-soft">in Calgary?</span></h1>
+              <div class="bh-prose">
+                <p>Reach out to talk about buying, selling, or investing &mdash; including Airbnb and
+                  short-term rental properties. The first conversation can stay simple, whether you&rsquo;re ready now
+                  or just exploring options.</p>
+                <p>Toni Tsim works with buyers, sellers, and investors across Calgary, AB with a focus on
+                  clear communication and premium presentation.</p>
+              </div>
+
+              <div class="bh-facts">
                 <div>
+                  <span class="bh-num">(01)</span>
                   <h2>Areas served</h2>
-                  <p class="muted">Calgary and surrounding communities &mdash; inner-city, southeast, and west-side
+                  <p>Calgary and surrounding communities &mdash; inner-city, southeast, and west-side
                     neighbourhoods, plus acreages within commuting distance.</p>
                 </div>
                 <div>
+                  <span class="bh-num">(02)</span>
                   <h2>Who Toni works with</h2>
-                  <p class="muted">First-time buyers, move-up families, sellers preparing to list, and investors
+                  <p>First-time buyers, move-up families, sellers preparing to list, and investors
                     building or scaling a short-term rental portfolio.</p>
                 </div>
                 <div>
+                  <span class="bh-num">(03)</span>
                   <h2>What happens next</h2>
-                  <p class="muted">You&rsquo;ll hear back within one business day. The first call is a no-pressure
+                  <p>You&rsquo;ll hear back within one business day. The first call is a no-pressure
                     conversation about your timeline, budget, and goals &mdash; free, with no obligation.</p>
                 </div>
               </div>
             </div>
 
-            <div class="contact-card">
-              <p class="eyebrow">Send a message</p>
+            <div class="bh-form-card">
+              <p class="bh-tag">Send a message</p>
               <h2>Tell Toni about your move</h2>
 
               <form class="contact-form" name="contact" method="POST" action="https://formsubmit.co/yyctoni@gmail.com">
@@ -2563,6 +3454,7 @@
                     <option>Selling a home</option>
                     <option>Airbnb / short-term rental investing</option>
                     <option>Investment property</option>
+                    <option>Joining the team</option>
                     <option>Just exploring / not sure yet</option>
                   </select>
                 </label>
@@ -2572,22 +3464,26 @@
                     placeholder="Timeline, budget, neighbourhoods you like &mdash; whatever&rsquo;s useful."></textarea>
                 </label>
 
-                <button type="submit" class="primary-button form-submit">Send message</button>
-                <p class="form-note muted">Prefer email? <a
+                <button type="submit" class="bh-btn bh-btn--gold form-submit">Send message</button>
+                <p class="form-note">Prefer email? <a
                     href="mailto:yyctoni@gmail.com?subject=Real%20Estate%20Inquiry">yyctoni@gmail.com</a></p>
               </form>
 
               <div class="contact-links">
-                <a href="tel:+15878398118"><span class="contact-icon">&#128222;</span>(587) 839-8118</a>
-                <a href="mailto:yyctoni@gmail.com"><span class="contact-icon">&#9993;</span>yyctoni@gmail.com</a>
+                <a href="tel:+15878398118"><span class="contact-icon">Phone</span>(587) 839-8118<i
+                    aria-hidden="true">&#8599;</i></a>
+                <a href="mailto:yyctoni@gmail.com"><span class="contact-icon">Email</span>yyctoni@gmail.com<i
+                    aria-hidden="true">&#8599;</i></a>
                 <a href="https://instagram.com/yyc.toni" target="_blank" rel="noopener noreferrer"><span
-                    class="contact-icon">&#64;</span>yyc.toni</a>
+                    class="contact-icon">Instagram</span>yyc.toni<i aria-hidden="true">&#8599;</i></a>
                 <a href="https://maps.google.com/?q=Calgary,+Alberta" target="_blank" rel="noopener noreferrer"><span
-                    class="contact-icon">&#128205;</span>Calgary, Alberta</a>
+                    class="contact-icon">Location</span>Calgary, Alberta<i aria-hidden="true">&#8599;</i></a>
               </div>
             </div>
           </div>
-          <div class="large-photo"></div>
+
+          <div class="large-photo bh-wide-photo bh-reveal"></div>
+
         </div>
       </section>
 
@@ -3112,6 +4008,80 @@
         gCount.textContent = 'On Google';
         if (data.uri) { badge.href = data.uri; allLink.href = data.uri; }
       }).catch(err => console.warn('Google reviews unavailable, using manual list.', err));
+    })();
+
+    /* ===================== Homepage pillars: pinned scroll scene ===================== */
+    /* The stage pins full screen; as you scroll, each pillar grows from its tilted card
+       into the whole viewport, one after another. Reduced motion keeps the static row. */
+    (function initPillars() {
+      const section = document.querySelector('.bh-pillars');
+      if (!section) return;
+      const stage = section.querySelector('.bh-pillars-stage');
+      const slots = [...section.querySelectorAll('.bh-pillar-row li')];
+      const panels = slots.map(li => li.querySelector('.bh-pillar'));
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const HOLD = 0.5;   // extra screens of scroll with the last pillar full screen
+      let geo = null;
+      let queued = false;
+
+      const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+      const lerp = (a, b, t) => a + (b - a) * t;
+      const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+      // card positions relative to the stage (the panels are absolutely positioned, so they don't affect this)
+      function measure() {
+        const s = stage.getBoundingClientRect();
+        const cs = getComputedStyle(section);
+        geo = {
+          w: s.width,
+          h: s.height,
+          tiltK: parseFloat(cs.getPropertyValue('--tilt-k')) || 1,
+          radius: parseFloat(cs.getPropertyValue('--rad0')) || 18,
+          slots: slots.map(li => {
+            const r = li.getBoundingClientRect();
+            return { x: r.left - s.left, y: r.top - s.top, w: r.width, h: r.height, tilt: parseFloat(getComputedStyle(li).getPropertyValue('--tilt')) || 0 };
+          })
+        };
+      }
+
+      function render() {
+        queued = false;
+        if (!section.classList.contains('is-animated') || !stage.offsetWidth) return;   // homepage hidden
+        if (!geo || geo.w !== stage.offsetWidth || geo.h !== stage.offsetHeight) measure();
+
+        const travel = section.offsetHeight - stage.offsetHeight;
+        const scrolled = clamp(-section.getBoundingClientRect().top, 0, travel);
+        const step = travel / (panels.length + HOLD);
+
+        panels.forEach((el, i) => {
+          const t = ease(clamp((scrolled - i * step) / step, 0, 1));
+          const s = geo.slots[i];
+          el.style.left = lerp(s.x, 0, t) + 'px';
+          el.style.top = lerp(s.y, 0, t) + 'px';
+          el.style.width = lerp(s.w, geo.w, t) + 'px';
+          el.style.height = lerp(s.h, geo.h, t) + 'px';
+          el.style.borderRadius = lerp(geo.radius, 0, t) + 'px';
+          el.style.transform = 'rotate(' + lerp(s.tilt * geo.tiltK, 0, t) + 'deg)';
+          el.style.setProperty('--k', t.toFixed(4));
+        });
+      }
+
+      const queue = () => { if (!queued) { queued = true; requestAnimationFrame(render); } };
+
+      function setMode() {
+        const on = !reduceMotion.matches;
+        section.classList.toggle('is-animated', on);
+        if (!on) panels.forEach(el => el.removeAttribute('style'));
+        geo = null;
+        queue();
+      }
+
+      window.addEventListener('scroll', queue, { passive: true });
+      window.addEventListener('resize', () => { geo = null; queue(); });
+      // re-measure when the homepage is shown again (stage goes from 0 to full size)
+      if ('ResizeObserver' in window) new ResizeObserver(() => { geo = null; queue(); }).observe(stage);
+      reduceMotion.addEventListener('change', setMode);
+      setMode();
     })();
 
   </script>
