@@ -1374,6 +1374,36 @@
       color: var(--bh-bg);
     }
 
+    /* why intro: big statement on the left, supporting copy on the right */
+    .bh-why-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: clamp(24px, 5vw, 72px);
+      margin-top: clamp(28px, 4vw, 48px);
+    }
+
+    .bh-why-statement {
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--bh-ink);
+      text-wrap: balance;
+    }
+
+    .bh-why-copy {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .bh-why-copy p {
+      color: var(--bh-muted);
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
     /* text for screen readers only */
     .sr-only {
       position: absolute;
@@ -2264,7 +2294,8 @@
       }
 
       .bh-join-top,
-      .bh-firsthome {
+      .bh-firsthome,
+      .bh-why-intro {
         grid-template-columns: 1fr;
       }
 
@@ -2612,6 +2643,147 @@
       margin-top: clamp(36px, 5vw, 56px);
     }
 
+    /* services panels (selling, investing): heading column + copy column; --ink flips the colours */
+    .bh-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      padding: clamp(26px, 4.5vw, 60px);
+      border-radius: 20px;
+      background: var(--bh-card);
+      color: var(--bh-ink);
+      --panel-muted: var(--bh-muted);
+      --panel-line: var(--bh-line);
+    }
+
+    .bh-panel--ink {
+      background: var(--bh-ink);
+      color: var(--bh-bg);
+      --panel-muted: color-mix(in srgb, var(--bh-bg) 68%, var(--bh-ink));
+      --panel-line: color-mix(in srgb, var(--bh-bg) 16%, transparent);
+    }
+
+    .bh-panel-title {
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .bh-panel-lead {
+      margin-top: clamp(22px, 3vw, 32px);
+      font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+      line-height: 1.5;
+      max-width: 40ch;
+    }
+
+    .bh-panel-body {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .bh-panel-body p {
+      color: var(--panel-muted);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .bh-panel-subhead {
+      font-family: var(--bh-mono);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bh-soft);
+      margin-top: 14px;
+    }
+
+    .bh-panel-list {
+      list-style: none;
+      counter-reset: panel;
+    }
+
+    .bh-panel-list li {
+      counter-increment: panel;
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      padding: 13px 0;
+      border-top: 1px solid var(--panel-line);
+      font-family: var(--bh-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .bh-panel-list li:last-child {
+      border-bottom: 1px solid var(--panel-line);
+    }
+
+    .bh-panel-list li::before {
+      content: counter(panel, decimal-leading-zero);
+      font-family: var(--bh-mono);
+      font-size: 0.74rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--bh-soft);
+    }
+
+    .bh-panel-chips {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .bh-panel-chips li {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--panel-line);
+      font-family: var(--bh-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--panel-muted);
+    }
+
+    .bh-panel-body .bh-panel-cta {
+      color: inherit;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .bh-panel .bh-actions {
+      margin-top: 8px;
+    }
+
+    .bh-panel--ink .bh-btn--gold:focus-visible {
+      outline-color: var(--bh-bg);
+    }
+
+    /* investing motto: three beats across the full panel width */
+    .bh-panel-motto {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px 28px;
+      padding-top: clamp(22px, 3vw, 32px);
+      border-top: 1px solid var(--panel-line);
+      font-family: var(--bh-display);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 2.6vw, 2.3rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .bh-panel-motto span:nth-child(2) {
+      color: var(--bh-soft);
+    }
+
     /* listings: case-study style photo cards */
     .bh-listings {
       display: grid;
@@ -2782,6 +2954,11 @@
         gap: 36px;
       }
 
+      .bh-panel,
+      .bh-panel-motto {
+        grid-template-columns: 1fr;
+      }
+
       .bh-step-num {
         margin-bottom: 16px;
       }
@@ -2794,6 +2971,10 @@
 
       .bh-tile {
         padding: 20px 20px 24px;
+      }
+
+      .bh-panel {
+        border-radius: 16px;
       }
 
       .bh-actions .bh-btn {
@@ -2891,7 +3072,21 @@
           </figure>
 
           <section class="bh-section" aria-labelledby="bhWhy">
-            <h2 class="bh-heading" id="bhWhy">Why work <span class="bh-soft">with Toni?</span></h2>
+            <p class="bh-tag">Why Work with Toni</p>
+            <h2 class="bh-heading" id="bhWhy">Calgary real estate, <span class="bh-soft">with a local
+                advantage.</span></h2>
+            <div class="bh-why-intro">
+              <p class="bh-why-statement">Calgary is not one market. Every community, property type, and price point
+                can tell a different story.</p>
+              <div class="bh-why-copy">
+                <p>Toni helps clients look beyond the listing price and understand the bigger picture: neighbourhood
+                  trends, property potential, rental considerations, resale positioning, and the factors that can
+                  influence long-term value.</p>
+                <p>Whether you&rsquo;re purchasing your first home, selling an established property, or evaluating
+                  your next investment, you&rsquo;ll have a strategy built around the Calgary market and your specific
+                  goals.</p>
+              </div>
+            </div>
             <ol class="bh-why">
               <li class="bh-reveal"><span class="bh-num">(01)</span>Investor mindset&mdash;not just sales</li>
               <li class="bh-reveal"><span class="bh-num">(02)</span>Airbnb and cash-flow expertise</li>
@@ -3235,6 +3430,65 @@
               </div>
             </article>
           </div>
+
+          <section class="bh-panel bh-reveal" aria-labelledby="servicesSell">
+            <div>
+              <p class="bh-tag">For Sellers</p>
+              <h2 class="bh-panel-title" id="servicesSell">Your home deserves more than <span class="bh-soft">a
+                  for-sale sign.</span></h2>
+              <p class="bh-panel-lead">Selling is about more than putting a property on the market. It&rsquo;s about
+                creating the right first impression, attracting qualified attention, and positioning your home
+                strategically.</p>
+            </div>
+            <div class="bh-panel-body">
+              <p>From pricing and preparation to photography, digital marketing, showing strategy, and negotiation,
+                Toni brings a polished approach designed to make your property stand out.</p>
+              <h3 class="bh-panel-subhead">A strategic approach to selling</h3>
+              <ol class="bh-panel-list">
+                <li>Market-informed pricing</li>
+                <li>Pre-listing preparation guidance</li>
+                <li>Professional presentation and photography</li>
+                <li>Digital marketing strategy</li>
+                <li>Showing and offer strategy</li>
+                <li>Negotiation and transaction support</li>
+              </ol>
+              <p class="bh-panel-cta">Thinking about selling? Start with a complimentary conversation about your
+                property and your goals.</p>
+              <div class="bh-actions">
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Talk about selling</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="bh-panel bh-panel--ink bh-reveal" aria-labelledby="servicesInvest">
+            <div>
+              <p class="bh-tag">Investment Opportunities</p>
+              <h2 class="bh-panel-title" id="servicesInvest">Thinking beyond <span class="bh-soft">the purchase
+                  price.</span></h2>
+              <p class="bh-panel-lead">A good investment property needs to make sense beyond the initial purchase.</p>
+            </div>
+            <div class="bh-panel-body">
+              <p>Toni helps investors evaluate opportunities through a broader lens &mdash; including purchase price,
+                potential rental income, operating considerations, furnishing requirements, location, property
+                restrictions, and long-term strategy.</p>
+              <ul class="bh-panel-chips" aria-hidden="true">
+                <li>Purchase price</li>
+                <li>Rental income</li>
+                <li>Operating costs</li>
+                <li>Furnishing</li>
+                <li>Location</li>
+                <li>Restrictions</li>
+                <li>Long-term strategy</li>
+              </ul>
+              <p>Whether you&rsquo;re considering your first investment property or expanding an existing portfolio,
+                the goal is to make informed decisions before you commit.</p>
+              <div class="bh-actions">
+                <a class="bh-btn bh-btn--gold" href="/contact" data-page="contact">Talk investment strategy</a>
+              </div>
+            </div>
+            <p class="bh-panel-motto"><span>Buy the property.</span> <span>Understand the numbers.</span>
+              <span>Build the strategy.</span></p>
+          </section>
 
           <section class="bh-stack bh-reveal" aria-labelledby="servicesStr">
             <div class="bh-card">
